@@ -1,0 +1,88 @@
+body{
+    font-family: 'Lora', serif;
+}
+/*container*/
+.background-form{
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background: url("../imgs/background-pizza.jpg") 50% top no-repeat fixed;
+    background-attachment: scroll !important;
+    background-size: cover;
+}
+.fix-img{
+    width:100% ;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.container{
+    width: 100%;
+    margin: 80px auto 40px;
+    text-align: center;
+    overflow: hidden;
+}
+.title h2{
+    font-weight: 700;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+.description {
+    margin: 0 auto 30px;
+}
+.description p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #777;
+}
+input {
+    width: 90%;
+    height: 60px;
+    margin-bottom: 20px;
+    padding: 15px;
+    color: #656565;
+    border: 2px solid #454545;
+    background-color: transparent;
+}
+input:focus{
+    outline: none;
+    border-color: #f2b410;
+}
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    outline: none;
+}
+textarea{
+    background-color: transparent;
+    width: 90%;
+    height: 220px;
+    padding: 15px 10px;
+    resize: none;
+    color: #656565;
+    border: 2px solid #454545;
+}
+textarea:focus{
+    outline: none;
+    border-color: #f2b410;
+}
+.buton{
+    margin-top: 20px;
+}
+.btn{
+    font-weight: 700;
+    background-color: #f2b410;
+    border: 2px solid #f2b410;
+    padding: 15px;
+    color: white;
+}
+.btn:hover{
+    color: #f2b410;
+    border: 2px solid #f2b410;
+    background-color: transparent;
+}
+.btn:focus{
+    box-shadow: none;
+}

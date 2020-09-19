@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/lbs/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/lbs/mdBootstrap/css/mdb.min.css">
+    <link rel="stylesheet" href="/lbs/mdBootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/contact.css">
+    </head>
+<body>
+<!--header-->
+<div class="header">
+    <img src="/images/bg6.jpg" style="width: 100%;height: 500px">
+</div>
+
+<!--container-->
+<div class="background-img-form ">
+    <div class="background-color-form">
+        <div class="container Contact">
+            <div class="row">
+                <div class="title col-md-12">
+                    <h2>CONTACT FORM</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="description col-md-8">
+                    <p>There are many variations of passages of Lorem Ipsum available,
+                        but the majority have suffered alteration, by injected humour,
+                        or new randomised words which don't look believable.
+                    </p>
+                </div>
+            </div>
+            
+            <form action="#" method="post" id="formContact">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div id="input" class="col-md-12 animated bounceInLeft slow">
+                                <input type="text" id="name" required name="full-name" placeholder="Full name*">
+                                <input type="email" required name="email" placeholder="Email*">
+                                <input type="number" required maxlength="11" name="phone" placeholder="Phone number*">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <textarea name="message" class="animated bounceInRight delay-1s slow" placeholder="Your message" rows="2" cols="20" ></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                   <div class="col-md-12">
+                       <button type="submit" id="btn1" class="btn animated bounceInUp slow delay-1s">SEND MESSAGE</button>
+                   </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--location-->
+<div class="background-local">
+    <div class="container">
+        <form action="#" method="get">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="selectCountry">
+
+                        <select id="country" class="browser-default custom-select custom-select-lg mb-3">
+                            <option selected >Select your country, please !</option>
+                            <option value="1" disabled>USA (coming soon)</option>
+                            <option value="2" disabled>CANADA (coming soon)</option>
+                            <option value="3" disabled>AUSTRALIA (coming soon)</option>
+                            <option value="4" >VIETNAMESE</option>
+                            <option value="5" disabled>FILAN (coming soon)</option>
+                            <option value="6" disabled>ITALIA (coming soon)</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="selectCity">
+                        <select id="area" class="browser-default custom-select custom-select-lg mb-3">
+                            <option selected>Select your area, please !</option>
+                            <option value="1">Hà Nội</option>
+                            <option value="2" disabled>Đà Nẵng (coming soon)</option>
+                            <option value="3">Hồ Chí Minh</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="location">
+            <div class="map">
+                <div class="row">
+                    <div class="col-md-4 animated slideInRight initMap" id="initMap" ></div>
+                </div>
+            </div>
+            <div class="infomation">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row info animated zoomIn">
+                            <div class="col-12">
+                                <h4>Pizza MlemMlem 1</h4>
+                            </div>
+                            <div class="col-12"><p><i class="fas fa-map-marker-alt"></i> &ensp;
+                                8 Ton That Thuyet - Ha Noi</p>
+                            </div>
+                            <div class="col-12"><p><i class="fas fa-clock"></i> &ensp;
+                                Monday – Sunday: 11:00 – 22:00 <br> (Last Order 21:30)</p>
+                            </div>
+                            <div class="col-12">
+                                <button type="button" id="btn2" class="btn animated zoomIn">
+                                    RESERVATION
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 animated zoomIn delay-1s">
+                        <img src="/images/4763.png" style="width: 100%; height: 300px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--link reservation-->
+<div class="background-link">
+    <div class="container">
+        <div class="fix-background-link">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row textinfo">
+                        <div class="col-12"><p class="title-text">Enjoy !!!</p></div>
+                        <div class="col-12 fixcol"><h3>MlemMlem's Pizza</h3></div>
+                        <div class="col-12"><p>
+                            Curabitur quas nets lacus ets nulat iaculis loremis etis
+                            nisle varius vitae seditum fugiatum ligula aliquam qui sequi.
+                        </p></div>
+                        <div class="col-12">
+                            <button class="btn" id="btn3"> RESERVATION</button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6 slider">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="5000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block" src="/images/food6.jpg">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block" src="/images/food7.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer-->
+<div class="footer"></div>
+
+
+<!--java-->
+<script type="text/javascript" src="/lbs/mdBootstrap/js/jquery.js"></script>
+<script type="text/javascript" src="/lbs/mdBootstrap/js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="/lbs/mdBootstrap/js/mdb.min.js" ></script>
+
+<script type="text/javascript">$('.carousel').carousel()</script>
+<script type="text/javascript">
+    // form contact
+    var fixImg = $(".background-color-form");
+    var offsetFix = fixImg.offset().top;
+    var formeffect = $("#formContact");
+    var formBtn = $("#btn1");
+    window.addEventListener("scroll",
+        () =>{
+        if (window.pageYOffset >= (offsetFix - 100) ) {
+            formeffect.css("display","block");
+        }
+        if(window.pageYOffset >= offsetFix - 50) {
+            formBtn.css("display","flex");
+        }
+        });
+
+    // local effect
+    var localtion = $('.background-local').offset().top;
+    window.addEventListener('scroll',
+        () => {
+            var offse = window.scrollY;
+
+            if ( offse >= localtion - 350) {
+                $('.location').css("display","block");
+            }
+        });
+
+    // function getData() {
+    //     $.getJSON('Get/GetData?no=1', function (responseText) {
+    //         //Load some data from the server
+    //     })
+    // };
+    //
+    // $(window).scroll(function () {
+    //     getData();
+    // });
+
+
+
+    // map
+    function initMap() {
+        // The location of Uluru
+        var uluru = {lat: 21.0289003, lng: 105.7816498};
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('initMap'), {zoom: 14, center: uluru});
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker(
+            {
+                position: uluru,
+                map: map,
+                label:{
+                    text:"Pizza MlemMlem 1",
+                    color:"red"
+                }
+            }
+        );
+    }
+
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaj0mHlR-keu-9hsR6d-gB0L9BclG04rk&callback=initMap"></script>
+</body>
+</html>

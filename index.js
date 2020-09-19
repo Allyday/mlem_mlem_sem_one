@@ -42,3 +42,8 @@ app.get('/', (req, res) => {
   //   });
   // });
 });
+
+// contact
+app.get('/contact', (req,res) => {
+  res.render('contact');
+})
