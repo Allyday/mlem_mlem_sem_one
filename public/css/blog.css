@@ -1,4 +1,5 @@
 *{
+    cursor: default;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -110,12 +111,11 @@ form{
     transition: all 500ms;
 }
 .date-time{
-    color: #a41a13;
-    margin-top: 20px;
+    margin: 20px 0;
 }
-.date-time > p {
-    border-bottom: 1px solid #eeeeee;
-    padding-bottom: 20px;
+.date-time  p {
+    color: #a41a13;
+    /*border-bottom: 1px solid #eeeeee;*/
     font-size: 18px;
     font-weight: 700;
 }
