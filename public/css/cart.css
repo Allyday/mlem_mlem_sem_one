@@ -1,0 +1,265 @@
+*{
+    font-family: Lora, serif;
+    font-size: 18px;
+}
+
+/*footer*/
+.backgroundImg{
+    cursor: default;
+    padding-top: 40px;
+    color: white;
+    width: 100%;
+    position: relative;
+    height: 370px;
+    background-image: url("../images/4.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.backgroundImg::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(15, 25, 36, 0.85);
+}
+.container-footer{
+    position: relative;
+    border-bottom: 2px dotted #ddd;
+    display: block;
+    width: 1140px;
+    margin: 0 auto;
+}
+.title-footer{
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+.title-footer>a{
+    font-weight: 600;
+    font-size: 30px;
+}
+.fix-color-text{
+    font-size: 18px;
+    color: #ddd;
+}
+.backgroundImg a{
+    color: #ddd;
+    text-decoration-line: none;
+}
+.backgroundImg a:hover{
+    color: #F2B410 ;
+}
+.div-toTop{
+    padding: 10px 20px;
+    background:#ffc107 ;
+    position: absolute;
+    bottom:-60px;
+    left: 45%;
+    transition: all 500ms;
+}
+.div-toTop:hover{
+    transition: all 500ms;
+    background: #bb8b01;
+}
+/*end footer*/
+
+
+.container{
+    position: relative;
+}
+.background-icon{
+    margin-top: 50px;
+    background-color: rgba(242, 180, 16, 0.8);
+}
+.effect-icon{
+    height: 160px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+}
+.text-shiphang{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.text-shiphang>p{
+    font-weight: 700;
+    font-size: 40px;
+    color: #b11015;
+}
+.col-12>p{
+    font-size: 35px;
+    font-weight: 500;
+    color: #F2B410 ;
+}
+
+.div-shiphang{
+    margin-top: -65px;
+    display: flex;
+    justify-content: center;
+}
+.status{
+    margin-top: 50px;
+    width: 100%;
+    float: left;
+}
+.status > p {
+    font-family: Lora, serif;
+    font-size: 25px;
+}
+.reservation{
+    margin-bottom: 30px;
+    position: relative;
+}
+.effect-icon,
+.table-sp{
+    position: relative;
+}
+.effect-icon::after{
+    content: '';
+    visibility: hidden;
+    clear: both;
+    display: block;
+}
+.reservation,
+.table-sp,
+.check-out {
+    display: none;
+}
+.check-out{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+input[name=soNguoi]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    outline: none;
+}
+.tenKH,
+.soNguoi,
+.ngayDat,
+.gioDat {
+    margin-bottom: 30px;
+}
+ h3 {
+     font-size: 25px;
+    font-weight:300 ;
+    /*color: #252525;*/
+    color: #6c6c6c;
+}
+.plus,
+.minus {
+    width: 40px;
+    height: 35px;
+    border: #F2B410;
+    background-color: #F2B410;
+}
+input[type=number],
+input[name=trip-start],
+.custom-select,
+.fix-input{
+    border: 2px solid #454545;
+}
+input[type=number]:focus,
+input[name=trip-start]:focus,
+.custom-select:focus,
+.fix-input:focus{
+    box-shadow: none;
+    border-color: #F2B410;
+    outline: none;
+}
+.plus:focus,
+.minus:focus {
+    outline: none;
+}
+.imge {
+    width: 100%;
+    height: 100%;
+    /*border-radius:5px*/
+}
+.img-reservation{
+    position: relative;
+}
+.img-reservation::before{
+    display: block;
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    z-index: 10;
+}
+.btn-center {
+    display: flex;
+    justify-content: center;
+}
+.btn-center > button,
+.btn-center > button:hover{
+    box-shadow: none;
+}
+.img-table{
+    width: 150px;
+}
+.img-table > img {
+    width: 100%;
+}
+.tag-a{
+    box-sizing: border-box;
+    padding: 10px;
+    color: #ffffff;
+    border-radius: 5px;
+    box-shadow: none;
+    background-color: #dc3545;
+    border: 1px solid #dc3545;
+}
+.tag-a:focus,
+.tag-a:active{
+    box-shadow: none;
+    outline: none;
+}
+.btn-checkout {
+    display: flex;
+    justify-content: center;
+}
+.strong{
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+.a-update{
+    border-radius: 5px;
+    border: 2px solid #F2B410;
+    padding: 10px;
+    text-decoration-line: none;
+    color:#F2B410 !important;
+}
+.a-update:hover{
+    text-decoration-line: none;
+    color:#F2B410 ;
+}
+.nav{
+    margin-bottom: -20px;
+}
+/*.active{*/
+/*    color:#F2B410 ;*/
+/*}*/
+form p {
+    color:#212529 ;
+}
+.fix-btn{
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.fix-btn:focus{
+    outline: none;
+}
+.fix-payment{
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eeeeee ;
+}

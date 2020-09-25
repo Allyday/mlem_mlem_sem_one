@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/lbs/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/lbs/mdBootstrap/css/mdb.min.css">
+    <link rel="stylesheet" href="/lbs/mdBootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/cart.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+
+<!--header-->
+<div class="header">
+    <img src="/images/bg6.jpg" style="width: 100%;height: 500px;">
+</div>
+<!--icon-->
+<div class="background-icon">
+    <div class="container">
+        <section class="effect-icon">
+            <div class="row">
+                <div class="col-md-8 animated slideInLeft delay-3s text-shiphang">
+                    <p>Super-FAST and FREE delivery</p>
+                </div>
+                <div class="col-md-4 div-shiphang">
+                    <div class="fa-pull-right">
+                        <img id="icon" class="ship-hang" style="max-height: 200px"  src="/images/sai-gon-ship-dich-vu-giao-hang-nhanh-1(1).png">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<!--container-->
+<div class="background-container" style="height: auto">
+    <div class="container">
+<!--    reservation -->
+   <section class="reservation animated slideInUp">
+       <div class="status">
+           <p>Your table is ready !!!</p>
+       </div>
+       <form action="#" method="post">
+           <table class="table">
+               <thead class="grey lighten-2">
+               <tr>
+                   <th scope="col" class="strong">Your full name</th>
+                   <th scope="col" class="strong">Your phone number</th>
+                   <th scope="col" class="strong">How many ?</th>
+                   <th scope="col" class="strong">Date</th>
+                   <th scope="col" class="strong">Time</th>
+               </tr>
+               </thead>
+               <tbody>
+               <tr>
+                   <th scope="row" class="strong">Ngoc Trinh</th>
+                   <td class="strong">0988.888.888</td>
+                   <td >
+                       <button onclick="this.parentNode.querySelector('input[name=soNguoi]').stepDown()" class="minus" type="button">-</button>
+                       <input class="quantity" min="1" max="15" name="soNguoi" value="6" type="number">
+                       <button onclick="this.parentNode.querySelector('input[name=soNguoi]').stepUp()" class="plus" type="button">+</button>
+                   </td>
+                   <td class="strong">
+                       <input type="date" id="start" name="trip-start" value="2020-09-20" min="2020-09-20" max="2021-01-01">
+                   </td>
+                   <td class="strong">
+                       <div class="row">
+                           <div class="col-md-6">
+                               <select class="browser-default custom-select">
+                                   <option selected>10 h</option>
+                                   <option value="1">11 h</option>
+                                   <option value="2">12 h</option>
+                                   <option value="3">18 h</option>
+                                   <option value="4">19 h</option>
+                                   <option value="5">20 h</option>
+                               </select>
+                           </div>
+                           <div class="col-md-6">
+                               <select class="browser-default custom-select">
+                                   <option value="1">00</option>
+                                   <option value="2" selected>15 m</option>
+                                   <option value="3">30 m</option>
+                                   <option value="4">45 m</option>
+                               </select>
+                           </div>
+                       </div>
+                   </td>
+               </tr>
+               </tbody>
+           </table>
+           <div class="row" id="btn-reservation">
+               <div class="col-md-6 btn-checkout">
+                   <button type="button" class="tag-a btn-outline-yellow">Update</button>
+               </div>
+               <div class="col-md-6 btn-checkout">
+                   <button type="button" class="tag-a btn-outline-black">Remove</button>
+               </div>
+           </div>
+       </form>
+   </section>
+<!--table sp-->
+   <section class="table-sp ">
+       <form action="#!" method="post">
+           <div class="status">
+               <p>Your bag !!!</p>
+           </div>
+           <div class="row">
+               <div class="col-md-9 animated slideInLeft">
+                   <table class="table">
+               <thead class="grey lighten-2">
+               <tr>
+                   <th scope="col" class="strong">Image</th>
+                   <th scope="col" class="strong">Name</th>
+                   <th scope="col" class="strong">Quantity</th>
+                   <th scope="col" class="strong">Unit price</th>
+                   <th scope="col" class="strong">Total</th>
+                   <th scope="col">
+                       <a class="a-update" href="javascript: void(0)">Update</a>
+                   </th>
+               </tr>
+               </thead>
+               <tbody>
+               <tr>
+                   <th scope="row" class="img-table"><img src="/images/m1.jpg"></th>
+                   <td class="strong">Tiết Canh</td>
+                   <td style="justify-content: center;display: flex">
+                       <input class="quantity" min="1" max="15" name="soLuong" value="2" type="number">
+                   </td>
+                   <td class="strong">$ 5</td>
+                   <td class="strong">$ 10</td>
+                   <td><button type="button" class="tag-a btn-outline-black">Remove</button></td>
+               </tr>
+               <tr>
+                   <th scope="row" class="img-table"><img src="/images/m1.jpg"></th>
+                   <td class="strong">Tiết Canh</td>
+                   <td style="justify-content: center;display: flex">
+                       <input class="quantity" min="1" max="15" name="soLuong" value="2" type="number">
+                   </td>
+                   <td class="strong">$ 5</td>
+                   <td class="strong">$ 10</td>
+                   <td><button type="button" class="tag-a btn-outline-black">Remove</button></td>
+               </tr>
+               </tbody>
+           </table>
+               </div>
+               <div class="col-md-3 animated slideInRight" style="background: #80808026;padding-top: 30px">
+                   <!--  collapse-->
+                   <p style="cursor: pointer;color:#F2B410 " data-toggle="collapse" href="#coupon" aria-expanded="false" aria-controls="coupon">
+                       USE COUPON CODE
+                   </p>
+                   <div class="collapse" id="coupon" style="margin-bottom: 20px">
+                       <div class="md-4">
+                           <label>Enter your coupon here</label>
+                           <input type="text" name="coupon" class="fix-input form-control m-md-1" placeholder="your coupon here">
+                       </div>
+                       <button style="margin-top: 10px" type="button" class="fix-btn btn-outline-yellow">Apply</button>
+                   </div>
+                   <!--    table check out-->
+                   <table class="table">
+                       <tbody>
+                       <tr>
+                           <td>Sub-total:</td>
+                           <td class="text-right">$ 20</td>
+                       </tr>
+                       <tr>
+                           <td>VAT (10%):</td>
+                           <td class="text-right">$ 2</td>
+                       </tr>
+                       <tr>
+                           <td>Total:</td>
+                           <td class="text-right">$ 22</td>
+                       </tr>
+                       </tbody>
+                   </table>
+               </div>
+           </div>
+       </form>
+   </section>
+<!--modal-->
+   <section class="check-out">
+       <div class="row">
+           <div class="col-md-6 btn-checkout animated slideInLeft">
+               <a href="javascript:void(0)" class="btn btn-outline-yellow">Shopping</a>
+           </div>
+           <div class="col-md-6 btn-checkout animated slideInRight">
+               <a
+                   href="javascript:void(0)"
+                   class="btn btn-outline-yellow"
+                   data-toggle="modal"
+                   data-target="#Modal-login"
+               >check out</a>
+           </div>
+       </div>
+<!--       modal log in-->
+       <div id="Modal-login" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true" data-backdrop="true">
+           <div class="modal-dialog modal-dialog-centered" role="document">
+               <div class="modal-content">
+                   <div class="modal-header">
+<!--                       nav tab-->
+                       <ul class="nav" role="tablist">
+                           <li class="nav-item">
+                               <p class="nav-link active" data-toggle="tab" href="#login" role="tab"
+                                  aria-selected="true" style="cursor: grab">Log In</p>
+                           </li>
+                           <li class="nav-item">
+                               <p class="nav-link"  data-toggle="tab" href="#register" role="tab"
+                                  aria-selected="false" style="cursor: grab">Register</p>
+                           </li>
+                       </ul>
+                   </div>
+                   <div class="modal-body">
+                       <div class="tab-content">
+<!--                           nav - log in-->
+                           <div class="tab-pane  show active" id="login" role="tabpanel" >
+                               <form class="text-center"  action="#!">
+                                   <p class="h4 mb-4">Sign in</p>
+                                   <!-- Email -->
+                                   <input type="email" name="email-login" class="form-control mb-4 fix-input" placeholder="E-mail">
+                                   <!-- Password -->
+                                   <input type="password" name="pass-login" class="form-control mb-4 fix-input" placeholder="Password">
+                                   <button
+                                       class="fix-btn btn-outline-yellow "
+                                       type="button"
+                                       data-toggle="modal"
+                                       data-target="#modal-checkout"
+                                       data-dismiss="modal"
+                                   >Sign in</button>
+                                   <!-- Register -->
+                                   <p>Not a member?
+                                       <p role="tab" class="nav-link " data-toggle="tab" href="#register" style="cursor: pointer;color: #F2B410">Register</p>
+                                   </p> </form>
+                           </div>
+<!--                           nav register-->
+                           <div class="tab-pane" id="register" role="tabpanel" >
+                               <form class="text-center" action="#!">
+                                   <p class="h4 mb-4">Register</p>
+
+                                   <div class="form-row mb-4">
+                                       <div class="col">
+                                           <!-- First name -->
+                                           <input type="text" class="form-control fix-input" placeholder="First name">
+                                       </div>
+                                       <div class="col">
+                                           <!-- Last name -->
+                                           <input type="text" class="form-control fix-input" placeholder="Last name">
+                                       </div>
+                                   </div>
+                                   <!-- E-mail -->
+                                   <input type="email" name="email-register" class="form-control mb-4 fix-input" placeholder="E-mail">
+                                   <!-- Phone number -->
+                                   <input type="text" name="phone-register" class="form-control mb-4 fix-input" placeholder="Phone number">
+                                   <!-- Password -->
+                                   <input type="password" name="pass-register" class="form-control mb-4 fix-input" placeholder="Password" >
+                                   <!-- Sign up button -->
+                                   <button data-toggle="tab" href="#login" class="fix-btn btn-outline-yellow " type="button">Register</button>
+                                   <!-- Social register -->
+                                   <p>or Register with:</p>
+                                   <a style="color: #F2B410" href="javascript: void(0)" class="mx-2" role="button"><i class="fab fa-facebook-f"></i></a>
+                                   <a style="color: #F2B410" href="javascript: void(0)" class="mx-2" role="button"><i class="fab fa-twitter"></i></a>
+                                   <a style="color: #F2B410" href="javascript: void(0)" class="mx-2" role="button"><i class="fab fa-instagram"></i></a>
+                               </form>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="modal-footer">
+                       <button type="button" class="fix-btn btn-outline-black" data-dismiss="modal">Close</button>
+                   </div>
+               </div>
+           </div>
+       </div>
+<!--       modal check out-->
+       <form action="#!" method="post">
+       <div id="modal-checkout" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true" data-backdrop="true">
+           <div class="modal-dialog modal-dialog-scrollable" role="document">
+               <div class="modal-content">
+                   <div class="modal-header">
+                       <h3>Payment</h3>
+                   </div>
+
+                   <div class="modal-body">
+                       <div class="row">
+                           <div class="col-12 fix-payment">
+                               <label style="width: 100%">Accepted Cards</label>
+                               <img style="height: 35px;" src="/images/accept-all-credit-cards-clipart-3.jpg">
+                           </div>
+                           <div class="col-12 fix-payment">
+                               <label>Name on Card</label>
+                               <input required type="text" class="fix-input form-control" name="nameCard" placeholder="Name on card">
+                           </div>
+                           <div class="col-12 required fix-payment">
+                               <label>Credit Card Number</label>
+                               <input required type="text" class="fix-input form-control" name="CardNumber" placeholder="Ex: 4283-1095-7452-8427">
+                           </div>
+                           <div class="col-12 fix-payment">
+                               <label>Exp Month</label>
+                               <input required list="Month" class="form-control fix-input" name="month" placeholder="Jun">
+                               <datalist id="Month">
+                                   <option value="Jan">
+                                   </option><option value="Feb">
+                                   </option><option value="Mar">
+                                   </option><option value="Apr">
+                                   </option><option value="May">
+                                   </option><option value="Jun">
+                                   </option><option value="Jul">
+                                   </option><option value="Aug">
+                                   </option><option value="Sep">
+                                   </option><option value="Oct">
+                                   </option><option value="Nov">
+                                   </option><option value="Dec">
+                                   </option>
+                               </datalist>
+                           </div>
+                           <div class="col-12">
+                               <div class="row">
+                                   <div class="col-6">
+                                       <label>Exp Year</label>
+                                       <input required type="number" class="fix-input form-control" min="2020" max="20230" name="year" placeholder="Ex: 2020">
+                                   </div>
+                                   <div class="col-6">
+                                       <label>CVC</label>
+                                       <input required type="number" class="fix-input form-control" maxlength="3" minlength="3" name="cvc" placeholder="Ex: 126">
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="modal-footer">
+                       <div class="row" style="width: 100%">
+                           <div class="col-6 pull-left">
+                               <button  type="button" class="fix-btn btn-outline-black" data-dismiss="modal">Close</button>
+                           </div>
+                           <div class="col-6"  style="display: flex;justify-content: flex-end;">
+                               <button type="submit" class="fix-btn btn-outline-yellow">check out</button>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+       </form>
+   </section>
+</div>
+</div>
+
+<%- include('footer') %>
+<!--java-->
+<script type="text/javascript" src="/lbs/mdBootstrap/js/jquery.js"></script>
+<script type="text/javascript" src="/lbs/mdBootstrap/js/parallax.min.js"></script>
+<script type="text/javascript" src="/lbs/mdBootstrap/js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="/lbs/mdBootstrap/js/mdb.min.js" ></script>
+<script type="text/javascript" src="/lbs/mdBootstrap/js/anime.min.js" ></script>
+<script type="text/javascript">
+    // $('#myModal').modal();
+    // $('#coupon').collapse({
+    //     toggle: false
+    // })
+
+    var offsetbackgroundicon = $('.background-icon').offset().top;
+// event scroll
+    window.addEventListener("scroll",
+        () => {
+        var widow = window.pageYOffset;
+        // console.log(offsetbackgroundicon,widow)
+
+        if ( widow >= offsetbackgroundicon - 300){
+            $('.reservation').css("display","block");
+        }
+        if ( widow >= offsetbackgroundicon + 200) {
+            $('.table-sp').css("display","block");
+        }
+        if ( widow >= offsetbackgroundicon + 400) {
+            $('.check-out').css("display","block");
+        }
+        });
+
+anime({
+targets: '.ship-hang',
+translateX: [-1250, 0],
+rotate: [0,20,0],
+// delay: 500,
+duration: 4000,
+easing: 'easeInOutExpo',
+translateZ: 100
+});
+setTimeout( () => {
+            anime({
+                targets: '.ship-hang',
+                translateY:[0,-5,-10,-5,0],
+                // delay: 500,
+                duration: 900,
+                easing: 'linear',
+                direction: 'alternate',
+                loop: true
+            });
+        },5000);
+</script>
+<!-- back on top-->
+<script type="text/javascript">
+    function toTop() {
+        // document.documentElement.scrollTop = 0;
+       $('html,body').animate({
+            scrollTop : 0 ,
+        },700)
+    }
+</script>
+
+</body>
+</html>

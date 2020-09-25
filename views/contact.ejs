@@ -9,15 +9,17 @@
     <link rel="stylesheet" href="/lbs/mdBootstrap/css/mdb.min.css">
     <link rel="stylesheet" href="/lbs/mdBootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="/css/footer.css">
     </head>
 <body>
+
 <!--header-->
 <div class="header">
     <img src="/images/bg6.jpg" style="width: 100%;height: 500px">
 </div>
 
 <!--container-->
-<div class="background-img-form ">
+<div class="parallax" data-parallax="scroll" data-image-src="/images/background-pizza.jpg" data-position-Y="center">
     <div class="background-color-form">
         <div class="container Contact">
             <div class="row">
@@ -38,7 +40,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="row">
-                            <div id="input" class="col-md-12 animated bounceInLeft slow">
+                            <div id="input" class="col-md-12 animated slideInLeft">
                                 <input type="text" id="name" required name="full-name" placeholder="Full name*">
                                 <input type="email" required name="email" placeholder="Email*">
                                 <input type="number" required maxlength="11" name="phone" placeholder="Phone number*">
@@ -48,14 +50,14 @@
                     <div class="col-md-6">
                         <div class="row">
                             <div class="col-md-12">
-                                <textarea name="message" class="animated bounceInRight delay-1s slow" placeholder="Your message" rows="2" cols="20" ></textarea>
+                                <textarea name="message" class="animated slideInRight slow" placeholder="Your message" rows="2" cols="20" ></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                    <div class="col-md-12">
-                       <button type="submit" id="btn1" class="btn animated bounceInUp slow delay-1s">SEND MESSAGE</button>
+                       <button type="submit" id="btn1" class="btn animated bounceInUp slow">SEND MESSAGE</button>
                    </div>
                 </div>
             </form>
@@ -116,9 +118,11 @@
                                 Monday – Sunday: 11:00 – 22:00 <br> (Last Order 21:30)</p>
                             </div>
                             <div class="col-12">
-                                <button type="button" id="btn2" class="btn animated zoomIn">
-                                    RESERVATION
-                                </button>
+                                <a href="/reservation">
+                                    <button type="button"  class="btn btn2 animated zoomIn">
+                                        RESERVATION
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -146,49 +150,43 @@
                             nisle varius vitae seditum fugiatum ligula aliquam qui sequi.
                         </p></div>
                         <div class="col-12">
+                            <a href="/reservation">
                             <button class="btn" id="btn3"> RESERVATION</button>
+                            </a>
                         </div>
-
                     </div>
                 </div>
                 <div class="col-md-6 slider">
-                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="5000">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block" src="/images/food6.jpg">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block" src="/images/food7.jpg">
-                            </div>
-                        </div>
+                    <div class="jarallax" data-jarallax-video="mp4:./videos/couple-eat-pizza.mp4">
+                        <img class="jarallax-img" src="/images/rs2.jpg" alt="">
+                        <div class="fix-video-jarallax"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!--footer-->
-<div class="footer"></div>
 
-
+<%- include('footer') %>
 <!--java-->
 <script type="text/javascript" src="/lbs/mdBootstrap/js/jquery.js"></script>
+<script type="text/javascript" src="/lbs/mdBootstrap/js/parallax.min.js"></script>
+<script type="text/javascript" src="/lbs/mdBootstrap/js/jarallax.min.js"></script>
+<script type="text/javascript" src="/lbs/mdBootstrap/js/jarallax-video.min.js"></script>
 <script type="text/javascript" src="/lbs/mdBootstrap/js/bootstrap.min.js" ></script>
 <script type="text/javascript" src="/lbs/mdBootstrap/js/mdb.min.js" ></script>
 
-<script type="text/javascript">$('.carousel').carousel()</script>
 <script type="text/javascript">
     // form contact
-    var fixImg = $(".background-color-form");
-    var offsetFix = fixImg.offset().top;
+    var offsetFix = $('.parallax').offset().top;
     var formeffect = $("#formContact");
     var formBtn = $("#btn1");
     window.addEventListener("scroll",
         () =>{
-        if (window.pageYOffset >= (offsetFix - 100) ) {
+        if (window.pageYOffset >= (offsetFix - 200) ) {
             formeffect.css("display","block");
         }
-        if(window.pageYOffset >= offsetFix - 50) {
+        if(window.pageYOffset >= offsetFix - 100) {
             formBtn.css("display","flex");
         }
         });
@@ -203,19 +201,6 @@
                 $('.location').css("display","block");
             }
         });
-
-    // function getData() {
-    //     $.getJSON('Get/GetData?no=1', function (responseText) {
-    //         //Load some data from the server
-    //     })
-    // };
-    //
-    // $(window).scroll(function () {
-    //     getData();
-    // });
-
-
-
     // map
     function initMap() {
         // The location of Uluru
@@ -236,7 +221,16 @@
         );
     }
 
+</script>
+<!-- back on top-->
+<script type="text/javascript">
+    function toTop() {
+        // document.documentElement.scrollTop = 0;
+        $('html,body').animate({
+            scrollTop : 0 ,
+        },700)
 
+    }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaj0mHlR-keu-9hsR6d-gB0L9BclG04rk&callback=initMap"></script>
 </body>
