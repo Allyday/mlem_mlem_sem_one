@@ -1,205 +1,207 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>reservation</title>
     <link rel="icon" href="/images/pizza.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <%- include('head-fonts') %>
     <link rel="stylesheet" href="/lbs/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="/lbs/mdBootstrap/css/mdb.min.css">
     <link rel="stylesheet" href="/lbs/mdBootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/reservation.css">
     <link rel="stylesheet" href="/css/footer.css">
 </head>
-<body>
-<!--header-->
-<div class="header">
-    <img src="/images/bg6.jpg" style="width: 100%;height: 500px;">
-</div>
-<!--container-->
-<div class="container">
-    <!--    form-book-->
-    <section class="form-book">
-        <div class="row">
-            <div class="col-md-5 animated slideInLeft delay-1s">
-                <img src="/images/chef2.jpg" alt="" class="img-chef">
-            </div>
 
-            <div class="col-md-7 animated slideInRight delay-1s" style="position: relative">
-                <div class="text-form text-center">
-                    <div class="row">
-                        <div class="col-md-12 text-title">
-                            <p>Reservations</p>
-                        </div>
-                        <div class="col-md-12 text-h2">
-                            <h2>ONLINE BOOKING</h2>
-                        </div>
-                        <div class="col-md-12 text-end">
-                            <p>
-                                Curabitur quas nets lacus ets nulat iaculis
-                                loremis etis nisle varius vitae seditum fugiatum
-                                ligula aliquam qui sequi. Lorem ipsum dolor sit
-                                amet, consectetur adipiscing elit rutrum eleif
-                                arcu sit aspernatur nets fugit, sed quia.
-                            </p>
-                        </div>
-                    </div>
+<body>
+    <!--header-->
+    <div class="header">
+        <img src="/images/bg6.jpg" style="width: 100%;height: 500px;">
+    </div>
+    <!--container-->
+    <div class="container">
+        <!--    form-book-->
+        <section class="form-book">
+            <div class="row">
+                <div class="col-md-5 animated slideInLeft delay-1s">
+                    <img src="/images/chef2.jpg" alt="" class="img-chef">
                 </div>
-                <form action="#!" method="post">
-                    <div class="form-input">
-                        <div class="col-md-6 fa-pull-left" style="z-index: 2">
-                            <input class="fix-input" required type="text" name="name" placeholder="Full Name">
-                            <input class="fix-input" required  type="text" name="phone" placeholder="Phone Number">
-                            <input class="fix-input" required type="date" name="date" placeholder="Booking Date">
-                        </div>
-                        <div class="col-md-6 fa-pull-right" style="z-index: 2">
-                            <input class="fix-input" required type="email" name="email" placeholder="Email">
-                            <select required class="browser-default custom-select fix-input">
-                                <option value>How many ?</option>
-                                <option value="1">1 person</option>
-                                <option value="2">2 person</option>
-                                <option value="3">3 person</option>
-                                <option value="4">4 person</option>
-                                <option value="5">5 person</option>
-                                <option value="6">6 person</option>
-                                <option value="7">7 person</option>
-                                <option value="8">8 person</option>
-                                <option value="9">9 person</option>
-                                <option value="10">10 person</option>
-                            </select>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <select class="fix-input browser-default custom-select">
-                                        <option selected>10 h</option>
-                                        <option value="1">11 h</option>
-                                        <option value="2">12 h</option>
-                                        <option value="3">18 h</option>
-                                        <option value="4">19 h</option>
-                                        <option value="5">20 h</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <select class="fix-input browser-default custom-select">
-                                        <option value="1">00</option>
-                                        <option value="2" selected>15 m</option>
-                                        <option value="3">30 m</option>
-                                        <option value="4">45 m</option>
-                                    </select>
-                                </div>
-<!--                  <input class="fix-input" required type="text" name="time" placeholder="Booking Time">-->
+
+                <div class="col-md-7 animated slideInRight delay-1s" style="position: relative">
+                    <div class="text-form text-center">
+                        <div class="row">
+                            <div class="col-md-12 text-title">
+                                <p>Reservations</p>
+                            </div>
+                            <div class="col-md-12 text-h2">
+                                <h2>ONLINE BOOKING</h2>
+                            </div>
+                            <div class="col-md-12 text-end">
+                                <p>
+                                    Curabitur quas nets lacus ets nulat iaculis
+                                    loremis etis nisle varius vitae seditum fugiatum
+                                    ligula aliquam qui sequi. Lorem ipsum dolor sit
+                                    amet, consectetur adipiscing elit rutrum eleif
+                                    arcu sit aspernatur nets fugit, sed quia.
+                                </p>
                             </div>
                         </div>
-                        <div class="col-md-12 a-submit">
-                            <input class="btn-outline-yellow" type="submit" value="Book Your Table">
-                        </div>
                     </div>
-                </form>
+                    <form action="#!" method="post">
+                        <div class="form-input">
+                            <div class="col-md-6 fa-pull-left" style="z-index: 2">
+                                <input class="fix-input" required type="text" name="name" placeholder="Full Name">
+                                <input class="fix-input" required type="text" name="phone" placeholder="Phone Number">
+                                <input class="fix-input" required type="date" name="date" placeholder="Booking Date">
+                            </div>
+                            <div class="col-md-6 fa-pull-right" style="z-index: 2">
+                                <input class="fix-input" required type="email" name="email" placeholder="Email">
+                                <select required class="browser-default custom-select fix-input">
+                                    <option value>How many ?</option>
+                                    <option value="1">1 person</option>
+                                    <option value="2">2 person</option>
+                                    <option value="3">3 person</option>
+                                    <option value="4">4 person</option>
+                                    <option value="5">5 person</option>
+                                    <option value="6">6 person</option>
+                                    <option value="7">7 person</option>
+                                    <option value="8">8 person</option>
+                                    <option value="9">9 person</option>
+                                    <option value="10">10 person</option>
+                                </select>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <select class="fix-input browser-default custom-select">
+                                            <option selected>10 h</option>
+                                            <option value="1">11 h</option>
+                                            <option value="2">12 h</option>
+                                            <option value="3">18 h</option>
+                                            <option value="4">19 h</option>
+                                            <option value="5">20 h</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select class="fix-input browser-default custom-select">
+                                            <option value="1">00</option>
+                                            <option value="2" selected>15 m</option>
+                                            <option value="3">30 m</option>
+                                            <option value="4">45 m</option>
+                                        </select>
+                                    </div>
+                                    <!--                  <input class="fix-input" required type="text" name="time" placeholder="Booking Time">-->
+                                </div>
+                            </div>
+                            <div class="col-md-12 a-submit">
+                                <input class="btn-outline-yellow" type="submit" value="Book Your Table">
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
-    </section>
-</div>
+        </section>
+    </div>
     <!--    video-parallax-->
-<div class="fix-jarallax">
-    <div class="jarallax" data-videopreload="none" data-videoStartTime="4" data-videoLoop="false" data-jarallax-video="mp4:./videos/restaurant1.mp4">
-        <div class="jarallax">
-            <img class="jarallax-img" src="/images/rs2.jpg" alt="">
-        </div>
-        <div class="container-jarallax">
-            <div class="text-center-jaralax">
-                <h1>LET'S ENJOY &ensp;<span>OUR PIZZA</span></h1>
+    <div class="fix-jarallax">
+        <div class="jarallax" data-videopreload="none" data-videoStartTime="4" data-videoLoop="false"
+            data-jarallax-video="mp4:./videos/restaurant1.mp4">
+            <div class="jarallax">
+                <img class="jarallax-img" src="/images/rs2.jpg" alt="">
+            </div>
+            <div class="container-jarallax">
+                <div class="text-center-jaralax">
+                    <h1>LET'S ENJOY &ensp;<span>OUR PIZZA</span></h1>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!--    adversity-->
-<div class="container">
-    <section class="adversity">
-        <div style="margin-bottom: 20px;">
-            <h2 style="cursor:default;font-family: 'Montserrat', sans-serif;">Pizza's story</h2>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="fix-img animated zoomIn ">
-                    <a href="/blog" class="btn-a">
-                        <div class="img-gradient">
-                            <img src="/images/m3.jpg" alt="tiet canh" class="img-fluid">
-                        </div>
-                        <div class="text-type-pizza">
-                            <p>pizza fresh</p>
-                        </div>
-                        <span class="icon-ref">
-                            <p>See more</p>
-                        </span>
-                    </a>
+    <!--    adversity-->
+    <div class="container">
+        <section class="adversity">
+            <div style="margin-bottom: 20px;">
+                <h2 style="cursor:default;font-family: 'Montserrat', sans-serif;">Pizza's story</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="fix-img animated zoomIn ">
+                        <a href="/blog" class="btn-a">
+                            <div class="img-gradient">
+                                <img src="/images/m3.jpg" alt="tiet canh" class="img-fluid">
+                            </div>
+                            <div class="text-type-pizza">
+                                <p>pizza fresh</p>
+                            </div>
+                            <span class="icon-ref">
+                                <p>See more</p>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="fix-img animated zoomIn">
+                        <a href="/blog" class="btn-a">
+                            <div class="img-gradient">
+                                <img src="/images/m2.jpg" alt="tiet canh" class="img-fluid">
+                            </div>
+                            <div class="text-type-pizza">
+                                <p>pizza recipe</p>
+                            </div>
+                            <span class="icon-ref">
+                                <p>See more</p>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="fix-img animated zoomIn">
+                        <a href="/blog" class="btn-a">
+                            <div class="img-gradient">
+                                <img src="/images/m1.jpg" alt="tiet canh" class="img-fluid">
+                            </div>
+                            <div class="text-type-pizza">
+                                <p>cháo lòng</p>
+                            </div>
+                            <span class="icon-ref">
+                                <p>See more</p>
+                            </span>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="fix-img animated zoomIn">
-                    <a href="/blog" class="btn-a">
-                        <div class="img-gradient">
-                            <img src="/images/m2.jpg" alt="tiet canh" class="img-fluid">
-                        </div>
-                        <div class="text-type-pizza">
-                            <p>pizza recipe</p>
-                        </div>
-                        <span class="icon-ref">
-                            <p>See more</p>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="fix-img animated zoomIn">
-                    <a href="/blog" class="btn-a">
-                        <div class="img-gradient">
-                            <img src="/images/m1.jpg" alt="tiet canh" class="img-fluid">
-                        </div>
-                        <div class="text-type-pizza">
-                            <p>cháo lòng</p>
-                        </div>
-                        <span class="icon-ref">
-                            <p>See more</p>
-                        </span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
+        </section>
+    </div>
 
-<%- include('footer') %>
+    <%- include('footer') %>
 
-<!--javascript-->
-<script type="text/javascript" src="/lbs/mdBootstrap/js/jquery.js"></script>
-<script type="text/javascript" src="/lbs/mdBootstrap/js/jarallax.min.js"></script>
-<script type="text/javascript" src="/lbs/mdBootstrap/js/jarallax-video.min.js"></script>
-<script type="text/javascript" src="/lbs/mdBootstrap/js/bootstrap.min.js" ></script>
-<script type="text/javascript" src="/lbs/mdBootstrap/js/mdb.min.js" ></script>
-<!--script-->
-<script type="text/javascript">
-    var offsetcontainer = $('.fix-jarallax').offset().top;
+    <!--javascript-->
+    <script type="text/javascript" src="/lbs/mdBootstrap/js/jquery.js"></script>
+    <script type="text/javascript" src="/lbs/mdBootstrap/js/jarallax.min.js"></script>
+    <script type="text/javascript" src="/lbs/mdBootstrap/js/jarallax-video.min.js"></script>
+    <script type="text/javascript" src="/lbs/mdBootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lbs/mdBootstrap/js/mdb.min.js"></script>
+    <!--script-->
+    <script type="text/javascript">
+        var offsetcontainer = $('.fix-jarallax').offset().top;
 
-    window.addEventListener('scroll', () => {
-        let windowscroll = window.scrollY;
-        if (windowscroll >= offsetcontainer + 100 ) {
-            $('.adversity').css('display','block');
+        window.addEventListener('scroll', () => {
+            let windowscroll = window.scrollY;
+            if (windowscroll >= offsetcontainer + 100) {
+                $('.adversity').css('display', 'block');
+            }
+        })
+    </script>
+    <!-- back on top-->
+    <script type="text/javascript">
+        function toTop() {
+            // document.documentElement.scrollTop = 0;
+            $('html,body').animate({
+                scrollTop: 0,
+            }, 700)
+
         }
-    })
-</script>
-<!-- back on top-->
-<script type="text/javascript">
-    function toTop() {
-        // document.documentElement.scrollTop = 0;
-        $('html,body').animate({
-            scrollTop : 0 ,
-        },700)
-
-    }
-</script>
+    </script>
 </body>
+
 </html>
