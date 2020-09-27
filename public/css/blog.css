@@ -1,0 +1,134 @@
+*{
+    cursor: default;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/*container*/
+.blog{
+    position: relative;
+    width: 100%;
+    /*height: 1400px;*/
+    height: auto;
+}
+.container{
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    margin: 50px auto ;
+}
+.tages{
+    display: flex;
+}
+.tages > p{
+    margin-right: 10px;
+    font-size: 25px;
+    font-weight: 600;
+}
+.tages a{
+    border-radius: 5%;
+    background:#F2B410 ;
+    font-weight: 500;
+    color: #212529;
+    text-decoration-line: none;
+    padding: 5px 15px;
+}
+.tages a:hover{
+    background: rgb(182, 135, 3);
+}
+.nav{
+    padding-top: 10px;
+}
+li{
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+input[name=search]{
+    width: 100%;
+    color: #656565;
+    border: 2px solid #454545;
+    background-color: transparent;
+    padding: 20px 15px;
+}
+input[name=search]:focus{
+    border-color: #F2B410;
+    outline: none;
+}
+form{
+    position: relative;
+}
+.btn-search{
+    background: transparent;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10%;
+    height: 100%;
+}
+.btn-search:focus{
+    border: none;
+    outline: none;
+}
+
+.detail-a-dish{
+    position: relative;
+    overflow: hidden;
+    height: 550px;
+    display: block;
+    float: left;
+    width: 95%;
+    margin: 0 auto 40px;
+    transition: 800ms;
+    /*background: linear-gradient(0deg, #3a3636, transparent,transparent,transparent,transparent,transparent);*/
+}
+.onclick {
+    background-color: #fbc02d;
+    color: white;
+    border-radius: 5%;
+    padding: 0 15px;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+    transition: 500ms;
+}
+.onclick:hover{
+    background-color: #a37200;
+    transition: 500ms;
+}
+.fix-img{
+    width: 100%;
+}
+.contain-img{
+    overflow: hidden;
+    width:100%;
+}
+.contain-img > img{
+    width: 100%;
+    transition: all 500ms;
+}
+.contain-img > img:hover{
+   transform: scale(1.15);
+    transition: all 500ms;
+}
+.date-time{
+    margin: 20px 0;
+}
+.date-time  p {
+    color: #a41a13;
+    /*border-bottom: 1px solid #eeeeee;*/
+    font-size: 18px;
+    font-weight: 700;
+}
+.title-recipe{
+}
+.title-recipe > p {
+    font-size: 25px;
+    font-weight: 600;
+}
+.title-recipe > p:hover{
+    color: #a41a13;
+}
+.description{
+    margin-bottom: 40px;
+}
+

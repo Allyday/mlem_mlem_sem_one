@@ -47,3 +47,14 @@ app.get('/', (req, res) => {
 app.get('/contact', (req,res) => {
   res.render('contact');
 })
+// cart
+app.get('/cart', (req,res) => {
+  res.render('cart');
+})
+// reservation
+app.get('/reservation', (req,res) => {
+  res.render('reservation');
+})
+app.get('/blog', (req,res) => {
+  res.render('blog');
+})
