@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/jquery-yys-slider-old.css">
+</head>
+
+<body>
+    <div class="content-part part-tese">
+        <!--    <div class="content-title"></div>-->
+        <div class="shadow"></div>
+        <div class="gallery_container"></div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/js/jquery-yys-slider-old.js"></script>
+    <script>
+        $(function () {
+            $('.content-part.part-tese').addClass('show');
+            $('.gallery_container').gallery_slider({
+                imgNum: 4,
+                imgArr: [
+                    '/images/pizza1.jpg',
+                    '/images/pizza1.jpg',
+                    '/images/pizza1.jpg',
+                    '/images/pizza1.jpg'
+                ]
+            });
+        })
+    </script>
+</body>
+
+</html>
