@@ -1,3 +1,52 @@
+/*======================= header bot ==================*/
+
+.header-bot{
+    width: 100%;
+    height: 550px;
+    position: relative;
+    background: url(../imgs/demoepic.jpg) 50% top no-repeat fixed;
+    background-size: cover;
+    color: white;
+    margin: 0 auto;
+    padding: 210px 0 90px
+
+}
+.section-title{
+    font-family: 'Lora', serif;
+    font-size: 60px;
+}
+.header-bot .overplay{
+    background: rgba(17, 17, 17, 0.75);
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+
+.text-center{
+
+    text-align: center;
+}
+.comic-text{
+    font-size:80px;
+    line-height:60px;
+    color:#F2B410;
+    font-family: 'Tangerine', cursive;
+}
+.animate__bounceInLeft{
+    --animate-duration: 5s;
+}
+hr{
+    width: 50px;
+}
+
+/*========================= end header bot ======================*/
+/*======================================== container =====================*/
+
+
 .container-1{
     margin-top: 110px;
 }
