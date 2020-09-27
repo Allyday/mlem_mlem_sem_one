@@ -1,6 +1,3 @@
-
-
-
 /*
 -----Mục lục------
 1.Home
@@ -97,7 +94,7 @@ html {
 /* end text */
 
 .header {
-  background-image: url('../images/pizza-fire.jpg');
+  background-image: url('../images/pizza-frame.jpg');
   min-height: 100%;
   background-position: center;
   background-repeat: no-repeat;
