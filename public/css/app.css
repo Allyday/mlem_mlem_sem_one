@@ -94,7 +94,7 @@ html {
 /* end text */
 
 .header {
-  background-image: url('../images/pizza-frame.jpg');
+  background-image: url('../images/pizza-fire.jpg');
   min-height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -135,7 +135,7 @@ html {
 }
 
 .parralax.one {
-  background-image: url('../images/pizza-left.jpg');
+  background-image: url('../images/pizza-frame.jpg');
   min-height: 50%;
 }
 
