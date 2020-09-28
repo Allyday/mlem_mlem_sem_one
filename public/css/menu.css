@@ -1,0 +1,110 @@
+/* xinchao */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+.section-white {
+    background-color: #fff;
+    padding: 90px 0;
+}
+
+.container {
+    width: 1170px;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+h2.menu-section-title {
+    font-size: 28px;
+    position: relative;
+    margin-bottom: 50px;
+    margin-right: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+h2.menu-section-title::after {
+    position: absolute;
+    content: "";
+    background-color: #f8c12c;
+    height: 3px;
+    width: 50px;
+    bottom: -1px;
+    left: 0;
+}
+
+.menu-wrapper {
+    display: inline-block;
+    padding-right: 20px;
+    margin-bottom: 10px;
+}
+
+.menu-image {
+    float: left;
+    width: 20%;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.menu-description {
+    float: left;
+    padding-left: 5%;
+    width: 75%;
+}
+
+.menu-list {
+    display: block;
+    clear: both;
+}
+
+.menu-list h5 {
+    font-size: 18px;
+    line-height: 22px;
+    vertical-align: bottom;
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    float: left;
+    letter-spacing: 2px;
+    max-width: 70%;
+    padding-right: 12px;
+    margin: 5px 0;
+}
+
+.menu-list p.price {
+    color: #F2B410;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 700;
+    display: inline-block;
+    vertical-align: bottom;
+    float: right;
+    padding-top: 7px;
+    padding-left: 12px;
+    margin-bottom: 5px;
+}
+
+.menu-dot-line {
+    border-bottom: 2px dotted #F2B410;
+    height: 22px;
+    overflow: hidden;
+    display: block;
+}
+
+p.menu-ingredients {
+    display: block;
+    clear: both;
+    width: 100%;
+}
