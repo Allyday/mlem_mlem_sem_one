@@ -43,18 +43,27 @@ app.get('/', (req, res) => {
   // });
 });
 
-// contact
-app.get('/contact', (req,res) => {
-  res.render('contact');
-})
-// cart
-app.get('/cart', (req,res) => {
+app.get('/about-us', (req, res) => {
+  res.render('about');
+});
+
+app.get('/menu', (req, res) => {
+  res.render('menu');
+});
+
+
+app.get('/cart', (req, res) => {
   res.render('cart');
-})
-// reservation
-app.get('/reservation', (req,res) => {
-  res.render('reservation');
-})
-app.get('/blog', (req,res) => {
+});
+
+app.get('/blog', (req, res) => {
   res.render('blog');
-})
+});
+
+app.get('/contact', (req, res) => {
+  res.render('contact');
+});
+
+app.get('/reservation', (req, res) => {
+  res.render('reservation');
+});

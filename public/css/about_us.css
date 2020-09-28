@@ -1,0 +1,120 @@
+/*======================= header bot ==================*/
+
+.header-bot{
+    width: 100%;
+    height: 550px;
+    position: relative;
+    background: url(../images/demoepic.jpg) 50% top no-repeat fixed;
+    background-size: cover;
+    color: white;
+    margin: 0 auto;
+    padding: 210px 0 90px
+
+}
+.section-title{
+    font-family: 'Lora', serif;
+    font-size: 60px;
+}
+.header-bot .overplay{
+    background: rgba(17, 17, 17, 0.75);
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+
+.text-center{
+    text-align: center;
+}
+.comic-text{
+    font-size:80px;
+    line-height:60px;
+    color:#F2B410;
+    font-family: 'Tangerine', cursive;
+}
+.animate__bounceInLeft{
+    --animate-duration: 5s;
+}
+hr{
+    width: 50px;
+}
+
+/*========================= end header bot ======================*/
+/*======================================== container =====================*/
+
+
+.container-1{
+    margin-top: 110px;
+}
+.container-1 img{
+    margin-left: -30px;
+}
+
+.container .btn {
+
+    position: relative;
+
+    padding: 1.4rem 4.2rem;
+
+    padding-right: 3.1rem;
+
+    font-size: 1.4rem;
+
+    color: var(--inv);
+
+    letter-spacing: 1.1rem;
+
+    text-transform: uppercase;
+
+    transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+
+    cursor: pointer;
+
+    user-select: none;
+}
+.btn:before, .btn:after {
+    content: '';
+    position: absolute;
+    transition: inherit;
+    z-index: -1;
+}
+.btn:hover {
+    color: var(--def);
+    transition-delay: .5s;
+}
+.btn:hover:before {
+    transition-delay: 0s;
+}
+.btn:hover:after {
+    background: var(--inv);
+    transition-delay: .35s;
+}
+.from-center:before {
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 0;
+    border: 1px solid ;
+    border-left: 0;
+    border-right: 0;
+}
+.from-center:after {
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+}
+.from-center:hover:before {
+    left: 0;
+    width: 100%;
+}
+.from-center:hover:after {
+    top: 0;
+    height: 100%;
+}
+.footer-about{
+    margin-top: 110px;
+}

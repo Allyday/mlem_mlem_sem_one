@@ -1,5 +1,5 @@
 /*footer*/
-.backgroundImg{
+.backgroundImg {
     cursor: default;
     padding-top: 40px;
     color: white;
@@ -11,7 +11,8 @@
     background-repeat: no-repeat;
     background-position: right;
 }
-.backgroundImg::before{
+
+.backgroundImg::before {
     position: absolute;
     content: "";
     left: 0;
@@ -20,42 +21,53 @@
     bottom: 0;
     background-color: rgba(15, 25, 36, 0.85);
 }
-.container-footer{
+
+.container-footer {
     position: relative;
     border-bottom: 2px dotted #ddd;
     display: block;
     width: 1140px;
     margin: 0 auto;
 }
-.title-footer{
+
+.title-footer {
     margin-bottom: 20px;
     font-family: 'Montserrat', sans-serif;
 }
-.title-footer>a{
+
+.title-footer>a {
     font-weight: 600;
     font-size: 30px;
 }
-.fix-color-text{
+
+.fix-color-text {
     font-size: 18px;
     color: #ddd;
 }
-.backgroundImg a{
+
+.backgroundImg a {
+    padding: 0;
     color: #ddd;
     text-decoration-line: none;
 }
-.backgroundImg a:hover{
-    color: #F2B410 ;
+
+.backgroundImg a:hover {
+    color: #F2B410;
 }
-.div-toTop{
+
+.div-toTop {
     padding: 10px 20px;
-    background:#ffc107 ;
+    background: #ffc107;
     position: absolute;
-    bottom:-60px;
+    bottom: -60px;
     left: 45%;
     transition: all 500ms;
+    cursor: pointer;
 }
-.div-toTop:hover{
+
+.div-toTop:hover {
     transition: all 500ms;
     background: #bb8b01;
 }
+
 /*end footer*/

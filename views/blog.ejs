@@ -1,141 +1,134 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>blog</title>
-    <link rel="icon" href="/images/pizza.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/lbs/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="/lbs/mdBootstrap/css/mdb.min.css">
-    <link rel="stylesheet" href="/lbs/mdBootstrap/css/bootstrap.min.css">
+    <title>Blog</title>
+    <%- include('shared-imports') %>
     <link rel="stylesheet" href="/css/blog.css">
-    <link rel="stylesheet" href="/css/app.css">
-    <link rel="stylesheet" href="/css/footer.css">
 </head>
+
 <body>
-<!--header-->
-<%- include('header') %>
-<!--container-->
+    <!--header-->
+    <%- include('header') %>
 
-<section class="blog clearfix">
-    <div class="container clearfix">
-        <div class="row">
-            <div class="col-md-12" style="margin-bottom: 30px">
-                <div class="row">
-                    <div class="col-md-6 tages">
-                        <p>Tages &ensp;</p>
-                        <ul class="nav">
-<!--                            category-->
-                            <li><a href="#">Pizza</a></li>
-                            <li><a href="#">Health</a></li>
-                            <li><a href="#">Fast food</a></li>
-                            <li><a href="#">Recipe</a></li>
-                            <li><a href="#">Fresh</a></li>
-                            <li><a href="#">Pizza</a></li>
-                            <li><a href="#">Health</a></li>
-                            <li><a href="#">Fast food</a></li>
-                            <li><a href="#">Recipe</a></li>
-                            <li><a href="#">Fresh</a></li>
-                        </ul>
 
-                    </div>
-                    <div class="col-md-6 ">
-                        <form action="#" method="post" class="form-inline">
-                            <input type="text" name="search" required placeholder="Enter keywords">
-                            <button type="submit" class="btn-search">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </form>
+    <!--container-->
+
+    <section class="blog clearfix">
+        <div class="container clearfix">
+            <div class="row">
+                <div class="col-md-12" style="margin-bottom: 30px">
+                    <div class="row">
+                        <div class="col-md-6 tages">
+                            <p>Tages &ensp;</p>
+                            <ul class="nav">
+                                <!--                            category-->
+                                <li><a href="#">Pizza</a></li>
+                                <li><a href="#">Health</a></li>
+                                <li><a href="#">Fast food</a></li>
+                                <li><a href="#">Recipe</a></li>
+                                <li><a href="#">Fresh</a></li>
+                                <li><a href="#">Pizza</a></li>
+                                <li><a href="#">Health</a></li>
+                                <li><a href="#">Fast food</a></li>
+                                <li><a href="#">Recipe</a></li>
+                                <li><a href="#">Fresh</a></li>
+                            </ul>
+
+                        </div>
+                        <div class="col-md-6 ">
+                            <form action="#" method="post" class="form-inline">
+                                <input type="text" name="search" required placeholder="Enter keywords">
+                                <button type="submit" class="btn-search">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-12">
-                <div class="row" style="display: block;float: left;" >
-<!--                    article-->
-                    <div class="col-md-6 detail-a-dish animated zoomIn">
-                        <div class="row">
-                            <div class="col-md-12 fix-img">
-                                <div class="contain-img">
-                                    <img src="/images/food10.jpg" alt="">
+                <div class="col-md-12">
+                    <div class="row" style="display: block;float: left;">
+                        <!--                    article-->
+                        <div class="col-md-6 detail-a-dish animated zoomIn">
+                            <div class="row">
+                                <div class="col-md-12 fix-img">
+                                    <div class="contain-img">
+                                        <img src="/images/food10.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 date-time">
+                                    <div class="border-bottom clearfix">
+                                        <p class="fa-pull-left">20/09/2020</p>
+                                        <span class="fa-pull-right" style="color: #b8b8b8">By: &ensp; MlemMlem</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 title-recipe">
+                                    <p>Where to eat best pizza in Tropea?</p>
+                                    <div class=" description">
+                                        <p>Here is main text quis nostrud exercitation
+                                            ullamco laboris nisi here is itealic text ut
+                                            aliquip ex ea commodo consequat. Duis aute
+                                            irure dolor in reprehenderit in voluptate
+                                            velit esse cillum dolore eu fugiat nulla rure
+                                            dolor in reprehenderit in voluptate velit
+                                            esse cillum dolore eu fugiat nulla pariatur.
+                                            Excepteur sint occaecat here is link cupidatat
+                                            non proident, sunt in culpa qui officia
+                                            deserunt mollit anim id est laborum.
+                                            Here is main text quis nostrud exercitation
+                                            ullamco laboris nisi here is itealic text ut
+                                            aliquip ex ea commodo consequat. Duis aute
+                                            irure dolor in reprehenderit in voluptate
+                                            velit esse cillum dolore eu fugiat nulla rure
+                                            dolor in reprehenderit in voluptate velit
+                                            esse cillum dolore eu fugiat nulla pariatur.
+                                            Excepteur sint occaecat here is link cupidatat
+                                            non proident, sunt in culpa qui officia
+                                            deserunt mollit anim id est laborum.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-12 date-time">
-                                <div class="border-bottom clearfix">
-                                    <p class="fa-pull-left">20/09/2020</p>
-                                    <span class="fa-pull-right" style="color: #b8b8b8">By: &ensp; MlemMlem</span>
-                                </div>
-                            </div>
-                            <div class="col-md-12 title-recipe">
-                                <p>Where to eat best pizza in Tropea?</p>
-                                <div class=" description">
-                                    <p>Here is main text quis nostrud exercitation
-                                        ullamco laboris nisi here is itealic text ut
-                                        aliquip ex ea commodo consequat. Duis aute
-                                        irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla rure
-                                        dolor in reprehenderit in voluptate velit
-                                        esse cillum dolore eu fugiat nulla pariatur.
-                                        Excepteur sint occaecat here is link cupidatat
-                                        non proident, sunt in culpa qui officia
-                                        deserunt mollit anim id est laborum.
-                                        Here is main text quis nostrud exercitation
-                                        ullamco laboris nisi here is itealic text ut
-                                        aliquip ex ea commodo consequat. Duis aute
-                                        irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla rure
-                                        dolor in reprehenderit in voluptate velit
-                                        esse cillum dolore eu fugiat nulla pariatur.
-                                        Excepteur sint occaecat here is link cupidatat
-                                        non proident, sunt in culpa qui officia
-                                        deserunt mollit anim id est laborum.
-                                    </p>
-                                </div>
+                            <div class="onclick" onclick="seeMore(this)">
+                                see more...
                             </div>
                         </div>
-                        <div class="onclick" onclick="seeMore(this)" >
-                            see more...
-                        </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<%- include('footer') %>
+    <%- include('footer') %>
 
-<!--javascript-->
-<script type="text/javascript" src="/lbs/mdBootstrap/js/jquery.js"></script>
-<script type="text/javascript">
-    function seeMore(dom) {
-        if (dom.parentElement.offsetHeight <= 550) {
-            dom.innerText = 'see less...';
-            dom.parentElement.style.height = 'auto';
-        } else {
-            dom.innerText = 'see more...';
-            dom.parentElement.style.height = '550px';
+    <!--javascript-->
+    <script type="text/javascript" src="/lbs/mdBootstrap/js/jquery.js"></script>
+    <script type="text/javascript">
+        function seeMore(dom) {
+            if (dom.parentElement.offsetHeight <= 550) {
+                dom.innerText = 'see less...';
+                dom.parentElement.style.height = 'auto';
+            } else {
+                dom.innerText = 'see more...';
+                dom.parentElement.style.height = '550px';
+            }
+
+            // dom.innerText = 'see less';
+            // console.log(dom.innerText)
+            // dom.parentElement.style.height = 'auto';
+            // console.log(dom.parentElement.offsetHeight)
         }
-
-        // dom.innerText = 'see less';
-        // console.log(dom.innerText)
-        // dom.parentElement.style.height = 'auto';
-        // console.log(dom.parentElement.offsetHeight)
-    }
-</script>
-<!-- back on top-->
-<script type="text/javascript">
-    function toTop() {
-        // document.documentElement.scrollTop = 0;
-        $('html,body').animate({
-            scrollTop : 0 ,
-        },700)
-    }
-</script>
+    </script>
+    <!-- back on top-->
+    <script type="text/javascript">
+        function toTop() {
+            // document.documentElement.scrollTop = 0;
+            $('html,body').animate({
+                scrollTop: 0,
+            }, 700)
+        }
+    </script>
 </body>
+
 </html>
