@@ -49,6 +49,7 @@ html {
 }
 
 .header .row {
+  display: inherit;
   position: absolute;
   top: 50%;
   left: 50%;
