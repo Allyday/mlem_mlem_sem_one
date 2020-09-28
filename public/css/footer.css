@@ -46,6 +46,7 @@
 }
 
 .backgroundImg a {
+    padding: 0;
     color: #ddd;
     text-decoration-line: none;
 }

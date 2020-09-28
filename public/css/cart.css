@@ -236,6 +236,7 @@ input[name=trip-start]:focus,
     padding: 10px;
     text-decoration-line: none;
     color:#F2B410 !important;
+    background: transparent;
 }
 .a-update:hover{
     text-decoration-line: none;
