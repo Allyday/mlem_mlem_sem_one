@@ -1,6 +1,7 @@
-*{
+* {
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Lora', serif;
     font-size: 14px;
@@ -8,17 +9,21 @@ body {
     color: #333;
     background-color: #fff;
 }
+
 .section-white {
     background-color: #fff;
     padding: 90px 0;
 }
-.container{
+
+.container {
     width: 1170px;
 }
+
 .row {
     margin-right: -15px;
     margin-left: -15px;
 }
+
 h2.menu-section-title {
     font-size: 28px;
     position: relative;
@@ -27,6 +32,7 @@ h2.menu-section-title {
     padding-bottom: 20px;
     border-bottom: 1px solid #ddd;
 }
+
 h2.menu-section-title::after {
     position: absolute;
     content: "";
@@ -36,27 +42,33 @@ h2.menu-section-title::after {
     bottom: -1px;
     left: 0;
 }
+
 .menu-wrapper {
     display: inline-block;
     padding-right: 20px;
     margin-bottom: 10px;
 }
+
 .menu-image {
     float: left;
     width: 20%;
 }
+
 .width-100 {
     width: 100%;
 }
+
 .menu-description {
     float: left;
     padding-left: 5%;
     width: 75%;
 }
+
 .menu-list {
     display: block;
     clear: both;
 }
+
 .menu-list h5 {
     font-size: 18px;
     line-height: 22px;
@@ -69,6 +81,7 @@ h2.menu-section-title::after {
     padding-right: 12px;
     margin: 5px 0;
 }
+
 .menu-list p.price {
     color: #F2B410;
     font-size: 18px;
@@ -81,12 +94,14 @@ h2.menu-section-title::after {
     padding-left: 12px;
     margin-bottom: 5px;
 }
+
 .menu-dot-line {
     border-bottom: 2px dotted #F2B410;
     height: 22px;
     overflow: hidden;
     display: block;
 }
+
 p.menu-ingredients {
     display: block;
     clear: both;
