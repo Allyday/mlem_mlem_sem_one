@@ -10,10 +10,31 @@
 <body>
     <!--header-->
     <%- include('header') %>
-
+    <!--header-->
+    <div class="parallax" data-parallax="scroll" data-image-src="/images/img_head_blog.jpg" data-position-Y="top">
+        <div class="background-color">
+            <div class="container">
+                <div class="row fix-title-head">
+                    <div class="col-md-12 wow  fadeIn" data-wow-delay="0.5s" style="width: 100%;text-align: center">
+                        <span class="title-yellow-head">Let's Share</span>
+                    </div>
+                    <div class="col-md-12 wow  bounceIn" data-wow-delay="1s" style="width: 100%;text-align: center">
+                        <h2 class=" title-h2-head ">SPECIAL PLACE</h2>
+                    </div>
+                    <div class="col-md-12 wow  fadeInUp" data-wow-delay="1.5s" style="width: 100%;text-align: center">
+                        <p class="p-head">
+                            An unforgettable dining experience
+                            in the heart of Detech Tower, VietNamese. <br>
+                            Contemporary british menu, inspired by the
+                            traditions of Great Britain.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--container-->
-
     <section class="blog clearfix">
         <div class="container clearfix">
             <div class="row">
@@ -49,7 +70,7 @@
                 <div class="col-md-12">
                     <div class="row" style="display: block;float: left;">
                         <!--                    article-->
-                        <div class="col-md-6 detail-a-dish animated zoomIn">
+                        <div class="col-md-6 detail-a-dish">
                             <div class="row">
                                 <div class="col-md-12 fix-img">
                                     <div class="contain-img">
@@ -101,10 +122,15 @@
     </section>
 
     <%- include('footer') %>
-
     <!--javascript-->
     <script type="text/javascript" src="/lbs/mdBootstrap/js/jquery.js"></script>
+    <script type="text/javascript" src="/lbs/mdBootstrap/js/parallax.min.js"></script>
+    <script type="text/javascript" src="/lbs/mdBootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lbs/mdBootstrap/js/mdb.min.js"></script>
     <script type="text/javascript">
+        $( document ).ready(function() {
+            new  WOW().init();
+        });
         function seeMore(dom) {
             if (dom.parentElement.offsetHeight <= 550) {
                 dom.innerText = 'see less...';
@@ -113,12 +139,12 @@
                 dom.innerText = 'see more...';
                 dom.parentElement.style.height = '550px';
             }
-
             // dom.innerText = 'see less';
             // console.log(dom.innerText)
             // dom.parentElement.style.height = 'auto';
             // console.log(dom.parentElement.offsetHeight)
         }
+
     </script>
     <!-- back on top-->
     <script type="text/javascript">

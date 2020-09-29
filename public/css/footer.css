@@ -42,7 +42,7 @@
 
 .fix-color-text {
     font-size: 18px;
-    color: #ddd;
+    color: rgba(221, 221, 221, 0.9);
 }
 
 .backgroundImg a {
