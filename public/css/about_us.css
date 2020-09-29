@@ -47,12 +47,13 @@ hr{
 
 
 .container-1{
-    margin-top: 110px;
+    margin-top: 130px;
 }
-.container-font{
+.container-1 img{
     margin-left: -30px;
 }
-.btn {
+
+.container .btn {
 
     position: relative;
 
@@ -114,6 +115,9 @@ hr{
     top: 0;
     height: 100%;
 }
+#myCarousel{
+    margin-top: 130px;
+}
 .footer-about{
-    margin-top: 110px;
+    margin-top: 10px;
 }

@@ -6,6 +6,12 @@
     <link rel="stylesheet" href="/css/about_us.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <script type=”text/javascript” src=”http://code.jquery.com/jquery-2.0.3.min.js”> </script> <!-- end imports -->
+
+
+<!--    !-&#45;&#45; Carosel -&#45;&#45;-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <!-- end head -->
 </head>
 
@@ -19,15 +25,15 @@
             <div class="overplay"></div>
             <div class="container header-image">
                 <div class="row">
-                    <div class="col-md-10 col-md-offset-1 text-center">
+                    <div class="col-md-12 col-md-offset-1 text-center">
                         <span class="comic-text wow fadeIn" data-wow-delay="0.5s"
                             style="visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;">True
                             Passion</span>
-                        <h2 class="section-title white wow bounceIn" data-wow-delay="1s"
+                        <h2 class="section-title  wow bounceIn" data-wow-delay="1s"
                             style="visibility: visible; animation-delay: 1s; animation-name: bounceIn;">Natural Flavours
                         </h2>
 
-                        <hr />
+                        <hr class="white"/>
                         <p class="hero-text wow fadeInUp" data-wow-delay="2s"
                             style="visibility: visible; animation-delay: 2s; animation-name: fadeInUp;">Opened in 2018,
                             Pizzass is a famous chain of goods in Vietnam and many other countries in the world.
@@ -47,56 +53,66 @@
 
                 <!--        =============================== container 1 ===============================-->
                 <div class="container-1">
-                    <div class="container-font">
+
+                     <div class="row">
                         <div class="col-md-6 wow bounceInLeft"
                             style="visibility: visible; animation-name: bounceInLeft;">
                             <img src="/images/hamber.jpg" height="364" width="594" />
                         </div>
-                    </div>
-                    <div class="col-md-6 text-center wow slideInRight"
-                        style="visibility: visible; animation-name: slideInRight;padding-top : 40px">
-                        <span class="comic-text">Discover</span>
-                        <h2 class="section-title">Best Recipes</h2>
-                        <p>Curabitur quas nets lacus ets nulat iaculis loremis etis nisle varius vitae seditum fugiatum
-                            ligula aliquam qui sequi. Lorem ipsum dolor sit amet, consectetur adipiscing elit rutrum
-                            eleif arcu sit aspernatur nets fugit, sed quia.</p>
-                        <div class="btn from-center">OUR REPCEIPES</div>
-                    </div>
+
+                        <div class="col-md-6 text-center wow slideInRight"
+                            style="visibility: visible; animation-name: slideInRight;padding-top : 40px">
+                            <span class="comic-text">Discover</span>
+                            <h2 class="section-title">Best Recipes</h2>
+                            <p>Curabitur quas nets lacus ets nulat iaculis loremis etis nisle varius vitae seditum fugiatum
+                                ligula aliquam qui sequi. Lorem ipsum dolor sit amet, consectetur adipiscing elit rutrum
+                                eleif arcu sit aspernatur nets fugit, sed quia.</p>
+                            <div class="btn from-center">OUR REPCEIPES</div>
+                         </div>
                 </div>
             </div>
-
+            </div>
 
             <!--=========================== container 2 use carousel ======================-->
-            <div class="container-1">
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="9000">
+<!--            <div class="container">&ndash;&gt;-->
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="/images/container2222.jpg" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="/images/container2-1.jpg" alt="Second slide">
+                        <div class="item active">
+                            <img src="/images/carosel-1.jpg"  alt="first slide" style="width:100%; height: 720px">
+                        </div>slide
+
+                        <div class="item">
+                            <img src="/images/carosel-2.jpg"  alt="Second slide" style="width:100%;height: 720px">
                         </div>
 
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="/images/container2.jpg" alt="Third slide">
+                        <div class="item">
+                            <img src="/images/carosel-3.png" alt="Third " style="width:100%;height: 720px">
                         </div>
-
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-            </div>
-
+                <!--                </div>-->
             <!--================================= container 3 ===========================-->
             <div class="container">
                 <div class="container-1">
-                    <div class="container-font">
+                    <div class="row">
                         <div class="col-md-6 text-center wow bounceInLeft"
                             style="visibility: visible; animation-name: bounceInLeft;">
                             <span class="comic-text">Discover</span>
@@ -107,12 +123,12 @@
                                 odio magna, in ultricies ex tincidunt.</p>
                             <div class="btn from-center">OUR BLOGER</div>
                         </div>
-                    </div>
-                    <div class="col-md-6  wow slideInRight"
-                        style="visibility: visible; animation-name: slideInRight;padding-top : 40px">
+                        <div class="col-md-6  wow slideInRight"
+                             style="visibility: visible; animation-name: slideInRight;padding-top : 40px">
 
-                        <img src="/images/chef.jpg" height="364" width="594" />
-                    </div>
+                            <img src="/images/chef.jpg" height="364" width="594" />
+                        </div>
+                     </div>
                 </div>
             </div>
         </div>
