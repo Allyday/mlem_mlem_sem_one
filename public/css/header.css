@@ -13,6 +13,8 @@
 
 .navbar-nav {
     flex-direction: row !important;
+    padding-left: 2rem;
+
 }
 
 .navbar-nav>ul>li {
@@ -67,6 +69,8 @@
 }
 .navbar-brand{
     font-family: 'Balsamiq Sans', cursive;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 .navbar-nav a {
     text-decoration: none;
