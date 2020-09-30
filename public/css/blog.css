@@ -2,7 +2,43 @@
     cursor: default;
     font-family: 'Montserrat', sans-serif;
 }
-
+/*head*/
+.parallax{
+    width:100%;
+    height:600px;
+    position:relative;
+}
+.background-color {
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color:#111111bf;
+}
+.fix-title-head{
+    color: white;
+    margin:230px auto;
+}
+.title-yellow-head{
+    font-size: 80px;
+    line-height: 60px;
+    color: #F2B410;
+    font-family: 'Tangerine', cursive;
+}
+.title-h2-head{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    line-height: 50px;
+    margin: 5px 0 20px;
+    font-weight: 700;
+}
+.p-head{
+    font-size: 18px;
+    line-height: 30px;
+    color: #eee;
+}
+/*end head*/
 
 /*container*/
 .blog{
@@ -45,7 +81,7 @@ li{
 input[name=search]{
     width: 100%;
     color: #656565;
-    border: 2px solid #454545;
+    border: 1px solid #45454590;
     background-color: transparent;
     padding: 20px 15px;
 }
@@ -130,5 +166,8 @@ form{
 }
 .description{
     margin-bottom: 40px;
+}
+.description>p{
+    padding: 10px;
 }
 

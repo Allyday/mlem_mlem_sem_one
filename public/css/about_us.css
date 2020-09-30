@@ -47,7 +47,7 @@ hr{
 
 
 .container-1{
-    margin-top: 110px;
+    margin-top: 130px;
 }
 .container-1 img{
     margin-left: -30px;
@@ -115,6 +115,9 @@ hr{
     top: 0;
     height: 100%;
 }
+#myCarousel{
+    margin-top: 130px;
+}
 .footer-about{
-    margin-top: 110px;
+    margin-top: 10px;
 }

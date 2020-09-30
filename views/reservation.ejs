@@ -12,19 +12,39 @@
     <%- include('header')%>
 
     <!--header-->
-    <div class="header">
-        <img src="/images/bg6.jpg" style="width: 100%;height: 500px;">
+    <div class="parallax" data-parallax="scroll" data-image-src="/images/bg6.jpg" data-position-Y="center">
+        <div class="background-color">
+            <div class="container">
+                <div class="row fix-title-head">
+                    <div class="col-md-12 wow  fadeIn" data-wow-delay="0.5s" style="width: 100%;text-align: center">
+                        <span class="title-yellow-head">Shale Pizzaass</span>
+                    </div>
+                    <div class="col-md-12 wow  bounceIn" data-wow-delay="1s" style="width: 100%;text-align: center">
+                        <h2 class=" title-h2-head ">SPECIAL MOMENTS</h2>
+                    </div>
+                    <div class="col-md-12 wow  fadeInUp" data-wow-delay="1.5s" style="width: 100%;text-align: center">
+                        <p class="p-head">
+                            An unforgettable dining experience
+                            in the heart of Detech Tower, VietNamese. <br>
+                            Contemporary british menu, inspired by the
+                            traditions of Great Britain.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
     <!--container-->
     <div class="container">
         <!--    form-book-->
         <section class="form-book">
             <div class="row">
-                <div class="col-md-5 animated slideInLeft delay-1s">
+                <div class="col-md-5 wow slideInLeft">
                     <img src="/images/chef2.jpg" alt="" class="img-chef">
                 </div>
 
-                <div class="col-md-7 animated slideInRight delay-1s" style="position: relative">
+                <div class="col-md-7 wow slideInRight" style="position: relative">
                     <div class="text-form text-center">
                         <div class="row">
                             <div class="col-md-12 text-title">
@@ -49,7 +69,7 @@
                             <div class="col-md-6 fa-pull-left" style="z-index: 2">
                                 <input class="fix-input" required type="text" name="name" placeholder="Full Name">
                                 <input class="fix-input" required type="text" name="phone" placeholder="Phone Number">
-                                <input class="fix-input" required type="date" name="date" placeholder="Booking Date">
+                                <input class="fix-input" required type="date" name="date" min="" value="" >
                             </div>
                             <div class="col-md-6 fa-pull-right" style="z-index: 2">
                                 <input class="fix-input" required type="email" name="email" placeholder="Email">
@@ -66,27 +86,7 @@
                                     <option value="9">9 person</option>
                                     <option value="10">10 person</option>
                                 </select>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <select class="fix-input browser-default custom-select">
-                                            <option selected>10 h</option>
-                                            <option value="1">11 h</option>
-                                            <option value="2">12 h</option>
-                                            <option value="3">18 h</option>
-                                            <option value="4">19 h</option>
-                                            <option value="5">20 h</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <select class="fix-input browser-default custom-select">
-                                            <option value="1">00</option>
-                                            <option value="2" selected>15 m</option>
-                                            <option value="3">30 m</option>
-                                            <option value="4">45 m</option>
-                                        </select>
-                                    </div>
-                                    <!--                  <input class="fix-input" required type="text" name="time" placeholder="Booking Time">-->
-                                </div>
+                                <input class="fix-input" required type="text" name="time" placeholder="Booking Time">
                             </div>
                             <div class="col-md-12 a-submit">
                                 <input class="btn-outline-yellow" type="submit" value="Book Your Table">
@@ -99,7 +99,7 @@
     </div>
     <!--    video-parallax-->
     <div class="fix-jarallax">
-        <div class="jarallax" data-videopreload="none" data-videoStartTime="4" data-videoLoop="false"
+        <div class="jarallax" data-videopreload="preload" data-videoStartTime="4" data-videoLoop="false"
             data-jarallax-video="mp4:./videos/restaurant1.mp4">
             <div class="jarallax">
                 <img class="jarallax-img" src="/images/rs2.jpg" alt="">
@@ -115,11 +115,11 @@
     <div class="container">
         <section class="adversity">
             <div style="margin-bottom: 20px;">
-                <h2 style="cursor:default;font-family: 'Montserrat', sans-serif;">Pizza's story</h2>
+                <h2 style="cursor:default;font-family: 'Montserrat', sans-serif;">Our secret </h2>
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="fix-img animated zoomIn ">
+                    <div class="fix-img wow zoomIn ">
                         <span  class="btn-a">
                             <div class="img-gradient">
                                 <img src="/images/m3.jpg" alt="tiet canh" class="img-fluid">
@@ -134,7 +134,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="fix-img animated zoomIn">
+                    <div class="fix-img wow zoomIn">
                         <span class="btn-a">
                             <div class="img-gradient">
                                 <img src="/images/m2.jpg" alt="tiet canh" class="img-fluid">
@@ -149,7 +149,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="fix-img animated zoomIn">
+                    <div class="fix-img wow zoomIn">
                         <span href="/blog" class="btn-a">
                             <div class="img-gradient">
                                 <img src="/images/m1.jpg" alt="tiet canh" class="img-fluid">
@@ -171,20 +171,33 @@
 
     <!--javascript-->
     <script type="text/javascript" src="/lbs/mdBootstrap/js/jquery.js"></script>
+    <script type="text/javascript" src="/lbs/mdBootstrap/js/moment.js"></script>
     <script type="text/javascript" src="/lbs/mdBootstrap/js/jarallax.min.js"></script>
     <script type="text/javascript" src="/lbs/mdBootstrap/js/jarallax-video.min.js"></script>
+    <script type="text/javascript" src="/lbs/mdBootstrap/js/parallax.min.js"></script>
     <script type="text/javascript" src="/lbs/mdBootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lbs/mdBootstrap/js/mdb.min.js"></script>
     <!--script-->
     <script type="text/javascript">
-        var offsetcontainer = $('.fix-jarallax').offset().top;
+        $( document ).ready(function() {
+            new WOW().init();
+        });
+    </script>
+    <script type="text/javascript">
+        var todayDate = moment().format("YYYY-MM-DD");
+        var selectorInuput = $('input[type=date]');
+        var attrTag = selectorInuput.attr(
+            {
+                'value': todayDate,
+                'min': todayDate
+            });
 
-        window.addEventListener('scroll', () => {
-            let windowscroll = window.scrollY;
-            if (windowscroll >= offsetcontainer + 100) {
-                $('.adversity').css('display', 'block');
-            }
-        })
+
+
+        // console.log(selectorInuput.val());
+        // if (selectorInuput.val() < todayDate) {
+        //     console.log("moi nhap lai");
+        // }
     </script>
 </body>
 

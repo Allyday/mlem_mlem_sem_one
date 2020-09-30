@@ -28,7 +28,7 @@ html {
 
 .asterisk {
   height: 19px;
-  margin-top: -8px;
+  margin-top: -11px;
   font-family: Source Sans Pro;
   color: #F2B410;
   font-size: 24px;
@@ -161,10 +161,10 @@ html {
   align-items: center;
   animation-name: spin;
   animation-duration: 0.3s;
-  /* spin delay = appear duration - 0.1s */
-  animation-delay: 1.7s;
+  /* spin delay = appear duration - 0.3s */
+  animation-delay: 1.5s;
   animation-timing-function: linear;
-  animation-iteration-count: 2;
+  animation-iteration-count: 2.2;
 }
 
 /* animation declarations */
