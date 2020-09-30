@@ -3,8 +3,9 @@
     top: 0;
     left: auto;
     z-index: 10;
-    background-color: black;
+    background-color: transparent;
     width: 100%;
+    transition: all 800ms;
 }
 
 .header-top>ul {

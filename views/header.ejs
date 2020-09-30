@@ -7,14 +7,10 @@
         <li><a class="fix-a" href="/">Home</a></li>
         <li><a class="fix-a" href="/about-us">ABOUT US</a></li>
         <li><a class="fix-a" href="/menu">MENU</a></li>
-        <li><a class="fix-a" href="/cart">CART</a></li>
         <li><a class="fix-a" href="/reservation">RESERVATION</a></li>
         <li><a class="fix-a" href="/contact">CONTACT</a></li>
         <li><a class="fix-a" href="/blog">BLOG</a></li>
-
-        <li><a class="fix-a" href="#"><i class="fab fa-twitter"></i></a></li>
-        <li><a class="fix-a" href="#"><i class="fab fa-facebook"></i></a></li>
-        <li><a class="fix-a" href="#"><i class="fab fa-instagram"></i></a></li>
+        <li><a class="fix-a" href="/cart">CART</a></li>
 
         <li>
             <div class="type-1">
@@ -28,5 +24,22 @@
         </li>
     </ul>
 </div>
+
+
+<script type="text/javascript" src="/lbs/mdBootstrap/js/jquery.js"></script>
+<script type="text/javascript">
+    var headerTop  = $('.header-top');
+    window.addEventListener('scroll', () => {
+        var scroll = window.pageYOffset;
+        console.log(scroll);
+        if (headerTop.offset().top <= 100) {
+            headerTop.css('background-color', 'transparent');
+        }
+        if (headerTop.offset().top >= 100) {
+            headerTop.css('background-color', 'black');
+        }
+
+    });
+</script>
 
 <!--==============   end header  ==============-->
