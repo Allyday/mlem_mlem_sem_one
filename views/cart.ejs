@@ -5,40 +5,43 @@
     <title>Cart</title>
     <%- include('shared-imports') %>
     <link rel="stylesheet" href="/css/cart.css">
-    <link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>
     <%- include('header')%>
-
-    <!--header-->
-    <div class="header">
-        <div class="overlay"></div>
-        <div class="row">
-            <div class="col-xs-12 text-center">
-                <h2 class="fancy welcome fadeInUp mb-0"><span class="first-letter">W</span>elcome</h2>
-                <h1 class="sans-serif white-text brand-name fadeZoomIn">Shale-PIZZAAss</h1>
-                <div class="line-container d-flex flex-row">
-                    <div class="line line-left"></div>
-                    <div class="spin">
-                        <div class="asterisk">*</div>
+<!--header-->
+    <div class="parallax" data-parallax="scroll" data-image-src="/images/img_head_cart.jpg" data-position-Y="center">
+        <div class="background-color">
+            <div class="container">
+                <div class="row fix-title-head">
+                    <div class="col-md-12 wow  fadeIn" data-wow-delay="0.5s" style="width: 100%;text-align: center">
+                        <span class="title-yellow-head">Delivery</span>
                     </div>
-                    <div class="line line-right"></div>
+                    <div class="col-md-12 wow  bounceIn" data-wow-delay="1s" style="width: 100%;text-align: center">
+                        <h2 class=" title-h2-head ">FAST - FREE</h2>
+                    </div>
+                    <div class="col-md-12 wow  fadeInUp" data-wow-delay="1.5s" style="width: 100%;text-align: center">
+                        <p class="p-head">
+                            An unforgettable dining experience
+                            in the heart of Covent Garden, London. <br>
+                            Contemporary british menu, inspired by the
+                            traditions of Great Britain.
+                        </p>
+                    </div>
                 </div>
-                <h5 class="sans-serif white-text slogan fadeInDown">HANDCRAFTED - WOODFIRED</h5>
             </div>
         </div>
     </div>
 
     <!--icon-->
-    <div class="background-icon">
+   <!-- <div class="background-icon">
         <div class="container">
             <section class="effect-icon">
                 <div class="row">
-                    <div class="col-md-8 animated slideInLeft delay-3s text-shiphang">
+                    <div class="col-md-8   slideInLeft text-shiphang">
                         <p>Super-FAST and FREE delivery</p>
                     </div>
-                    <div class="col-md-4 div-shiphang">
+                    <div class="col-md-4 div-shiphang   slideInLeft">
                         <div class="fa-pull-right">
                             <img id="icon" class="ship-hang" style="max-height: 200px"
                                 src="/images/sai-gon-ship-dich-vu-giao-hang-nhanh-1(1).png">
@@ -47,13 +50,13 @@
                 </div>
             </section>
         </div>
-    </div>
+    </div> -->
 
     <!--container-->
     <div class="background-container" style="height: auto">
         <div class="container">
             <!--    reservation -->
-            <section class="reservation animated slideInUp">
+            <section class="reservation   slideInUp">
                 <div class="status">
                     <p>Your table is ready !!!</p>
                 </div>
@@ -80,30 +83,10 @@
                                         class="plus" type="button">+</button>
                                 </td>
                                 <td class="strong">
-                                    <input type="date" id="start" name="trip-start" value="2020-09-20" min="2020-09-20"
-                                        max="2021-01-01">
+                                    <input type="date" required name="trip-start" value="2020-09-20" min="2020-09-20">
                                 </td>
                                 <td class="strong">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <select class="browser-default custom-select">
-                                                <option selected>10 h</option>
-                                                <option value="1">11 h</option>
-                                                <option value="2">12 h</option>
-                                                <option value="3">18 h</option>
-                                                <option value="4">19 h</option>
-                                                <option value="5">20 h</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <select class="browser-default custom-select">
-                                                <option value="1">00</option>
-                                                <option value="2" selected>15 m</option>
-                                                <option value="3">30 m</option>
-                                                <option value="4">45 m</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                    <input class="fix-input" required type="text" name="time" placeholder="Booking Time" >
                                 </td>
                             </tr>
                         </tbody>
@@ -125,7 +108,7 @@
                         <p>Your bag !!!</p>
                     </div>
                     <div class="row">
-                        <div class="col-md-9 animated slideInLeft">
+                        <div class="col-md-9   slideInLeft">
                             <table class="table">
                                 <thead class="grey lighten-2">
                                     <tr>
@@ -135,7 +118,7 @@
                                         <th scope="col" class="strong">Unit price</th>
                                         <th scope="col" class="strong">Total</th>
                                         <th scope="col">
-                                            <button class="a-update" href="javascript: void(0)">Update</button>
+                                            <button class="tag-a btn-outline-yellow" >Update</button>
                                         </th>
                                     </tr>
                                 </thead>
@@ -165,7 +148,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="col-md-3 animated slideInRight" style="background: #80808026;padding-top: 30px">
+                        <div class="col-md-3   slideInRight" style="background: #80808026;padding-top: 30px">
                             <!--  collapse-->
                             <p style="cursor: pointer;color:#F2B410 " data-toggle="collapse" href="#coupon"
                                 aria-expanded="false" aria-controls="coupon">
@@ -204,10 +187,10 @@
             <!--modal-->
             <section class="check-out">
                 <div class="row">
-                    <div class="col-md-6 btn-checkout animated slideInLeft">
+                    <div class="col-md-6 btn-checkout   slideInLeft">
                         <a style="font-size: 18px;box-shadow: none;" href="/menu" class="btn btn-outline-yellow" >Shopping</a>
                     </div>
-                    <div class="col-md-6 btn-checkout animated slideInRight">
+                    <div class="col-md-6 btn-checkout   slideInRight">
                         <a style="font-size: 18px;box-shadow: none;" href="javascript:void(0)" class="btn btn-outline-yellow" data-toggle="modal"
                             data-target="#Modal-login">check out</a>
                     </div>
@@ -241,7 +224,7 @@
                                                 placeholder="E-mail">
                                             <!-- Password -->
                                             <input type="password" name="pass-login" class="form-control mb-4 fix-input"
-                                                placeholder="Password">
+                                                placeholder="Password" autocomplete="off">
                                             <button class="fix-btn btn-outline-yellow " type="button"
                                                 data-toggle="modal" data-target="#modal-checkout"
                                                 data-dismiss="modal">Sign in</button>
@@ -277,17 +260,17 @@
                                                 placeholder="Phone number">
                                             <!-- Password -->
                                             <input type="password" name="pass-register"
-                                                class="form-control mb-4 fix-input" placeholder="Password">
+                                                class="form-control mb-4 fix-input" placeholder="Password" autocomplete="off">
                                             <!-- Sign up button -->
                                             <button data-toggle="tab" href="#login" class="fix-btn btn-outline-yellow "
                                                 type="button">Register</button>
                                             <!-- Social register -->
                                             <p>or Register with:</p>
-                                            <a style="color: #F2B410" href="javascript: void(0)" class="mx-2"
+                                            <a style="color: #F2B410;padding: 0;" href="javascript: void(0)" class="mx-2"
                                                 role="button"><i class="fab fa-facebook-f"></i></a>
-                                            <a style="color: #F2B410" href="javascript: void(0)" class="mx-2"
+                                            <a style="color: #F2B410;padding: 0;" href="javascript: void(0)" class="mx-2"
                                                 role="button"><i class="fab fa-twitter"></i></a>
-                                            <a style="color: #F2B410" href="javascript: void(0)" class="mx-2"
+                                            <a style="color: #F2B410;padding: 0;" href="javascript: void(0)" class="mx-2"
                                                 role="button"><i class="fab fa-instagram"></i></a>
                                         </form>
                                     </div>
@@ -392,58 +375,51 @@
             </section>
         </div>
     </div>
-
     <%- include('footer') %>
     <!--java-->
     <script type="text/javascript" src="/lbs/mdBootstrap/js/jquery.js"></script>
+    <script type="text/javascript" src="/lbs/mdBootstrap/js/moment.js"></script>
     <script type="text/javascript" src="/lbs/mdBootstrap/js/parallax.min.js"></script>
     <script type="text/javascript" src="/lbs/mdBootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lbs/mdBootstrap/js/mdb.min.js"></script>
     <script type="text/javascript" src="/lbs/mdBootstrap/js/anime.min.js"></script>
     <script type="text/javascript">
+        var todayDate = moment().format("YYYY-MM-DD");
+        var selectorInuput = $('input[type=date]');
+        var attrTag = selectorInuput.attr(
+            {
+                'value': todayDate,
+                'min': todayDate
+            });
         // $('#myModal').modal();
         // $('#coupon').collapse({
         //     toggle: false
         // })
 
-        var offsetbackgroundicon = $('.background-icon').offset().top;
-        // event scroll
-        window.addEventListener("scroll",
-            () => {
-                var widow = window.pageYOffset;
-                // console.log(offsetbackgroundicon,widow)
-
-                if (widow >= offsetbackgroundicon - 300) {
-                    $('.reservation').css("display", "block");
-                }
-                if (widow >= offsetbackgroundicon + 150) {
-                    $('.table-sp').css("display", "block");
-                }
-                if (widow >= offsetbackgroundicon + 400) {
-                    $('.check-out').css("display", "block");
-                }
-            });
-
-        anime({
-            targets: '.ship-hang',
-            translateX: [-1250, 0],
-            rotate: [0, 20, 0],
-            // delay: 500,
-            duration: 4000,
-            easing: 'easeInOutExpo',
-            translateZ: 100
+        $( document ).ready(function() {
+            new  WOW().init();
         });
-        setTimeout(() => {
-            anime({
-                targets: '.ship-hang',
-                translateY: [0, -5, -10, -5, 0],
-                // delay: 500,
-                duration: 900,
-                easing: 'linear',
-                direction: 'alternate',
-                loop: true
-            });
-        }, 5000);
+
+        // anime({
+        //     targets: '.ship-hang',
+        //     translateX: [-1250, 0],
+        //     rotate: [0, 20, 0],
+        //     // delay: 500,
+        //     duration: 4000,
+        //     easing: 'easeInOutExpo',
+        //     translateZ: 100
+        // });
+        // setTimeout(() => {
+        //     anime({
+        //         targets: '.ship-hang',
+        //         translateY: [0, -5, -10, -5, 0],
+        //         // delay: 500,
+        //         duration: 900,
+        //         easing: 'linear',
+        //         direction: 'alternate',
+        //         loop: true
+        //     });
+        // }, 5000);
     </script>
     <!-- back on top-->
     <script type="text/javascript">
