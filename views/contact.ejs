@@ -11,9 +11,28 @@
     <%- include('header')%>
 
     <!--header-->
-    <div class="header">
-        <img src="/images/bg6.jpg" style="width: 100%;height: 500px">
+    <div class="parallax" data-parallax="scroll" data-image-src="/images/img_head_contact.jpg" data-position-Y="center">
+        <div class="background-color">
+            <div class="container">
+                <div class="row fix-title-head">
+                    <div class="col-md-12 wow  fadeIn" data-wow-delay="0.5s" style="width: 100%;text-align: center">
+                        <span class="title-yellow-head">La Cuisine</span>
+                    </div>
+                    <div class="col-md-12 wow  bounceIn" data-wow-delay="1s" style="width: 100%;text-align: center">
+                        <h2 class=" title-h2-head ">GET IN TOUCH</h2>
+                    </div>
+                    <div class="col-md-12 wow  fadeInUp" data-wow-delay="1.5s" style="width: 100%;text-align: center">
+                        <p class="p-head">
+                            For any enquiries you can give us a call at +84 988 888 888
+                            <br>
+                            Alternatively we can get in touch using the form bellow.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 
     <!--container-->
     <div class="parallax" data-parallax="scroll" data-image-src="/images/background-pizza.jpg" data-position-Y="center">
@@ -37,7 +56,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="row">
-                                <div id="input" class="col-md-12 animated slideInLeft">
+                                <div id="input" class="col-md-12 wow slideInLeft">
                                     <input type="text" id="name" required name="full-name" placeholder="Full name*">
                                     <input type="email" required name="email" placeholder="Email*">
                                     <input type="number" required maxlength="11" name="phone"
@@ -48,7 +67,7 @@
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <textarea name="message" class="animated slideInRight slow"
+                                    <textarea name="message" class="wow slideInRight slow"
                                         placeholder="Your message" rows="2" cols="20"></textarea>
                                 </div>
                             </div>
@@ -56,7 +75,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <button type="submit" id="btn1" class="btn animated bounceInUp slow">SEND MESSAGE</button>
+                            <button type="submit" id="btn1" class="btn wow slideInUp">SEND MESSAGE</button>
                         </div>
                     </div>
                 </form>
@@ -98,13 +117,13 @@
             <div class="location">
                 <div class="map">
                     <div class="row">
-                        <div class="col-md-4 animated slideInRight initMap" id="initMap"></div>
+                        <div class="col-md-4 wow slideInRight initMap" id="initMap"></div>
                     </div>
                 </div>
                 <div class="infomation">
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="row info animated zoomIn">
+                            <div class="row info wow zoomIn">
                                 <div class="col-12">
                                     <h4>Pizza MlemMlem 1</h4>
                                 </div>
@@ -118,7 +137,7 @@
                                 </div>
                                 <div class="col-12">
                                     <a href="/reservation">
-                                        <button type="button" class="btn btn2 animated zoomIn">
+                                        <button type="button" class="btn btn2 wow zoomIn">
                                             RESERVATION
                                         </button>
                                     </a>
@@ -126,7 +145,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-5 animated zoomIn delay-1s">
+                        <div class="col-md-5 wow zoomIn">
                             <img src="/images/4763.jpg" style="width: 100%; height: 300px;">
                         </div>
                     </div>
@@ -183,29 +202,23 @@
 
     <script type="text/javascript">
         // form contact
-        var offsetFix = $('.parallax').offset().top;
-        var formeffect = $("#formContact");
-        var formBtn = $("#btn1");
-        window.addEventListener("scroll",
-            () => {
-                if (window.pageYOffset >= (offsetFix - 200)) {
-                    formeffect.css("display", "block");
-                }
-                if (window.pageYOffset >= offsetFix - 100) {
-                    formBtn.css("display", "flex");
-                }
-            });
+        // var offsetFix = $('.parallax').offset().top;
+        // var formeffect = $("#formContact");
+        // var formBtn = $("#btn1");
+        // window.addEventListener("scroll",
+        //     () => {
+        //         if (window.pageYOffset >= (offsetFix - 200)) {
+        //             formeffect.css("display", "block");
+        //         }
+        //         if (window.pageYOffset >= offsetFix - 100) {
+        //             formBtn.css("display", "flex");
+        //         }
+        //     });
 
-        // local effect
-        var localtion = $('.background-local').offset().top;
-        window.addEventListener('scroll',
-            () => {
-                var offse = window.scrollY;
-
-                if (offse >= localtion - 350) {
-                    $('.location').css("display", "block");
-                }
-            });
+        $( document ).ready(function() {
+            new WOW().init();
+        });
+        
         // map
         function initMap() {
             // The location of Uluru
@@ -225,8 +238,9 @@
                 map: map,
                 label: {
                     text: "Pizza MlemMlem 1",
-                    color: "red"
+                    color: "black"
                 }
+
             });
         }
     </script>

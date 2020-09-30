@@ -1,14 +1,29 @@
-body{width:1200px;height:1000px;) no-repeat 50% 0;}
-h1{width: 960px;margin: 20px auto;font-size: 18px;line-height: 25px;font-weight: normal;position: absolute;left: 50%;margin-left: -480px;color: #fff;z-index: 1;}
-.part-tese{height:850px;top:0}
-.content-part{position:absolute;width:1200px;left:50%;margin-left:-600px;margin-top: 50px;}
+/*body{width:1200px;height:1000px;) no-repeat 50% 0;}*/
+/*h1{width: 960px;margin: 20px auto;font-size: 18px;line-height: 25px;font-weight: normal;position: absolute;left: 50%;margin-left: -480px;color: #fff;z-index: 1;}*/
+.content-title>h1{
+    font-size: 80px;
+    line-height: 60px;
+    color: #F2B410;
+    font-family: 'Tangerine', cursive;
+}
+.content-title>h2{
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: #252525;
+    text-transform: uppercase;
+    font-size: 42px;
+    line-height: 50px;
+    margin: 0 0 20px 0;
+}
+.part-tese{height:850px;top:0;position: relative}
+.content-part{position:absolute;width:1200px;left:50%;margin-left:-600px;}
 .content-part.show .content-title{opacity:1;transform:translateY(0);-ms-transform:translateY(0);-webkit-transform:translateY(0);-moz-transform:translateY(0);-o-transform:translateY(0);transition:all 1s;-webkit-transition:all 1s;-moz-transition:all 1s;-o-transition:all 1s}
 .part-tese .content-title{background:url(../images/yys_tese_title.png) no-repeat center}
 .content-part .content-title{opacity:0;transform:translateY(50px);-ms-transform:translateY(50px);-webkit-transform:translateY(50px);-moz-transform:translateY(50px);-o-transform:translateY(50px)}
-.content-part .content-title{position:absolute;width:650px;height:263px;top:0;left:50%;margin-left:-325px}
+.content-part .content-title{position:absolute;width:100%;height:auto;top:0;left:0;text-align: center;}
 .part-tese .shadow{position:absolute;width:1014px;height:190px;bottom:0;left:50%;margin-left:-507px;background:url(../images/yys_tese_shadow.png)}
 .part-tese.show .gallery_container{opacity:1;transform:translateY(0);-ms-transform:translateY(0);-webkit-transform:translateY(0);-moz-transform:translateY(0);-o-transform:translateY(0);transition:all 1s .1s;-webkit-transition:all 1s .1s;-moz-transition:all 1s .1s;-o-transition:all 1s .1s}
-.part-tese .gallery_container{position:absolute;width:1000px;height:550px;top:210px;left:50%;margin-left:-500px}
+.part-tese .gallery_container{position:absolute;width:100%;height:550px;top:210px;left:0;}
 .part-tese .gallery_container.st02{top:800px}
 .part-tese .gallery_container{opacity:0;transform:translateY(200px);-ms-transform:translateY(200px);-webkit-transform:translateY(200px);-moz-transform:translateY(200px);-o-transform:translateY(200px)}
 .gallery_container{position:absolute;top:0;left:0}

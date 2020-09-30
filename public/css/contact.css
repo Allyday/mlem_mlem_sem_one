@@ -1,23 +1,48 @@
 body{
     font-family: Lora, serif;
 }
-
+/*head*/
+.parallax{
+    width:100%;
+    height:600px;
+    position:relative;
+}
+.background-color {
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(17, 17, 17, 0.8);;
+}
+.fix-title-head{
+    color: white;
+    margin:230px auto;
+}
+.title-yellow-head{
+    font-size: 80px;
+    line-height: 60px;
+    color: #F2B410;
+    font-family: 'Tangerine', cursive;
+}
+.title-h2-head{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    line-height: 50px;
+    margin: 5px 0 20px;
+    font-weight: 700;
+}
+.p-head{
+    font-size: 18px;
+    line-height: 30px;
+    color: #eee;
+}
+/*end head*/
 .parallax{
     width:100%;
     height:600px;
     position:relative;
     background:transparent;
-}
-.background-img-form {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    background: url(../images/background-pizza.jpg) 50% top no-repeat;
-    background-size: cover;
-    background-attachment: scroll !important;
-}
-#formContact{
-    display:none;
 }
 .background-color-form {
     width: 100%;
@@ -62,7 +87,7 @@ input[type=number]::-webkit-inner-spin-button {
 input , textarea{
     width: 90%;
     color: #656565;
-    border: 2px solid #454545;
+    border: 1px solid #45454590;
     background-color: transparent;
     margin-bottom:20px;
     padding: 20px 15px;
@@ -79,7 +104,6 @@ textarea{
     resize: none;
 }
 #btn1{
-    display:none;
     margin:0 auto;
     background:#F2B410;
     color:#fff;
@@ -109,7 +133,6 @@ textarea{
     width: 60%;
 }
 .location {
-display:none;
     width:95%;
     margin: 50px auto 40px;
     padding: 40px 0;
@@ -120,7 +143,7 @@ display:none;
     position:absolute;
     top:-20px;
     right:0;
-    z-index:10;
+    z-index:2;
 }
 .infomation{
     text-align:center;
