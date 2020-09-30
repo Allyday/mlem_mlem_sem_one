@@ -65,7 +65,9 @@
 
     user-select: none;
 }
-
+.navbar-brand{
+    font-family: 'Balsamiq Sans', cursive;
+}
 .navbar-nav a {
     text-decoration: none;
     -moz-border-radius: 30px;
