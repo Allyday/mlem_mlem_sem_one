@@ -67,3 +67,6 @@ app.get('/contact', (req, res) => {
 app.get('/reservation', (req, res) => {
   res.render('reservation');
 });
+app.get('/slide', (req, res) => {
+  res.render('slide');
+});
