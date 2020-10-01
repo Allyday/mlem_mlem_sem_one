@@ -11,6 +11,7 @@ html {
 .sans-serif {
   font-family: 'Montserrat';
   font-size: 36px;
+  font-weight: 700;
   line-height: 42px;
   margin-top: 0;
 }
@@ -24,6 +25,10 @@ html {
 
 .white-text {
   color: white
+}
+
+p {
+  margin: 20px 0 25px;
 }
 
 .asterisk {
@@ -97,7 +102,7 @@ html {
 }
 
 .section {
-  min-height: 60%;
+  min-height: 55%;
   padding: 90px 0;
 }
 
@@ -134,6 +139,94 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.row {
+  margin: auto;
+}
+
+.image-container {
+  width: 80%;
+  height: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.image-container::before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* buttons */
+.btn {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.btn,
+.btn:hover {
+  transition: all 0.25s ease-in-out;
+}
+
+.btn.btn-yellow {
+  position: relative;
+  color: #fff;
+  background-color: #F2B410;
+  border-color: #F2B410;
+  font-family: 'Montserrat',
+    sans-serif;
+  font-weight: 700;
+  padding: 18px 32px;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 2px;
+}
+
+.btn.btn-yellow::before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  bottom: 4px;
+  left: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.btn.btn-yellow:hover {
+  box-shadow: none;
+  background-color: #F39C12 !important;
+}
+
+.btn.btn-white-transparent {
+  color: white;
+  background-color: transparent;
+  border-color: white;
+  font-family: 'Montserrat',
+    sans-serif;
+  font-weight: 700;
+  padding: 18px 32px;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 2px;
+}
+
+.btn.btn-white-transparent:hover {
+  box-shadow: none;
+  color: #F2B410;
+  background-color: white !important;
 }
 
 /* animation classes */
