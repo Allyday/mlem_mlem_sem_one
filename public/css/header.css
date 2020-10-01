@@ -15,25 +15,13 @@
 .navbar-nav {
     flex-direction: row !important;
     padding-left: 2rem;
-
-}
-
-.navbar-nav>ul>li {
-    color: #f2b410;
-    font-size: 14px;
-    line-height: 24px;
-    margin-bottom: 20px;
-}
-
-.navbar-nav>li {
-    margin-top: 20px;
 }
 
 .navbar-nav>li>a {
     padding: 15px;
     color: white;
     font-size: 14px;
-    margin-bottom: 20px;
+    margin: 15px 0;
     text-decoration: none !important;
 }
 
@@ -53,33 +41,24 @@
 .navbar-nav .btn-1 {
     background-color: #F2B410;
     position: relative;
-
-    /*font-size: 1.4rem;*/
-
     color: var(--inv);
-
     letter-spacing: 5px;
-
     text-transform: uppercase;
-
+    border-radius: 3px;
+    margin: 15px 80px;
     transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
-
-    cursor: pointer;
-
     user-select: none;
 }
-.navbar-brand{
+
+.navbar-brand {
     font-family: 'Balsamiq Sans', cursive;
     padding-left: 30px;
     padding-right: 30px;
 }
+
 .navbar-nav a {
     text-decoration: none;
-    -moz-border-radius: 30px;
-    -webkit-border-radius: 30px;
-    border-radius: 30px;
     padding: 12px 53px 12px 23px;
-    color: #fff;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
