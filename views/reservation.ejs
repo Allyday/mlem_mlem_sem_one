@@ -86,7 +86,7 @@
                                     <option value="9">9 person</option>
                                     <option value="10">10 person</option>
                                 </select>
-                                <input class="fix-input" required type="time" name="time" placeholder="Booking Time">
+                                <input onchange="onChangeTime()" class="fix-input" required type="time" name="time" placeholder="Booking Time">
                             </div>
                             <div class="col-md-12 a-submit">
                                 <input class="btn-outline-yellow" type="submit" value="Book Your Table">
@@ -184,20 +184,29 @@
         });
     </script>
     <script type="text/javascript">
-        var todayDate = moment().format("YYYY-MM-DD");
-        var selectorInuput = $('input[type=date]');
-        var attrTag = selectorInuput.attr(
+        var todayDate =new Date();
+        todayDate.setDate(todayDate.getDate()+1);
+        // console.log(moment(todayDate).format('YYYY-MM-DD'));
+        var InputDate = $('input[type=date]');
+        var attrTag = InputDate.attr(
             {
-                'value': todayDate,
-                'min': todayDate
+                'value': moment(todayDate).format('YYYY-MM-DD'),
+                'min': moment(todayDate).format('YYYY-MM-DD')
             });
 
+        // input time
 
+        var InputTime = $('input[type=time]');
+        function onChangeTime() {
+            if (InputTime.val() <= '20:30' && InputTime.val() >= '09:00') {
+                console.log('ok con vợ');
+            } else {
+                alert('Chúng tôi nhận đặt lịch trước từ 09:00 đến 20:30 ' +
+                    ' Giờ mặc định chúng tôi đặt là 11:00 !!!');
+                InputTime.val('11:00');
+            }
+        }
 
-        // console.log(selectorInuput.val());
-        // if (selectorInuput.val() < todayDate) {
-        //     console.log("moi nhap lai");
-        // }
     </script>
 </body>
 

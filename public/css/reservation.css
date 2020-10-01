@@ -219,6 +219,8 @@
     text-decoration-line: none;
 }
 .icon-ref > a{
+    font-size: 25px;
+    color: #f2b410 !important;
     text-align: center;
     margin-right: -30px;
 }
