@@ -33,7 +33,6 @@
         </div>
     </div>
 
-
     <!--container-->
     <div class="parallax" data-parallax="scroll" data-image-src="/images/background-pizza.jpg" data-position-Y="center">
         <div class="background-color-form">
@@ -75,7 +74,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <button type="submit" id="btn1" class="btn wow slideInUp">SEND</button>
+                            <button type="submit" class="btn wow slideInUp fixBtn1">SEND</button>
                         </div>
                     </div>
                 </form>
@@ -88,32 +87,35 @@
         <div class="container">
             <form action="#" method="get">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="selectCountry">
-
-                            <select id="country" class="browser-default custom-select custom-select-lg mb-3">
+                    <div class="col-md-5">
+                        <div class="selected">
+                            <select id="country" onchange="changeCountry()" class="browser-default custom-select custom-select-lg mb-3">
                                 <option selected>Select country</option>
-                                <option value="1" disabled>USA (coming soon)</option>
-                                <option value="2" disabled>ITALY (coming soon)</option>
-                                <option value="3" disabled>AUSTRALIA (coming soon)</option>
-                                <option value="4">VIETNAM</option>
+                                <option value="VIETNAM">VIETNAM</option>
+                                <option value="USA">USA</option>
+                                <option value="ITALY" >ITALY</option>
                             </select>
-
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="selectCity">
-                            <select id="area" class="browser-default custom-select custom-select-lg mb-3">
+                    <div class="col-md-5">
+                        <div class="selected">
+                            <select id="area" class="browser-default custom-select custom-select-lg mb-3" type="submit">
                                 <option selected>Select area</option>
-                                <option value="1">Hà Nội</option>
-                                <option value="2" disabled>Đà Nẵng (coming soon)</option>
-                                <option value="3">Hồ Chí Minh City</option>
+                                <option value="hanoi">Hà Nội</option>
+                                <option value="hcm">Hồ Chí Minh City</option>
+                                <option value="washington">Washington</option>
+                                <option value="california">California</option>
+                                <option value="roma">Roma</option>
                             </select>
                         </div>
                     </div>
+                    <div class="col-md-2">
+                            <div class="selected">
+                                <button type="submit" class="btn fixBtn2">Update</button>
+                            </div>
+                        </div>
                 </div>
             </form>
-
             <div class="location">
                 <div class="map">
                     <div class="row">
@@ -244,14 +246,52 @@
             });
         }
     </script>
-    <!-- back on top-->
     <script type="text/javascript">
-        function toTop() {
-            // document.documentElement.scrollTop = 0;
-            $('html,body').animate({
-                scrollTop: 0,
-            }, 700)
 
+        // var optArea = $("#area option:selected");
+        // console.log(optArea)
+        // for (let i = 0; i <= $("#area option").length; i++) {
+        //     if ($("#area option")[2]) {
+        //         $(this).attr('disabled', true)
+        //     }
+        //     console.log($("#area option")[i].value);
+        // }
+
+        function changeCountry() {
+            // console.log($("#country option:selected").val());
+            // console.log($("#country option")[2].value);
+            if ($("#country option:selected").val() === 'USA') {
+                $("#area option").map(function () {
+                    // $(this).attr('disabled', true);
+                    if ($(this).val() === 'washington') {
+                        $(this).removeAttr('disabled', true);
+                    } else if ($(this).val() === 'california') {
+                        $(this).removeAttr('disabled', true);
+                    } else {
+                        $(this).attr('disabled', true);
+                    }
+                })
+            }
+            if ($("#country option:selected").val() === 'VIETNAM') {
+                $("#area option").map(function () {
+                    if ($(this).val() === 'hanoi') {
+                        $(this).removeAttr('disabled', true);
+                    } else if ($(this).val() === 'hcm') {
+                        $(this).removeAttr('disabled', true);
+                    } else {
+                        $(this).attr('disabled', true);
+                    }
+                })
+            }
+            if ($("#country option:selected").val() === 'ITALY') {
+                $("#area option").map(function () {
+                    if ($(this).val() === 'roma') {
+                        $(this).removeAttr('disabled', true);
+                    } else {
+                        $(this).attr('disabled', true);
+                    }
+                })
+            }
         }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaj0mHlR-keu-9hsR6d-gB0L9BclG04rk&callback=initMap">
