@@ -9,7 +9,7 @@
 
 <body>
     <%- include('header')%>
-<!--header-->
+    <!--header-->
     <div class="parallax" data-parallax="scroll" data-image-src="/images/img_head_cart.jpg" data-position-Y="center">
         <div class="background-color">
             <div class="container">
@@ -34,7 +34,7 @@
     </div>
 
     <!--icon-->
-   <!-- <div class="background-icon">
+    <!-- <div class="background-icon">
         <div class="container">
             <section class="effect-icon">
                 <div class="row">
@@ -53,20 +53,20 @@
     </div> -->
 
     <!--container-->
-    <div class="background-container" style="height: auto">
+    <div class="background-container page-content" style="height: auto">
         <div class="container">
             <!--    reservation -->
             <section class="reservation   slideInUp">
                 <div class="status">
-                    <p>Your table is ready !!!</p>
+                    <p>Your table is ready!</p>
                 </div>
                 <form action="#" method="post">
                     <table class="table">
                         <thead class="grey lighten-2">
                             <tr>
-                                <th scope="col" class="strong">Your full name</th>
-                                <th scope="col" class="strong">Your phone number</th>
-                                <th scope="col" class="strong">How many ?</th>
+                                <th scope="col" class="strong">Full name</th>
+                                <th scope="col" class="strong">Phone</th>
+                                <th scope="col" class="strong">Guests</th>
                                 <th scope="col" class="strong">Date</th>
                                 <th scope="col" class="strong">Time</th>
                             </tr>
@@ -86,7 +86,8 @@
                                     <input type="date" required name="trip-start" value="2020-09-20" min="2020-09-20">
                                 </td>
                                 <td class="strong">
-                                    <input class="fix-input" required type="text" name="time" placeholder="Booking Time" width="200px" >
+                                    <input class="fix-input" required type="text" name="time" placeholder="Booking Time"
+                                        width="200px">
                                 </td>
                             </tr>
                         </tbody>
@@ -105,20 +106,20 @@
             <section class="table-sp ">
                 <form action="#!" method="post">
                     <div class="status">
-                        <p>Your bag !!!</p>
+                        <p>Your cart</p>
                     </div>
                     <div class="row">
                         <div class="col-md-9   slideInLeft">
                             <table class="table">
                                 <thead class="grey lighten-2">
                                     <tr>
-                                        <th scope="col" class="strong">Image</th>
+                                        <th scope="col" class="strong"></th>
                                         <th scope="col" class="strong">Name</th>
                                         <th scope="col" class="strong">Quantity</th>
                                         <th scope="col" class="strong">Unit price</th>
                                         <th scope="col" class="strong">Total</th>
                                         <th scope="col">
-                                            <button class="tag-a btn-outline-yellow" >Update</button>
+                                            <button class="tag-a btn-outline-yellow">Update</button>
                                         </th>
                                     </tr>
                                 </thead>
@@ -188,11 +189,12 @@
             <section class="check-out">
                 <div class="row">
                     <div class="col-md-6 btn-checkout   slideInLeft">
-                        <a style="font-size: 18px;box-shadow: none;" href="/menu" class="btn btn-outline-yellow" >Shopping</a>
+                        <a style="font-size: 18px;box-shadow: none;" href="/menu"
+                            class="btn btn-outline-yellow">Shopping</a>
                     </div>
                     <div class="col-md-6 btn-checkout   slideInRight">
-                        <a style="font-size: 18px;box-shadow: none;" href="javascript:void(0)" class="btn btn-outline-yellow" data-toggle="modal"
-                            data-target="#Modal-login">check out</a>
+                        <a style="font-size: 18px;box-shadow: none;" href="javascript:void(0)"
+                            class="btn btn-outline-yellow" data-toggle="modal" data-target="#Modal-login">check out</a>
                     </div>
                 </div>
                 <!--       modal log in-->
@@ -260,18 +262,19 @@
                                                 placeholder="Phone number">
                                             <!-- Password -->
                                             <input type="password" name="pass-register"
-                                                class="form-control mb-4 fix-input" placeholder="Password" autocomplete="off">
+                                                class="form-control mb-4 fix-input" placeholder="Password"
+                                                autocomplete="off">
                                             <!-- Sign up button -->
                                             <button data-toggle="tab" href="#login" class="fix-btn btn-outline-yellow "
                                                 type="button">Register</button>
                                             <!-- Social register -->
                                             <p>or Register with:</p>
-                                            <a style="color: #F2B410;padding: 0;" href="javascript: void(0)" class="mx-2"
-                                                role="button"><i class="fab fa-facebook-f"></i></a>
-                                            <a style="color: #F2B410;padding: 0;" href="javascript: void(0)" class="mx-2"
-                                                role="button"><i class="fab fa-twitter"></i></a>
-                                            <a style="color: #F2B410;padding: 0;" href="javascript: void(0)" class="mx-2"
-                                                role="button"><i class="fab fa-instagram"></i></a>
+                                            <a style="color: #F2B410;padding: 0;" href="javascript: void(0)"
+                                                class="mx-2" role="button"><i class="fab fa-facebook-f"></i></a>
+                                            <a style="color: #F2B410;padding: 0;" href="javascript: void(0)"
+                                                class="mx-2" role="button"><i class="fab fa-twitter"></i></a>
+                                            <a style="color: #F2B410;padding: 0;" href="javascript: void(0)"
+                                                class="mx-2" role="button"><i class="fab fa-instagram"></i></a>
                                         </form>
                                     </div>
                                 </div>
@@ -386,18 +389,17 @@
     <script type="text/javascript">
         var todayDate = moment().format("YYYY-MM-DD");
         var selectorInuput = $('input[type=date]');
-        var attrTag = selectorInuput.attr(
-            {
-                'value': todayDate,
-                'min': todayDate
-            });
+        var attrTag = selectorInuput.attr({
+            'value': todayDate,
+            'min': todayDate
+        });
         // $('#myModal').modal();
         // $('#coupon').collapse({
         //     toggle: false
         // })
 
-        $( document ).ready(function() {
-            new  WOW().init();
+        $(document).ready(function () {
+            new WOW().init();
         });
 
         // anime({
