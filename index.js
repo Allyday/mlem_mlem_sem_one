@@ -56,9 +56,60 @@ app.get('/cart', (req, res) => {
   res.render('cart');
 });
 
+// blog
 app.get('/blog', (req, res) => {
-  res.render('blog');
+  let sql_text ="select * from T2005E_mlem_DanhMuc; " +
+                " select * from T2005E_mlem_Blog; " +
+                " select * from T2005E_mlem_MonAn;";
+  let data = {
+    danhmucs: [],
+    articles: []
+  };
+  db.query(sql_text).then(rows =>{
+      data.danhmucs = rows.recordsets[0],
+      data.articels = rows.recordsets[1]
+  }).catch(err => {
+   })
+  res.render('blog',data);
 });
+app.get('/blog/:id', async (req, res) => {
+  let DanhMucID = req.params.id;
+  let sql_text = `select * from T2005E_mlem_DanhMuc; `+
+                `select * from T2005E_mlem_Blog where MonAnID `+
+               ` IN (select ID from T2005E_mlem_MonAn where LoaiID `+
+               ` IN (select '${DanhMucID}' from T2005E_mlem_DanhMuc));`;
+  let data = {
+      danhmucs: [],
+      articles: []
+  };
+
+  await db.query(sql_text).then(rows =>{
+      data.danhmucs = rows.recordsets[0],
+      data.articels = rows.recordsets[1]
+  }).catch(err => {
+  })
+  res.render('blog',data);
+})
+app.get('/search', async (req,res) => {
+  let keyword = req.query.search;
+  let sql_text = `select * from T2005E_mlem_DanhMuc; `+
+                 `select * from T2005E_mlem_View_Blog_MonAn_DanhMuc `+
+                 ` WHERE T2005E_mlem_DanhMuc.Ten LIKE N'%${keyword}%' `+
+                  ` OR T2005E_mlem_MonAn.TenSP LIKE N'%${keyword}%' `+
+                  ` OR T2005E_mlem_Blog.TieuDe LIKE N'%${keyword}%'; `;
+  let data = {
+      danhmucs: [],
+      articles: []
+  };
+  await db.query(sql_text).then(rows => {
+      data.danhmucs = rows.recordsets[0],
+      data.articels = rows.recordsets[1]
+  }).catch(err => {
+    console.log(err.message);
+  });
+  res.render('blog',data);
+})
+
 
 app.get('/contact', (req, res) => {
   res.render('contact');

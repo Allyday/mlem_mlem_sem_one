@@ -23,13 +23,20 @@
 }
 
 .container-footer {
+    font-family: 'Lora', serif;
     position: relative;
     border-bottom: 2px dotted #ddd;
     display: block;
     width: 1140px;
     margin: 0 auto;
 }
-
+.container-footer p{
+    margin: 0 0 1rem 0 !important;
+}
+.container-footer .row{
+    margin-right: -15px;
+    margin-left: -15px;
+}
 .title-footer {
     margin-bottom: 20px;
     font-family: 'Montserrat', sans-serif;
@@ -41,6 +48,7 @@
 }
 
 .fix-color-text {
+    line-height: 1.7;
     font-size: 18px;
     color: rgba(221, 221, 221, 0.9);
 }

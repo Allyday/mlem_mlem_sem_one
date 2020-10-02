@@ -43,22 +43,15 @@
                         <div class="col-md-6 tages">
                             <p>Tages &ensp;</p>
                             <ul class="nav">
-                                <!--                            category-->
-                                <li><a href="#">Pizza</a></li>
-                                <li><a href="#">Health</a></li>
-                                <li><a href="#">Fast food</a></li>
-                                <li><a href="#">Recipe</a></li>
-                                <li><a href="#">Fresh</a></li>
-                                <li><a href="#">Pizza</a></li>
-                                <li><a href="#">Health</a></li>
-                                <li><a href="#">Fast food</a></li>
-                                <li><a href="#">Recipe</a></li>
-                                <li><a href="#">Fresh</a></li>
+                                <!--  category-->
+                                <% danhmucs.map((e) => { %>
+                                <li><a href="blog/<%= e.ID %>"><%= e.Ten %></a></li>
+                                <% }) %>
                             </ul>
 
                         </div>
                         <div class="col-md-6 ">
-                            <form action="#" method="post" class="form-inline">
+                            <form action="/search" method="get" class="form-inline">
                                 <input type="text" name="search" required placeholder="Enter keywords">
                                 <button type="submit" class="btn-search">
                                     <i class="fas fa-search"></i>
@@ -69,52 +62,8 @@
                 </div>
                 <div class="col-md-12">
                     <div class="row" style="display: block;float: left;">
-                        <!--                    article-->
-                        <div class="col-md-6 detail-a-dish">
-                            <div class="row">
-                                <div class="col-md-12 fix-img">
-                                    <div class="contain-img">
-                                        <img src="/images/imageBlog/food10.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-12 date-time">
-                                    <div class="border-bottom clearfix">
-                                        <p class="fa-pull-left">20/09/2020</p>
-                                        <span class="fa-pull-right" style="color: #b8b8b8">By: &ensp; MlemMlem</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 title-recipe">
-                                    <p>Where to eat best pizza in Tropea?</p>
-                                    <div class=" description">
-                                        <p>Here is main text quis nostrud exercitation
-                                            ullamco laboris nisi here is itealic text ut
-                                            aliquip ex ea commodo consequat. Duis aute
-                                            irure dolor in reprehenderit in voluptate
-                                            velit esse cillum dolore eu fugiat nulla rure
-                                            dolor in reprehenderit in voluptate velit
-                                            esse cillum dolore eu fugiat nulla pariatur.
-                                            Excepteur sint occaecat here is link cupidatat
-                                            non proident, sunt in culpa qui officia
-                                            deserunt mollit anim id est laborum.
-                                            Here is main text quis nostrud exercitation
-                                            ullamco laboris nisi here is itealic text ut
-                                            aliquip ex ea commodo consequat. Duis aute
-                                            irure dolor in reprehenderit in voluptate
-                                            velit esse cillum dolore eu fugiat nulla rure
-                                            dolor in reprehenderit in voluptate velit
-                                            esse cillum dolore eu fugiat nulla pariatur.
-                                            Excepteur sint occaecat here is link cupidatat
-                                            non proident, sunt in culpa qui officia
-                                            deserunt mollit anim id est laborum.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="onclick" onclick="seeMore(this)">
-                                see more...
-                            </div>
-                        </div>
-
+                        <!--   article-->
+                        <%- include('grid-article') %>
                     </div>
                 </div>
             </div>
