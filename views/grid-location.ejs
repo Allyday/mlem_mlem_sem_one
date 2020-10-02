@@ -1,0 +1,69 @@
+<% vitris.map( (e) => { %>
+    <div class="location">
+        <div class="map">
+            <div class="row">
+                <div class="col-md-4 wow slideInRight initMap" id="initMap"></div>
+            </div>
+        </div>
+        <div class="infomation">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="row info wow zoomIn">
+                        <div class="col-12">
+                            <h4><%= e.TenCuaHang%></h4>
+                        </div>
+                        <div class="col-12">
+                            <p><i class="fas fa-map-marker-alt"></i> &ensp;
+                                <%= e.DiaChi %></p>
+                        </div>
+                        <div class="col-12">
+                            <p><i class="fas fa-clock"></i> &ensp;
+                                Monday – Sunday: 11:00 – 22:00 <br> (Last Order 21:30)</p>
+                        </div>
+                        <div class="col-12">
+                            <a href="/reservation">
+                                <button type="button" class="btn btn2 wow zoomIn">
+                                    RESERVATION
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5 wow zoomIn">
+                    <img src="/<%= e.AnhCuaHang %>" style="width: 100%; height: 300px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--javascript-->
+    <script type="text/javascript">
+        // map
+        function initMap() {
+            // The location of Uluru
+            var uluru = {
+                // lat: 21.0289003,
+                // lng: 105.7816498
+                lat: <%= e.ViDo %> ,
+                lng: <%= e.KinhDo %>
+            };
+            // The map, centered at Uluru
+            var map = new google.maps.Map(
+                document.getElementById('initMap'), {
+                    zoom: 14,
+                    center: uluru
+                });
+            // The marker, positioned at Uluru
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map,
+                label: {
+                    text: "<%= e.TenCuaHang %>",
+                    color: "black"
+                }
+
+            });
+        }
+    </script>
+<% }) %>

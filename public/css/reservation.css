@@ -185,6 +185,7 @@
     display: flex;
 }
 .text-type-pizza > p {
+    text-transform: lowercase;
     font-size: 60px;
     font-weight: 700;
     color:#f2b410 ;

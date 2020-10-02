@@ -64,7 +64,7 @@
                             </div>
                         </div>
                     </div>
-                    <form action="#!" method="post">
+                    <form action="/booking" method="post">
                         <div class="form-input">
                             <div class="col-md-6 fa-pull-left" style="z-index: 2">
                                 <input class="fix-input" required type="text" name="name" placeholder="Full Name">
@@ -73,7 +73,7 @@
                             </div>
                             <div class="col-md-6 fa-pull-right" style="z-index: 2">
                                 <input class="fix-input" required type="email" name="email" placeholder="Email">
-                                <select required class="browser-default custom-select fix-input">
+                                <select required class="browser-default custom-select fix-input" name="people">
                                     <option value>How many ?</option>
                                     <option value="1">1 person</option>
                                     <option value="2">2 person</option>
@@ -125,10 +125,10 @@
                                 <img src="/images/m3.jpg" alt="tiet canh" class="img-fluid">
                             </div>
                             <div class="text-type-pizza">
-                                <p>pizza fresh</p>
+                                <p><%= danhmucs[0].Ten %></p>
                             </div>
                             <span class="icon-ref">
-                                <a href="/blog">See more</a>
+                                <a href="/blog/<%= danhmucs[0].ID %>">See more</a>
                             </span>
                         </span>
                     </div>
@@ -140,10 +140,10 @@
                                 <img src="/images/m2.jpg" alt="tiet canh" class="img-fluid">
                             </div>
                             <div class="text-type-pizza">
-                                <p>pizza recipe</p>
+                                <p><%= danhmucs[1].Ten %></p>
                             </div>
                             <span class="icon-ref">
-                                <a href="/blog">See more</a>
+                                <a href="/blog/<%= danhmucs[1].ID %>">See more</a>
                             </span>
                         </span>
                     </div>
@@ -155,10 +155,10 @@
                                 <img src="/images/m1.jpg" alt="tiet canh" class="img-fluid">
                             </div>
                             <div class="text-type-pizza">
-                                <p>cháo lòng</p>
+                                <p><%= danhmucs[2].Ten %></p>
                             </div>
                             <span class="icon-ref">
-                                <a href="/blog">See more</a>
+                                <a href="/blog/<%= danhmucs[2].ID %>">See more</a>
                             </span>
                         </span>
                     </div>

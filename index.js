@@ -11,6 +11,9 @@ app.listen(PORT, () => {
 app.use(express.static('public'));
 // allow ejs syntax: mix view & logic
 app.set('view engine', 'ejs');
+//use body-parser
+const bodyparser = require("body-parser");
+app.use(bodyparser.urlencoded({extended:true}));
 
 // config sql server
 const mssql = require('mssql');
@@ -51,41 +54,36 @@ app.get('/menu', (req, res) => {
   res.render('menu');
 });
 
-
-app.get('/cart', (req, res) => {
-  res.render('cart');
-});
-
 // blog
-app.get('/blog', (req, res) => {
+app.get('/blog',async (req, res) => {
   let sql_text ="select * from T2005E_mlem_DanhMuc; " +
-                " select * from T2005E_mlem_Blog; " +
-                " select * from T2005E_mlem_MonAn;";
+      " select top 6 * from T2005E_mlem_Blog; ";
   let data = {
     danhmucs: [],
     articles: []
   };
-  db.query(sql_text).then(rows =>{
-      data.danhmucs = rows.recordsets[0],
-      data.articels = rows.recordsets[1]
+  await db.query(sql_text).then(rows =>{
+    data.danhmucs = rows.recordsets[0] ;
+    data.articels = rows.recordsets[1] ;
   }).catch(err => {
-   })
+    console.log(err.message);
+  })
   res.render('blog',data);
 });
 app.get('/blog/:id', async (req, res) => {
   let DanhMucID = req.params.id;
   let sql_text = `select * from T2005E_mlem_DanhMuc; `+
-                `select * from T2005E_mlem_Blog where MonAnID `+
-               ` IN (select ID from T2005E_mlem_MonAn where LoaiID `+
-               ` IN (select ID from T2005E_mlem_DanhMuc WHERE ID LIKE '${DanhMucID}' ));`;
+      `select * from T2005E_mlem_Blog where MonAnID `+
+      ` IN (select ID from T2005E_mlem_MonAn where LoaiID `+
+      ` IN (select ID from T2005E_mlem_DanhMuc WHERE ID LIKE '${DanhMucID}' ));`;
   let data = {
-      danhmucs: [],
-      articles: []
+    danhmucs: [],
+    articles: []
   };
 
   await db.query(sql_text).then(rows =>{
-      data.danhmucs = rows.recordsets[0],
-      data.articels = rows.recordsets[1]
+    data.danhmucs = rows.recordsets[0],
+        data.articels = rows.recordsets[1]
   }).catch(err => {
   })
   res.render('blog',data);
@@ -93,31 +91,85 @@ app.get('/blog/:id', async (req, res) => {
 app.get('/search', async (req,res) => {
   let keyword = req.query.search;
   let sql_text = `select * from T2005E_mlem_DanhMuc; `+
-                 `select * from T2005E_mlem_View_Blog_MonAn_DanhMuc `+
-                 ` WHERE T2005E_mlem_DanhMuc.Ten LIKE N'%${keyword}%' `+
-                  ` OR T2005E_mlem_MonAn.TenSP LIKE N'%${keyword}%' `+
-                  ` OR T2005E_mlem_Blog.TieuDe LIKE N'%${keyword}%'; `;
+      `SELECT T2005E_mlem_Blog.* FROM T2005E_mlem_Blog `+
+      ` LEFT JOIN T2005E_mlem_MonAn ON T2005E_mlem_Blog.MonAnID = T2005E_mlem_MonAn.ID `+
+      ` LEFT JOIN T2005E_mlem_DanhMuc ON T2005E_mlem_MonAn.LoaiID = T2005E_mlem_DanhMuc.ID`+
+      ` WHERE T2005E_mlem_DanhMuc.Ten LIKE N'%${keyword}%' `+
+      ` OR T2005E_mlem_MonAn.TenSP LIKE N'%${keyword}%' `+
+      ` OR T2005E_mlem_Blog.TieuDe LIKE N'%${keyword}%'; `;
   let data = {
-      danhmucs: [],
-      articles: []
+    danhmucs: [],
+    articles: []
   };
   await db.query(sql_text).then(rows => {
-      data.danhmucs = rows.recordsets[0],
-      data.articels = rows.recordsets[1]
+    data.danhmucs = rows.recordsets[0],
+        data.articels = rows.recordsets[1]
   }).catch(err => {
-    console.log(err.message);
+    // console.log(err.message);
   });
   res.render('blog',data);
 })
 
-
-app.get('/contact', (req, res) => {
-  res.render('contact');
-});
-
+//reservation
 app.get('/reservation', (req, res) => {
-  res.render('reservation');
+    let sql_text = `select top 3 * from T2005E_mlem_DanhMuc ORDER BY ID ASC;`
+    db.query(sql_text, (err,rows) => {
+        if (err) res.send(err);
+        else res.render('reservation', {
+          danhmucs: rows.recordset
+        });
+    });
 });
-app.get('/slide', (req, res) => {
-  res.render('slide');
+app.post('/booking',async (req,res) => {
+    let name = req.body.name ;
+    let phone = req.body.phone ;
+    let people = req.body.people ;
+    let date = req.body.date ;
+    let email = req.body.email ;
+    let time = req.body.time ;
+
+    let sql_text = `INSERT INTO T2005E_mlem_Bookings(TenKH,Tel,SoNguoi,Ngay,Gio,Email) `+
+                    `VALUES (N'${name}','${phone}',${people} ,'${date}', '${time}', '${email}');`;
+    try {
+     await db.query(sql_text);
+    }catch (err) {
+    }
+    res.redirect(`/reservation`);
+});
+//contact
+app.post('/save-comment',async (req,res) => {
+    let name = req.body.name;
+    let email = req.body.email;
+    let phone = req.body.phone;
+    let message = req.body.message;
+    let sql_text = `INSERT INTO T2005E_mlem_DanhGia (FullName,Phone,Email,Comment) `+
+                    `values (N'${name}', ${phone} ,'${email}','${message}');`;
+    try {
+     await db.query(sql_text);
+    }catch (err) {
+    }
+    res.redirect('/contact');
+});
+app.get('/contact', (req, res) => {
+    let sql_text = `select top 3 * from T2005E_mlem_ViTri;`;
+    db.query(sql_text, (err,rows) => {
+      if (err) res.send(err);
+      else res.render('contact',{
+        vitris: rows.recordsets[0]
+      });
+    });
+});
+app.get('/thanh-pho', (req,res) => {
+    let city = req.query.city;
+    let sql_text = `SELECT * FROM T2005E_mlem_ViTri WHERE ThanhPho LIKE '%${city}%'`;
+    db.query(sql_text, (err,rows) => {
+      if (err) res.send(err);
+      else res.render('contact', {
+        vitris: rows.recordsets[0]
+      });
+    });
+});
+//cart
+app.get('/cart', (req, res) => {
+  res.render('cart');
 });
