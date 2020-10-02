@@ -77,7 +77,7 @@ app.get('/blog/:id', async (req, res) => {
   let sql_text = `select * from T2005E_mlem_DanhMuc; `+
                 `select * from T2005E_mlem_Blog where MonAnID `+
                ` IN (select ID from T2005E_mlem_MonAn where LoaiID `+
-               ` IN (select '${DanhMucID}' from T2005E_mlem_DanhMuc));`;
+               ` IN (select ID from T2005E_mlem_DanhMuc WHERE ID LIKE '${DanhMucID}' ));`;
   let data = {
       danhmucs: [],
       articles: []
