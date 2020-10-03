@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Cart</title>
+    <%- include('shared-imports') %>
+    <link rel="stylesheet" href="/css/cart.css">
+</head>
+
+<body>
+    <%- include('header')%>
+    <!--header-->
+    <div class="parallax" data-parallax="scroll" data-image-src="/images/img_head_cart.jpg" data-position-Y="center">
+        <div class="background-color">
+            <div class="container">
+                <div class="row fix-title-head">
+                    <div class="col-md-12 wow  fadeIn" data-wow-delay="0.5s" style="width: 100%;text-align: center">
+                        <span class="title-yellow-head">Delivery</span>
+                    </div>
+                    <div class="col-md-12 wow  bounceIn" data-wow-delay="1s" style="width: 100%;text-align: center">
+                        <h2 class=" title-h2-head ">FAST - FREE</h2>
+                    </div>
+                    <div class="col-md-12 wow  fadeInUp" data-wow-delay="1.5s" style="width: 100%;text-align: center">
+                        <p class="p-head">
+                            An unforgettable dining experience
+                            in the heart of Covent Garden, London. <br>
+                            Contemporary british menu, inspired by the
+                            traditions of Great Britain.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--container-->
+    <div class="background-container page-content" style="height: auto">
+        <div class="container">
+            <!--    table -->
+            <section class="reservation slideInUp">
+                <div class="status">
+                    <p>Your table is ready!</p>
+                </div>
+                <%- include('grid-table-cart') %>
+            </section>
+            <!--modal-->
+            <section class="check-out">
+                <div class="row">
+                    <div class="col-md-12 btn-checkout slideInLeft">
+                        <a style="font-size: 18px;box-shadow: none;" href="/menu"
+                            class="btn btn-outline-yellow">Shopping</a>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </div>
+    <%- include('footer') %>
+    <!--java-->
+    <script type="text/javascript" src="/lbs/mdBootstrap/js/jquery.js"></script>
+    <script type="text/javascript" src="/lbs/mdBootstrap/js/moment.js"></script>
+    <script type="text/javascript" src="/lbs/mdBootstrap/js/parallax.min.js"></script>
+    <script type="text/javascript" src="/lbs/mdBootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lbs/mdBootstrap/js/mdb.min.js"></script>
+    <script type="text/javascript" src="/lbs/mdBootstrap/js/anime.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            new WOW().init();
+        });
+
+    </script>
+    <!-- back on top-->
+    <script type="text/javascript">
+        function toTop() {
+            // document.documentElement.scrollTop = 0;
+            $('html,body').animate({
+                scrollTop: 0,
+            }, 700)
+        }
+    </script>
+
+</body>
+
+</html>

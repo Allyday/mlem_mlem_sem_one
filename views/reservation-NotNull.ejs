@@ -64,35 +64,16 @@
                             </div>
                         </div>
                     </div>
-                    <form action="/booking" method="post">
-                        <div class="form-input">
-                            <div class="col-md-6 fa-pull-left" style="z-index: 2">
-                                <input class="fix-input" required type="text" name="name" placeholder="Full Name">
-                                <input class="fix-input" required type="text" name="phone" placeholder="Phone Number">
-                                <input class="fix-input" required type="date" name="date" min="" value="" >
+                    <div class="thankyou">
+                        <div class="row">
+                            <div class="col-12">
+                                <h3>Thanks for trusting us.</h3>
                             </div>
-                            <div class="col-md-6 fa-pull-right" style="z-index: 2">
-                                <input class="fix-input" required type="email" name="email" placeholder="Email">
-                                <select required class="browser-default custom-select fix-input" name="people">
-                                    <option value>How many ?</option>
-                                    <option value="1">1 person</option>
-                                    <option value="2">2 person</option>
-                                    <option value="3">3 person</option>
-                                    <option value="4">4 person</option>
-                                    <option value="5">5 person</option>
-                                    <option value="6">6 person</option>
-                                    <option value="7">7 person</option>
-                                    <option value="8">8 person</option>
-                                    <option value="9">9 person</option>
-                                    <option value="10">10 person</option>
-                                </select>
-                                <input onchange="onChangeTime()" class="fix-input" required type="time" name="time" placeholder="Booking Time">
-                            </div>
-                            <div class="col-md-12 a-submit">
-                                <input class="btn-outline-yellow" type="submit" value="Book Your Table">
+                            <div class="col-12">
+                                <h4>You can review or modify the information <a href="/cart">here.</a></h4>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -186,6 +167,7 @@
     <script type="text/javascript">
         var todayDate =new Date();
         todayDate.setDate(todayDate.getDate()+1);
+        // console.log(moment(todayDate).format('YYYY-MM-DD'));
         var InputDate = $('input[type=date]');
         var attrTag = InputDate.attr(
             {
@@ -196,9 +178,6 @@
         // input time
 
         var InputTime = $('input[type=time]');
-        InputTime.attr({
-            'value': '11:00'
-        })
         function onChangeTime() {
             if (InputTime.val() <= '20:30' && InputTime.val() >= '09:00') {
                 console.log('ok con vợ');

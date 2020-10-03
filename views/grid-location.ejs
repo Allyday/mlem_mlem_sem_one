@@ -58,11 +58,10 @@
             var marker = new google.maps.Marker({
                 position: uluru,
                 map: map,
-                label: {
-                    text: "<%= e.TenCuaHang %>",
-                    color: "black"
+                icon: {
+                    url: 'https://mt.googleapis.com/vt/icon/name=icons/onion/SHARED-mymaps-container-bg_4x.png,icons/onion/SHARED-mymaps-container_4x.png,icons/onion/1651-pizza-slice_4x.png&highlight=ff000000,1A237E&scale=2.0',
+                    scaledSize: new google.maps.Size(30, 30), // scaled size
                 }
-
             });
         }
     </script>

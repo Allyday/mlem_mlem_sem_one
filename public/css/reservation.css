@@ -225,3 +225,18 @@
     text-align: center;
     margin-right: -30px;
 }
+.thankyou{
+    position: absolute;
+    top: 50%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+.thankyou a{
+    font-size: 1.5rem;
+    color: #f2b410;
+}
+.thankyou a:hover{
+    text-decoration-line: none;
+}

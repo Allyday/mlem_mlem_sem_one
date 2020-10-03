@@ -33,35 +33,9 @@
         </div>
     </div>
 
-    <!--icon-->
-    <!-- <div class="background-icon">
-        <div class="container">
-            <section class="effect-icon">
-                <div class="row">
-                    <div class="col-md-8   slideInLeft text-shiphang">
-                        <p>Super-FAST and FREE delivery</p>
-                    </div>
-                    <div class="col-md-4 div-shiphang   slideInLeft">
-                        <div class="fa-pull-right">
-                            <img id="icon" class="ship-hang" style="max-height: 200px"
-                                src="/images/sai-gon-ship-dich-vu-giao-hang-nhanh-1(1).png">
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div> -->
-
     <!--container-->
     <div class="background-container page-content" style="height: auto">
         <div class="container">
-            <!--    table -->
-            <section class="reservation slideInUp">
-                <div class="status">
-                    <p>Your table is ready!</p>
-                </div>
-                <%- include('grid-table-cart') %>
-            </section>
             <!--bag-->
             <%- include('grid-bag-cart') %>
             <!--modal-->
@@ -260,6 +234,7 @@
     <%- include('footer') %>
     <!--java-->
     <script type="text/javascript" src="/lbs/mdBootstrap/js/jquery.js"></script>
+    <script type="text/javascript" src="/lbs/mdBootstrap/js/moment.js"></script>
     <script type="text/javascript" src="/lbs/mdBootstrap/js/parallax.min.js"></script>
     <script type="text/javascript" src="/lbs/mdBootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lbs/mdBootstrap/js/mdb.min.js"></script>
@@ -268,7 +243,6 @@
         $(document).ready(function () {
             new WOW().init();
         });
-
     </script>
     <!-- back on top-->
     <script type="text/javascript">

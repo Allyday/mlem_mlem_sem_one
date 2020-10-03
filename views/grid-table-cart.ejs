@@ -1,0 +1,78 @@
+<%  dataTable.map( (e) => {%>
+<form>
+    <table class="table">
+        <thead class="grey lighten-2">
+            <tr>
+                <th scope="col" class="strong">Full name</th>
+                <th scope="col" class="strong">Phone</th>
+                <th scope="col" class="strong">Guests</th>
+                <th scope="col" class="strong">Date</th>
+                <th scope="col" class="strong">Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row" class="strong">
+                    <%= e.TenKH %>
+                    <input type="hidden" name="TenKH" value="<%= e.TenKH %>">
+                </th>
+                <td class="strong"><%= e.Tel %></td>
+                <td class="strong">
+                    <button onclick="this.parentNode.querySelector('input[name=soNguoi]').stepDown()"
+                            class="minus" type="button">-</button>
+                    <input class="quantity" min="1" max="15" name="soNguoi" value="<%= e.SoNguoi %>" type="number">
+                    <button onclick="this.parentNode.querySelector('input[name=soNguoi]').stepUp()"
+                            class="plus" type="button">+</button>
+                </td>
+                <td class="strong">
+                    <input type="date" required name="date" min="" >
+                </td>
+                <td class="strong">
+                    <input class="fix-input" required type="time" name="time" style=" width: 150px;" onchange="onChangeTime()">
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <div class="row" id="btn-reservation">
+        <div class="col-md-6 btn-checkout">
+            <button type="submit" class="tag-a btn-outline-yellow" formaction="/updata-table" formmethod="post">Update</button>
+        </div>
+        <div class="col-md-6 btn-checkout">
+            <button type="submit" class="tag-a btn-outline-black" formaction="/delete-table" formmethod="post">Remove</button>
+        </div>
+    </div>
+</form>
+
+<!--    date time-->
+<script type="text/javascript" src="/lbs/mdBootstrap/js/moment.js"></script>
+<script type="text/javascript" src="/lbs/mdBootstrap/js/moment-timezone-with-data.js"></script>
+<script type="text/javascript">
+    var valueDate = new Date("<%= e.Ngay %>");
+    var todayDate = new Date();
+    todayDate.setDate(todayDate.getDate()+1);
+
+    var InputDate = $('input[type=date]');
+    var attrTag = InputDate.attr(
+        {
+            'value': moment(valueDate).format('YYYY-MM-DD'),
+            'min': moment(todayDate).format('YYYY-MM-DD')
+        });
+
+    // input time
+    var InputTime = $('input[type=time]');
+    InputTime.attr({
+        'value': '<%= e.Gio %>'
+    })
+    function onChangeTime() {
+        if (InputTime.val() <= '20:30' && InputTime.val() >= '09:00') {
+            console.log('ok con vợ');
+        } else {
+            alert('Chúng tôi nhận đặt lịch trước từ 09:00 đến 20:30 ' +
+                ' Giờ mặc định chúng tôi đặt là 11:00 !!!');
+            InputTime.val('11:00');
+        }
+    }
+</script>
+
+<% }) %>

@@ -1,0 +1,73 @@
+<section class="table-sp ">
+    <form method="post">
+        <div class="status">
+            <p>Your cart</p>
+        </div>
+        <div class="row">
+            <div class="col-md-9   slideInLeft">
+                <table class="table">
+                    <thead class="grey lighten-2">
+                    <tr>
+                        <th scope="col" class="strong"></th>
+                        <th scope="col" class="strong">Name</th>
+                        <th scope="col" class="strong">Quantity</th>
+                        <th scope="col" class="strong">Unit price</th>
+                        <th scope="col" class="strong">Total</th>
+                        <th scope="col"> </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                <% dataBag.map((e) => { %>
+                    <tr>
+                        <th scope="row" class="img-table"><img src="<%= e.Anh %>"></th>
+                        <td class="strong"><%= e.TenSP %></td>
+                        <td style="justify-content: center;display: flex">
+                            <input class="quantity" min="1" max="15" name="soLuong" value="<%= e.SoLuong %>" type="number">
+                        </td>
+                        <td class="strong"><%=  new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(e.Gia); %></td>
+                        <td class="strong">$ 10</td>
+                        <td class="strong">
+                            <button class="tag-a btn-outline-yellow" formaction="#!">Update</button>
+                            <button type="button" class="tag-a btn-outline-black">Remove</button>
+                        </td>
+                    </tr>
+                <% }) %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-3   slideInRight" style="background: #80808026;padding-top: 30px">
+                <!--  collapse-->
+                <p style="cursor: pointer;color:#F2B410 " data-toggle="collapse" href="#coupon"
+                   aria-expanded="false" aria-controls="coupon">
+                    USE COUPON CODE
+                </p>
+                <div class="collapse" id="coupon" style="margin-bottom: 20px">
+                    <div class="md-4">
+                        <label>Enter your coupon here</label>
+                        <input type="text" name="coupon" class="fix-input form-control m-md-1"
+                               placeholder="your coupon here">
+                    </div>
+                    <button style="margin-top: 10px" type="button"
+                            class="fix-btn btn-outline-yellow">Apply</button>
+                </div>
+                <!--    table check out-->
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <td>Sub-total:</td>
+                        <td class="text-right">$ 20</td>
+                    </tr>
+                    <tr>
+                        <td>VAT (10%):</td>
+                        <td class="text-right">$ 2</td>
+                    </tr>
+                    <tr>
+                        <td>Total:</td>
+                        <td class="text-right">$ 22</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</section>

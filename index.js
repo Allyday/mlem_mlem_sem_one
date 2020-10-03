@@ -112,11 +112,17 @@ app.get('/search', async (req,res) => {
 
 //reservation
 app.get('/reservation', (req, res) => {
-    let sql_text = `select top 3 * from T2005E_mlem_DanhMuc ORDER BY ID ASC;`
+    let sql_text = `select top 3 * from T2005E_mlem_DanhMuc ORDER BY ID ASC; `+
+                    ` SELECT * FROM T2005E_mlem_Bookings;`
     db.query(sql_text, (err,rows) => {
         if (err) res.send(err);
-        else res.render('reservation', {
-          danhmucs: rows.recordset
+        else if (rows.recordsets[1] == 'NULL' || rows.recordsets[1] == '') {
+            res.render('reservation', {
+                danhmucs: rows.recordsets[0]
+            });
+        }
+        else res.render('reservation-NotNull', {
+          danhmucs: rows.recordsets[0]
         });
     });
 });
@@ -128,8 +134,8 @@ app.post('/booking',async (req,res) => {
     let email = req.body.email ;
     let time = req.body.time ;
 
-    let sql_text = `INSERT INTO T2005E_mlem_Bookings(TenKH,Tel,SoNguoi,Ngay,Gio,Email) `+
-                    `VALUES (N'${name}','${phone}',${people} ,'${date}', '${time}', '${email}');`;
+    let sql_text = `INSERT INTO T2005E_mlem_Bookings(TenKH,Tel,SoNguoi,Ngay,Email,Gio) `+
+                    `VALUES (N'${name}','${phone}',${people} ,'${date}', '${email}', '${time}');`;
     try {
      await db.query(sql_text);
     }catch (err) {
@@ -169,7 +175,64 @@ app.get('/thanh-pho', (req,res) => {
       });
     });
 });
+
 //cart
 app.get('/cart', (req, res) => {
-  res.render('cart');
+    let sql_text = `SELECT * FROM T2005E_mlem_Bookings; `+
+                    `SELECT * FROM T2005E_mlem_MonAn`;
+    db.query(sql_text, (err,rows) => {
+        if (err) res.send(err);
+        else  if ((rows.recordsets[0] == 'NULL' || rows.recordsets[0] == '') && (rows.recordsets[1] == 'NULL' || rows.recordsets[1] == '') ) {
+            res.render('cart-Null-Both');
+        }
+        else if (rows.recordsets[0] == 'NULL' || rows.recordsets[0] == '') {
+            res.render('cart-Null-Table', {
+                dataBag: rows.recordsets[1]
+            });
+        }
+        else if (rows.recordsets[1] == 'NULL' || rows.recordsets[1] == '') {
+            res.render('cart-Null-Bag', {
+                dataTable: rows.recordsets[0]
+            });
+            // res.send(rows.recordsets[0])
+        }
+        else res.render('cart', {
+                dataTable: rows.recordsets[0],
+                dataBag: rows.recordsets[1]
+            })
+    });
 });
+app.post('/updata-table',async (req,res) => {
+    let SoNguoi = req.body.soNguoi;
+    let Ngay = req.body.date;
+    let Time = req.body.time;
+    let TenKH = req.body.TenKH;
+    let sql_text = `UPDATE T2005E_mlem_Bookings SET SoNguoi= '${SoNguoi}', Ngay= '${Ngay}', Gio= '${Time}' WHERE TenKH LIKE N'%${TenKH}%';`;
+    try {
+        await db.query(sql_text);
+    }catch (e) {
+    }
+    res.redirect('/cart');
+})
+app.post('/delete-table',async (req,res) => {
+    let TenKH = req.body.TenKH;
+    let sql_text = `delete from T2005E_mlem_Bookings WHERE TenKH LIKE N'%${TenKH}%'; DBCC CHECKIDENT ('T2005E_mlem_Bookings', RESEED, 0);`;
+    try {
+        await db.query(sql_text);
+    }catch (e) {
+    }
+    res.redirect('/cart');
+})
+
+
+
+// test
+app.get('/null-table' ,(req,res) => {
+    res.render('cart-Null-Table');
+})
+app.get('/null-bag' ,(req,res) => {
+    res.render('cart-Null-Bag');
+})
+app.get('/null-both' ,(req,res) => {
+    res.render('cart-Null-Both');
+})
