@@ -157,7 +157,7 @@ app.post('/save-comment',async (req,res) => {
     res.redirect('/contact');
 });
 app.get('/contact', (req, res) => {
-    let sql_text = `select top 3 * from T2005E_mlem_ViTri;`;
+    let sql_text = `select top 1 * from T2005E_mlem_ViTri;`;
     db.query(sql_text, (err,rows) => {
       if (err) res.send(err);
       else res.render('contact',{
@@ -194,7 +194,6 @@ app.get('/cart', (req, res) => {
             res.render('cart-Null-Bag', {
                 dataTable: rows.recordsets[0]
             });
-            // res.send(rows.recordsets[0])
         }
         else res.render('cart', {
                 dataTable: rows.recordsets[0],
@@ -213,7 +212,7 @@ app.post('/updata-table',async (req,res) => {
     }catch (e) {
     }
     res.redirect('/cart');
-})
+});
 app.post('/delete-table',async (req,res) => {
     let TenKH = req.body.TenKH;
     let sql_text = `delete from T2005E_mlem_Bookings WHERE TenKH LIKE N'%${TenKH}%'; DBCC CHECKIDENT ('T2005E_mlem_Bookings', RESEED, 0);`;
@@ -222,17 +221,44 @@ app.post('/delete-table',async (req,res) => {
     }catch (e) {
     }
     res.redirect('/cart');
+});
+
+app.post('/update-order',async (req,res) => {
+    let SoLuong = req.body.soLuong;
+    let idOrder = req.body.IDOrder;
+    let sql_text = `UPDATE T2005E_mlem_MonAn SET SOLUONG = ${SoLuong} where ID LIKE ${idOrder} ;`;
+    try {
+        await db.query(sql_text);
+    }catch (e) {
+        console.log(e);
+    }
+    res.redirect('/cart');
+});
+
+app.post('/delete-order',async (req,res) => {
+    let idOrder = req.body.IDOrder;
+    let sql_text = `UPDATE T2005E_mlem_MonAn SET SOLUONG = 0 where ID LIKE ${idOrder} ;`;
+    try {
+        await db.query(sql_text);
+    }catch (e) {
+        console.log(e);
+    }
+    res.redirect('/cart');
+});
+
+//menu order
+app.post('/order',async (req,res) => {
+    let order = (req.body.soLuong) + 1;
+    let idOrder = req.body.IDOrder;
+    let sql_text = `UPDATE T2005E_mlem_MonAn SET SOLUONG = ${order} where ID LIKE ${idOrder} ;`;
+    try {
+        await db.query(sql_text);
+    }catch (e) {
+        console.log(e);
+    }
+    res.redirect('/menu');
 })
 
 
 
-// test
-app.get('/null-table' ,(req,res) => {
-    res.render('cart-Null-Table');
-})
-app.get('/null-bag' ,(req,res) => {
-    res.render('cart-Null-Bag');
-})
-app.get('/null-both' ,(req,res) => {
-    res.render('cart-Null-Both');
-})
+

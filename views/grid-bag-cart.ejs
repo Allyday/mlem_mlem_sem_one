@@ -1,73 +1,102 @@
-<section class="table-sp ">
-    <form method="post">
-        <div class="status">
-            <p>Your cart</p>
-        </div>
-        <div class="row">
-            <div class="col-md-9   slideInLeft">
-                <table class="table">
-                    <thead class="grey lighten-2">
-                    <tr>
-                        <th scope="col" class="strong"></th>
-                        <th scope="col" class="strong">Name</th>
-                        <th scope="col" class="strong">Quantity</th>
-                        <th scope="col" class="strong">Unit price</th>
-                        <th scope="col" class="strong">Total</th>
-                        <th scope="col"> </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                <% dataBag.map((e) => { %>
-                    <tr>
-                        <th scope="row" class="img-table"><img src="<%= e.Anh %>"></th>
-                        <td class="strong"><%= e.TenSP %></td>
-                        <td style="justify-content: center;display: flex">
-                            <input class="quantity" min="1" max="15" name="soLuong" value="<%= e.SoLuong %>" type="number">
-                        </td>
-                        <td class="strong"><%=  new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(e.Gia); %></td>
-                        <td class="strong">$ 10</td>
-                        <td class="strong">
-                            <button class="tag-a btn-outline-yellow" formaction="#!">Update</button>
-                            <button type="button" class="tag-a btn-outline-black">Remove</button>
-                        </td>
-                    </tr>
-                <% }) %>
-                    </tbody>
-                </table>
+
+    <section class="table-sp ">
+        <form >
+            <div class="status">
+                <p>Your cart</p>
             </div>
-            <div class="col-md-3   slideInRight" style="background: #80808026;padding-top: 30px">
-                <!--  collapse-->
-                <p style="cursor: pointer;color:#F2B410 " data-toggle="collapse" href="#coupon"
-                   aria-expanded="false" aria-controls="coupon">
-                    USE COUPON CODE
-                </p>
-                <div class="collapse" id="coupon" style="margin-bottom: 20px">
-                    <div class="md-4">
-                        <label>Enter your coupon here</label>
-                        <input type="text" name="coupon" class="fix-input form-control m-md-1"
-                               placeholder="your coupon here">
-                    </div>
-                    <button style="margin-top: 10px" type="button"
-                            class="fix-btn btn-outline-yellow">Apply</button>
+            <div class="row">
+                <div class="col-md-9   slideInLeft">
+                    <table class="table">
+                        <thead class="grey lighten-2">
+                        <tr>
+                            <th scope="col" class="strong"></th>
+                            <th scope="col" class="strong">Name</th>
+                            <th scope="col" class="strong">Quantity</th>
+                            <th scope="col" class="strong">price</th>
+                            <th scope="col" class="strong">Total</th>
+                            <th scope="col" style="width: 120px"> </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+<% dataBag.map((e) => { %>
+                        <tr <% if (e.SOLUONG === 0) { %> class="d-none" <% } %> >
+                            <th scope="row" class="img-table"><img src="<%= e.Anh %>"></th>
+                            <td class="strong">
+                                <%= e.TenSP %>
+                                <input type="hidden" name="IDOrder" value="<%= e.ID %>" >
+                            </td>
+                            <td style="justify-content: center;display: flex">
+                                <input class="quantity" min="1" max="15" name="soLuong" value="<%= e.SOLUONG %>" type="number" required>
+                            </td>
+                            <td class="strong text-lowercase"><span class="Price"><%= e.Gia %></span> đ</td>
+                            <td class="strong text-lowercase"><span class="Subtotal">10</span> đ</td>
+                            <td class="strong">
+                                <button formaction="/update-order" formmethod="post" type="submit" class="tag-a btn-outline-yellow" style="margin-bottom: 10px">Update</button>
+                                <button formaction="/delete-order" formmethod="post"  type="submit" class="tag-a btn-outline-black">Remove</button>
+                            </td>
+                        </tr>
+<% }) %>
+                        </tbody>
+                    </table>
                 </div>
-                <!--    table check out-->
-                <table class="table">
-                    <tbody>
-                    <tr>
-                        <td>Sub-total:</td>
-                        <td class="text-right">$ 20</td>
-                    </tr>
-                    <tr>
-                        <td>VAT (10%):</td>
-                        <td class="text-right">$ 2</td>
-                    </tr>
-                    <tr>
-                        <td>Total:</td>
-                        <td class="text-right">$ 22</td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div class="col-md-3   slideInRight" style="background: #80808026;padding-top: 30px">
+                    <!--  collapse-->
+                    <p style="cursor: pointer;color:#F2B410 " data-toggle="collapse" href="#coupon"
+                       aria-expanded="false" aria-controls="coupon">
+                        USE COUPON CODE
+                    </p>
+                    <div class="collapse" id="coupon" style="margin-bottom: 20px">
+                        <div class="md-4">
+                            <label>Enter your coupon here</label>
+                            <input type="text" name="coupon" class="fix-input form-control m-md-1"
+                                   placeholder="your coupon here">
+                        </div>
+                        <button style="margin-top: 10px" type="button"
+                                class="fix-btn btn-outline-yellow">Apply</button>
+                    </div>
+                    <!--    table check out-->
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <td>Sub-total:</td>
+                            <td class="text-right"><span class="Subsum"></span> đ</td>
+                        </tr>
+                        <tr>
+                            <td>VAT (10%):</td>
+                            <td class="text-right"><span class="VAT"></span> đ</td>
+                        </tr>
+                        <tr>
+                            <td>Total:</td>
+                            <td class="text-right"><span class="Total"></span> đ</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-    </form>
-</section>
+        </form>
+    </section>
+    <script type="text/javascript">
+        var soluong = $('input[name=soLuong]');
+        var gia = $('.Price');
+        var Subtotal = $('.Subtotal');
+
+        var Subsum = $('.Subsum');
+        var VAT = $('.VAT');
+        var Total = $('.Total');
+
+        var Sum = 0;
+
+        for (let i = 0; i<= soluong.length; i++) {
+            soluong[i] = parseInt(soluong[i].value);
+            gia[i] = parseFloat(gia[i].innerText);
+            Sum += (soluong[i] * gia[i]);
+
+            Subtotal[i].innerText = soluong[i] * gia[i];
+
+            Subsum[0].innerText = Sum;
+            VAT[0].innerText = parseFloat(Sum/10).toFixed(2);
+            Total[0].innerText = Sum + (Sum/10);
+
+        }
+    </script>
+

@@ -93,6 +93,7 @@
                                 <option selected>Select country</option>
                                 <option value="VIETNAM">VIETNAM</option>
                                 <option value="USA">USA</option>
+                                <option value="India">India</option>
                                 <option value="ITALY" >ITALY</option>
                             </select>
                         </div>
@@ -100,12 +101,14 @@
                     <div class="col-md-5">
                         <div class="selected">
                             <select id="area" class="browser-default custom-select custom-select-lg mb-3" name="city">
+                            <% vitris.map((e) => { %>
                                 <option selected>Select area</option>
-                                <option value="hanoi">Hà Nội</option>
-                                <option value="hcm">Hồ Chí Minh City</option>
-                                <option value="washington">Washington</option>
-                                <option value="california">California</option>
-                                <option value="roma">Roma</option>
+                                <option value="hanoi" <% if (e.ThanhPho == 'hanoi') { %> selected <% } %> >Hà Nội</option>
+                                <option value="hcm" <% if (e.ThanhPho == 'hcm') { %> selected <% } %>>Hồ Chí Minh City</option>
+                                <option value="washington" <% if (e.ThanhPho == 'washington') { %> selected <% } %>>Washington</option>
+                                <option value="delhi" <% if (e.ThanhPho == 'delhi') { %> selected <% } %>>New Delhi</option>
+                                <option value="roma" <% if (e.ThanhPho == 'roma') { %> selected <% } %> >Roma</option>
+                            <%  }) %>
                             </select>
                         </div>
                     </div>
@@ -177,33 +180,39 @@
             // console.log($("#country option")[2].value);
             if ($("#country option:selected").val() === 'USA') {
                 $("#area option").map(function () {
-                    // $(this).attr('disabled', true);
                     if ($(this).val() === 'washington') {
-                        $(this).removeAttr('disabled', true);
-                    } else if ($(this).val() === 'california') {
-                        $(this).removeAttr('disabled', true);
+                        $(this).css('display','block');
                     } else {
-                        $(this).attr('disabled', true);
+                        $(this).css('display','none');
                     }
                 })
+            }
+            if ($("#country option:selected").val() ==='India') {
+                $("#area option").map(function () {
+                    if ($(this).val() === 'delhi') {
+                        $(this).css('display', 'block');
+                    } else {
+                        $(this).css('display','none');
+                    }
+                });
             }
             if ($("#country option:selected").val() === 'VIETNAM') {
                 $("#area option").map(function () {
                     if ($(this).val() === 'hanoi') {
-                        $(this).removeAttr('disabled', true);
+                        $(this).css('display', 'block');
                     } else if ($(this).val() === 'hcm') {
-                        $(this).removeAttr('disabled', true);
+                        $(this).css('display', 'block');
                     } else {
-                        $(this).attr('disabled', true);
+                        $(this).css('display','none');
                     }
                 })
             }
             if ($("#country option:selected").val() === 'ITALY') {
                 $("#area option").map(function () {
                     if ($(this).val() === 'roma') {
-                        $(this).removeAttr('disabled', true);
+                        $(this).css('display', 'block');
                     } else {
-                        $(this).attr('disabled', true);
+                        $(this).css('display','none');
                     }
                 })
             }
