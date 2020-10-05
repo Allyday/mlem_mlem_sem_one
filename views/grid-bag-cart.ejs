@@ -1,6 +1,6 @@
 
     <section class="table-sp ">
-        <form >
+<!--        <form >-->
             <div class="status">
                 <p>Your cart</p>
             </div>
@@ -19,22 +19,24 @@
                         </thead>
                         <tbody>
 <% dataBag.map((e) => { %>
-                        <tr <% if (e.SOLUONG === 0) { %> class="d-none" <% } %> >
+    <form>
+                        <tr>
                             <th scope="row" class="img-table"><img src="<%= e.Anh %>"></th>
                             <td class="strong">
                                 <%= e.TenSP %>
-                                <input type="hidden" name="IDOrder" value="<%= e.ID %>" >
+                                <input type="hidden" name="IDmonan" value="<%= e.ID %>" >
                             </td>
                             <td style="justify-content: center;display: flex">
                                 <input class="quantity" min="1" max="15" name="soLuong" value="<%= e.SOLUONG %>" type="number" required>
                             </td>
-                            <td class="strong text-lowercase"><span class="Price"><%= e.Gia %></span> đ</td>
-                            <td class="strong text-lowercase"><span class="Subtotal">10</span> đ</td>
+                            <td class="strong text-lowercase"><span class="Price"><%= e.Gia %></span> k</td>
+                            <td class="strong text-lowercase"><span class="Subtotal">10</span> k</td>
                             <td class="strong">
                                 <button formaction="/update-order" formmethod="post" type="submit" class="tag-a btn-outline-yellow" style="margin-bottom: 10px">Update</button>
                                 <button formaction="/delete-order" formmethod="post"  type="submit" class="tag-a btn-outline-black">Remove</button>
                             </td>
                         </tr>
+     </form>
 <% }) %>
                         </tbody>
                     </table>
@@ -59,21 +61,21 @@
                         <tbody>
                         <tr>
                             <td>Sub-total:</td>
-                            <td class="text-right"><span class="Subsum"></span> đ</td>
+                            <td class="text-right"><span class="Subsum"></span> k</td>
                         </tr>
                         <tr>
                             <td>VAT (10%):</td>
-                            <td class="text-right"><span class="VAT"></span> đ</td>
+                            <td class="text-right"><span class="VAT"></span> k</td>
                         </tr>
                         <tr>
                             <td>Total:</td>
-                            <td class="text-right"><span class="Total"></span> đ</td>
+                            <td class="text-right"><span class="Total"></span> k</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-        </form>
+<!--        </form>-->
     </section>
     <script type="text/javascript">
         var soluong = $('input[name=soLuong]');
@@ -95,7 +97,7 @@
 
             Subsum[0].innerText = Sum;
             VAT[0].innerText = parseFloat(Sum/10).toFixed(2);
-            Total[0].innerText = Sum + (Sum/10);
+            Total[0].innerText = parseFloat (Sum + (Sum/10)).toFixed(3);
 
         }
     </script>

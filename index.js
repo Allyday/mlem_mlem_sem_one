@@ -56,14 +56,14 @@ app.get('/menu', (req, res) => {
 
 // blog
 app.get('/blog',async (req, res) => {
-  let sql_text ="select * from T2005E_mlem_DanhMuc; " +
-      " select top 6 * from T2005E_mlem_Blog; ";
+  let sql_text ="select * from T2005E_mlem_MonAn; " +
+      " select top 4 * from T2005E_mlem_Blog; ";
   let data = {
-    danhmucs: [],
+    MonAncs: [],
     articles: []
   };
   await db.query(sql_text).then(rows =>{
-    data.danhmucs = rows.recordsets[0] ;
+    data.MonAncs = rows.recordsets[0] ;
     data.articels = rows.recordsets[1] ;
   }).catch(err => {
     console.log(err.message);
@@ -71,38 +71,34 @@ app.get('/blog',async (req, res) => {
   res.render('blog',data);
 });
 app.get('/blog/:id', async (req, res) => {
-  let DanhMucID = req.params.id;
-  let sql_text = `select * from T2005E_mlem_DanhMuc; `+
-      `select * from T2005E_mlem_Blog where MonAnID `+
-      ` IN (select ID from T2005E_mlem_MonAn where LoaiID `+
-      ` IN (select ID from T2005E_mlem_DanhMuc WHERE ID LIKE '${DanhMucID}' ));`;
+  let MonAnID = req.params.id;
+  let sql_text = `select * from T2005E_mlem_MonAn; `+
+      `select * from T2005E_mlem_Blog where MonAnID LIKE '${MonAnID}' ;`;
   let data = {
-    danhmucs: [],
+    MonAncs: [],
     articles: []
   };
 
   await db.query(sql_text).then(rows =>{
-    data.danhmucs = rows.recordsets[0],
-        data.articels = rows.recordsets[1]
+    data.MonAncs = rows.recordsets[0],
+    data.articels = rows.recordsets[1]
   }).catch(err => {
   })
-  res.render('blog',data);
+  res.render('blog-id',data);
 })
 app.get('/search', async (req,res) => {
   let keyword = req.query.search;
-  let sql_text = `select * from T2005E_mlem_DanhMuc; `+
+  let sql_text = `select * from T2005E_mlem_MonAn; `+
       `SELECT T2005E_mlem_Blog.* FROM T2005E_mlem_Blog `+
-      ` LEFT JOIN T2005E_mlem_MonAn ON T2005E_mlem_Blog.MonAnID = T2005E_mlem_MonAn.ID `+
-      ` LEFT JOIN T2005E_mlem_DanhMuc ON T2005E_mlem_MonAn.LoaiID = T2005E_mlem_DanhMuc.ID`+
-      ` WHERE T2005E_mlem_DanhMuc.Ten LIKE N'%${keyword}%' `+
-      ` OR T2005E_mlem_MonAn.TenSP LIKE N'%${keyword}%' `+
+      ` INNER JOIN T2005E_mlem_MonAn ON T2005E_mlem_Blog.MonAnID = T2005E_mlem_MonAn.ID `+
+      ` WHERE T2005E_mlem_MonAn.TenSP LIKE N'%${keyword}%' `+
       ` OR T2005E_mlem_Blog.TieuDe LIKE N'%${keyword}%'; `;
   let data = {
-    danhmucs: [],
-    articles: []
+        MonAncs: [],
+        articles: []
   };
   await db.query(sql_text).then(rows => {
-    data.danhmucs = rows.recordsets[0],
+        data.MonAncs = rows.recordsets[0],
         data.articels = rows.recordsets[1]
   }).catch(err => {
     // console.log(err.message);
@@ -179,7 +175,7 @@ app.get('/thanh-pho', (req,res) => {
 //cart
 app.get('/cart', (req, res) => {
     let sql_text = `SELECT * FROM T2005E_mlem_Bookings; `+
-                    `SELECT * FROM T2005E_mlem_MonAn`;
+                    `SELECT * FROM T2005E_mlem_MonAn where SOLUONG > 0`;
     db.query(sql_text, (err,rows) => {
         if (err) res.send(err);
         else  if ((rows.recordsets[0] == 'NULL' || rows.recordsets[0] == '') && (rows.recordsets[1] == 'NULL' || rows.recordsets[1] == '') ) {
@@ -225,8 +221,8 @@ app.post('/delete-table',async (req,res) => {
 
 app.post('/update-order',async (req,res) => {
     let SoLuong = req.body.soLuong;
-    let idOrder = req.body.IDOrder;
-    let sql_text = `UPDATE T2005E_mlem_MonAn SET SOLUONG = ${SoLuong} where ID LIKE ${idOrder} ;`;
+    let idOrder = req.body.IDmonan;
+    let sql_text = `update T2005E_mlem_MonAn set  SOLUONG = ${SoLuong} where ID = ${idOrder} ;`;
     try {
         await db.query(sql_text);
     }catch (e) {
@@ -236,7 +232,7 @@ app.post('/update-order',async (req,res) => {
 });
 
 app.post('/delete-order',async (req,res) => {
-    let idOrder = req.body.IDOrder;
+    let idOrder = req.body.IDmonan;
     let sql_text = `UPDATE T2005E_mlem_MonAn SET SOLUONG = 0 where ID LIKE ${idOrder} ;`;
     try {
         await db.query(sql_text);

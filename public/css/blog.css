@@ -143,6 +143,7 @@ form {
     padding: 0 15px;
     position: absolute;
     bottom: 0;
+    right: 5%;
     cursor: pointer;
     transition: 500ms;
 }

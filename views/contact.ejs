@@ -85,20 +85,20 @@
     <!--location-->
     <div class="background-local">
         <div class="container">
-            <form action="/thanh-pho" method="get">
+            <form action="/thanh-pho" method="get" id="FormChooseCity">
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                         <div class="selected">
                             <select id="country" onchange="changeCountry()" class="browser-default custom-select custom-select-lg mb-3">
                                 <option selected>Select country</option>
                                 <option value="VIETNAM">VIETNAM</option>
                                 <option value="USA">USA</option>
-                                <option value="India">India</option>
+                                <option value="India">INDIA</option>
                                 <option value="ITALY" >ITALY</option>
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                         <div class="selected">
                             <select id="area" class="browser-default custom-select custom-select-lg mb-3" name="city">
                             <% vitris.map((e) => { %>
@@ -112,11 +112,6 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                            <div class="selected">
-                                <button type="submit" class="btn fixBtn2">Update</button>
-                            </div>
-                        </div>
                 </div>
             </form>
             <%- include('grid-location') %>
@@ -217,6 +212,23 @@
                 })
             }
         }
+    </script>
+    <script type="text/javascript">
+        $('#FormChooseCity').submit((event) => {
+            event.stopImmediatePropagation();
+        });
+
+        $('#area').on('change', () => {
+            let count =0;
+            let slow = setTimeout( () => {
+                count++;
+                $('#FormChooseCity').submit();
+                if (count === 1) {
+                    count = 0;
+                    clearTimeout(slow);
+                }
+            },1500);
+        });
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaj0mHlR-keu-9hsR6d-gB0L9BclG04rk&callback=initMap">
     </script>
