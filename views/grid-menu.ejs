@@ -1,0 +1,41 @@
+<% danhmucs.map( (d) => { %>
+    <div class="col-md-6 margin-bottom-30">
+        <h2 class="menu-section-title"><%= d.Ten %></h2>
+        <% menus.map((e) => { %>
+            <% if (d.ID === e.LoaiID) { %>
+            <div class="menu-wrapper">
+                <div class="menu-image" style="background-image: url('<%= e.Anh %>')">
+                    <div class="hover-order text-center">
+                        <form action="/order" method="post">
+                            <input type="hidden" name="IDOrder" value="<%= e.ID %>">
+                            <input type="hidden" name="soLuong" value="<%= e.SOLUONG %>" >
+                            <button type="button" onclick="AddCart(...)"><i class="fas fa-shopping-cart"></i></button>
+                        </form>
+                    </div>
+<!--                    <img src="" class="width-100">-->
+                </div>
+                <div class="menu-description">
+                    <div class="menu-list">
+                        <h5><%= e.TenSP %></h5>
+                        <p class="price"><%=  new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(e.Gia); %></p>
+                        <span class="menu-dot-line"></span>
+                    </div>
+                    <p class="menu-ingredients"><%= e.Mota %></p>
+                </div>
+            </div>
+                <% }%>
+        <% }) %>
+    </div>
+<% })%>
+<script>
+    function AddCart(id,name,qty,price,image) {
+        const p = {
+            name:name,
+
+        }
+        let cart = window.sessionStorage.getItem("cart");
+        cart = cart!==null?cart:[];
+        cart.push(p);
+        window.sessionStorage.setItem("cart",cart);
+    }
+</script>

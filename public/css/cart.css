@@ -39,7 +39,8 @@
     font-weight: 700;
 }
 
-.p-head {
+.p-head{
+    font-family: Lora, serif;
     font-size: 18px;
     line-height: 30px;
     color: #eee;
@@ -221,8 +222,11 @@ input[type=date]:focus,
     width: 150px;
 }
 
-.img-table>img {
+.fix-imgs {
+    height: 80px;
     width: 100%;
+    background-position: center center;
+    background-size: cover;
 }
 
 .tag-a {

@@ -50,13 +50,21 @@ body {
 /*end head*/
 .section-white {
     background-color: #fff;
-    padding: 90px 0;
+    padding: 60px 0;
 }
 
-/*.container {*/
-/*    width: 1170px;*/
-/*}*/
-
+.notice{
+    font-family: 'Montserrat', sans-serif;
+    background-color:#eeeeee;
+    padding: 40px 0;
+}
+.notice a {
+    color: #f2b410;
+}
+.notice a:hover{
+    color: #dca300;
+    text-decoration-line: none;
+}
 .row {
     margin-right: -15px;
     margin-left: -15px;
@@ -84,6 +92,7 @@ h2.menu-section-title::after {
 }
 
 .menu-wrapper {
+    width: 100%;
     display: inline-block;
     padding-right: 20px;
     margin-bottom: 10px;
@@ -92,6 +101,9 @@ h2.menu-section-title::after {
     position: relative;
     float: left;
     width: 20%;
+    height: 80px;
+    background-position: center center;
+    background-size: cover;
 }
 .menu-wrapper:hover .hover-order{
     opacity: 1;
@@ -105,11 +117,15 @@ h2.menu-section-title::after {
     position: absolute;
     transition: all 500ms;
 }
-.hover-order>a,
-.hover-order>a:hover{
+.hover-order button,
+.hover-order button:hover{
+    background: transparent;
+    border: none;
+    width: 100%;
+    height: 100%;
     color: #f2b410;
 }
-.hover-order>a>i{
+.hover-order button>i{
     margin-top: 20px;
     font-size: 40px;
 }

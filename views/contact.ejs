@@ -90,7 +90,7 @@
                     <div class="col-md-6">
                         <div class="selected">
                             <select id="country" onchange="changeCountry()" class="browser-default custom-select custom-select-lg mb-3">
-                                <option selected>Select country</option>
+                                <option selected disabled>Select country</option>
                                 <option value="VIETNAM">VIETNAM</option>
                                 <option value="USA">USA</option>
                                 <option value="India">INDIA</option>
@@ -102,7 +102,6 @@
                         <div class="selected">
                             <select id="area" class="browser-default custom-select custom-select-lg mb-3" name="city">
                             <% vitris.map((e) => { %>
-                                <option selected>Select area</option>
                                 <option value="hanoi" <% if (e.ThanhPho == 'hanoi') { %> selected <% } %> >Hà Nội</option>
                                 <option value="hcm" <% if (e.ThanhPho == 'hcm') { %> selected <% } %>>Hồ Chí Minh City</option>
                                 <option value="washington" <% if (e.ThanhPho == 'washington') { %> selected <% } %>>Washington</option>

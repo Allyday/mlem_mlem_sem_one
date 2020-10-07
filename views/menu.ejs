@@ -35,162 +35,25 @@
         </div>
     </div>
 
-    <!-- xinchao123 -->
+    <!-- menu  -->
+    <% SOMONORDER.map((d) => { %>
+        <% if (d.SoMonOrder != 0) { %>
+            <section class="notice">
+                <div class="container">
+                    <div class="col-md-12">
+                        <h4>You have <%= d.SoMonOrder %> dish in <a href="/cart">your bag !</a></h4>
+                    </div>
+                </div>
+            </section>
+        <% } %>
+    <% }) %>
+
     <section class="section-white">
-        <!--        begin container-->
         <div class="container">
-            <!--            begin row-->
             <div class="row">
-                <div class="col-md-6">
-                    <h2 class="menu-section-title">PIZZAS</h2>
-                    <div class="menu-wrapper">
-                        <div class="menu-image">
-                            <div class="hover-order text-center">
-                                <a href="#!"><i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                            <img src="/images/pizza2.jpg" class="width-100">
-                        </div>
-                        <div class="menu-description">
-                            <div class="menu-list">
-                                <h5>CHEESE & TOMATO</h5>
-                                <p class="price">$10.00</p>
-                                <span class="menu-dot-line"></span>
-                            </div>
-                            <p class="menu-ingredients">Cheese & tomato</p>
-                        </div>
-                    </div>
-                    <div class="menu-wrapper">
-                        <div class="menu-image">
-                            <div class="hover-order text-center">
-                                <a href="#!"><i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                            <img src="/images/pizza2.jpg" class="width-100">
-                        </div>
-                        <div class="menu-description">
-                            <div class="menu-list">
-                                <h5>BBQ BEAST</h5>
-                                <p class="price">$14.99</p>
-                                <span class="menu-dot-line"></span>
-                            </div>
-                            <p class="menu-ingredients">BBQ sauce, Chicken, Pepperoni, Meatballs, Green peppers, red
-                                peppers, jalapeno Peppers</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <h2 class="menu-section-title">PIZZAS</h2>
-                    <div class="menu-wrapper">
-                        <div class="menu-image">
-                            <div class="hover-order text-center">
-                                <a href="#!"><i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                            <img src="/images/pizza2.jpg" class="width-100">
-                        </div>
-                        <div class="menu-description">
-                            <div class="menu-list">
-                                <h5>CHEESE & TOMATO</h5>
-                                <p class="price">$10.00</p>
-                                <span class="menu-dot-line"></span>
-                            </div>
-                            <p class="menu-ingredients">Cheese & tomato</p>
-                        </div>
-                    </div>
-                    <div class="menu-wrapper">
-                        <div class="menu-image">
-                            <div class="hover-order text-center">
-                                <a href="#!"><i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                            <img src="/images/pizza2.jpg" class="width-100">
-                        </div>
-                        <div class="menu-description">
-                            <div class="menu-list">
-                                <h5>BBQ BEAST</h5>
-                                <p class="price">$14.99</p>
-                                <span class="menu-dot-line"></span>
-                            </div>
-                            <p class="menu-ingredients">BBQ sauce, Chicken, Pepperoni, Meatballs, Green peppers, red
-                                peppers, jalapeno Peppers</p>
-                        </div>
-                    </div>
-                </div>
+                <%- include('grid-menu') %>
             </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <h2 class="menu-section-title">PIZZAS</h2>
-                    <div class="menu-wrapper">
-                        <div class="menu-image">
-                            <div class="hover-order text-center">
-                                <a href="#!"><i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                            <img src="/images/pizza2.jpg" class="width-100">
-                        </div>
-                        <div class="menu-description">
-                            <div class="menu-list">
-                                <h5>CHEESE & TOMATO</h5>
-                                <p class="price">$10.00</p>
-                                <span class="menu-dot-line"></span>
-                            </div>
-                            <p class="menu-ingredients">Cheese & tomato</p>
-                        </div>
-                    </div>
-                    <div class="menu-wrapper">
-                        <div class="menu-image">
-                            <div class="hover-order text-center">
-                                <a href="#!"><i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                            <img src="/images/pizza2.jpg" class="width-100">
-                        </div>
-                        <div class="menu-description">
-                            <div class="menu-list">
-                                <h5>BBQ BEAST</h5>
-                                <p class="price">$14.99</p>
-                                <span class="menu-dot-line"></span>
-                            </div>
-                            <p class="menu-ingredients">BBQ sauce, Chicken, Pepperoni, Meatballs, Green peppers, red
-                                peppers, jalapeno Peppers</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <h2 class="menu-section-title">PIZZAS</h2>
-                    <div class="menu-wrapper">
-                        <div class="menu-image">
-                            <div class="hover-order text-center">
-                                <a href="#!"><i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                            <img src="/images/pizza2.jpg" class="width-100">
-                        </div>
-                        <div class="menu-description">
-                            <div class="menu-list">
-                                <h5>CHEESE & TOMATO</h5>
-                                <p class="price">$10.00</p>
-                                <span class="menu-dot-line"></span>
-                            </div>
-                            <p class="menu-ingredients">Cheese & tomato</p>
-                        </div>
-                    </div>
-                    <div class="menu-wrapper">
-                        <div class="menu-image">
-                            <div class="hover-order text-center">
-                                <a href="#!"><i class="fas fa-shopping-cart"></i></a>
-                            </div>
-                            <img src="/images/pizza2.jpg" class="width-100">
-                        </div>
-                        <div class="menu-description">
-                            <div class="menu-list">
-                                <h5>BBQ BEAST</h5>
-                                <p class="price">$14.99</p>
-                                <span class="menu-dot-line"></span>
-                            </div>
-                            <p class="menu-ingredients">BBQ sauce, Chicken, Pepperoni, Meatballs, Green peppers, red
-                                peppers, jalapeno Peppers</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--            end row-->
         </div>
-        <!--        end container-->
     </section>
 <!--    section parallax-->
     <section class="parallax" data-parallax="scroll" data-image-src="/images/bg8.jpg">

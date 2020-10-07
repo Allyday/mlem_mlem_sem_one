@@ -21,7 +21,10 @@
 <% dataBag.map((e) => { %>
     <form>
                         <tr>
-                            <th scope="row" class="img-table"><img src="<%= e.Anh %>"></th>
+                            <th scope="row" class="img-table">
+                                <div class="fix-imgs" style="background-image: url('<%= e.Anh %>')"></div>
+<!--                                <img src="">-->
+                            </th>
                             <td class="strong">
                                 <%= e.TenSP %>
                                 <input type="hidden" name="IDmonan" value="<%= e.ID %>" >
@@ -93,12 +96,12 @@
             gia[i] = parseFloat(gia[i].innerText);
             Sum += (soluong[i] * gia[i]);
 
-            Subtotal[i].innerText = soluong[i] * gia[i];
+            Subtotal[i].innerText = parseFloat(soluong[i] * gia[i]).toFixed(2);
 
-            Subsum[0].innerText = Sum;
+            Subsum[0].innerText = parseFloat(Sum).toFixed(2);
             VAT[0].innerText = parseFloat(Sum/10).toFixed(2);
             Total[0].innerText = parseFloat (Sum + (Sum/10)).toFixed(3);
-
         }
+        console.log(Sum);
     </script>
 

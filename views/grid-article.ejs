@@ -1,28 +1,28 @@
 <% articels.map( (e) => { %>
-    <div class="col-md-6 detail-a-dish">
-        <div class="row">
-            <div class="col-md-12 fix-img">
-                <div class="contain-img">
-                    <img src="<%= e.Anh %>" alt="">
+        <div class="col-md-6 detail-a-dish">
+            <div class="row">
+                <div class="col-md-12 fix-img">
+                    <div class="contain-img" style="background-image: url('<%= e.Anh %>')">
+<!--                        <img src="" alt="">-->
+                    </div>
+                </div>
+                <div class="col-md-12 date-time">
+                    <div class="border-bottom clearfix">
+                        <p class="fa-pull-left fix-Date"></p>
+                        <span class="fa-pull-right" style="color: #b8b8b8">By: &ensp; MlemMlem</span>
+                    </div>
+                </div>
+                <div class="col-md-12 title-recipe">
+                    <p><%= e.TieuDe %></p>
+                    <div class=" description">
+                        <p><%= e.NoiDung %></p>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-12 date-time">
-                <div class="border-bottom clearfix">
-                    <p class="fa-pull-left fix-Date"></p>
-                    <span class="fa-pull-right" style="color: #b8b8b8">By: &ensp; MlemMlem</span>
-                </div>
-            </div>
-            <div class="col-md-12 title-recipe">
-                <p><%= e.TieuDe %></p>
-                <div class=" description">
-                    <p><%= e.NoiDung %></p>
-                </div>
+            <div class="onclick" onclick="seeMore(this)">
+                see more...
             </div>
         </div>
-        <div class="onclick" onclick="seeMore(this)">
-            see more...
-        </div>
-    </div>
 
 <!--java-->
 

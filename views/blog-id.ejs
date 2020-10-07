@@ -44,8 +44,8 @@
                             <p>Tages &ensp;</p>
                             <ul class="nav">
                                 <!--  category-->
-                                <% MonAncs.map((e) => { %>
-                                    <li><a href="<%= e.ID %>"><%= e.TenSP %></a></li>
+                                <% DanhMucs.map((e) => { %>
+                                    <li><a href="<%= e.ID %>"><%= e.Ten %></a></li>
                                 <% }) %>
                             </ul>
 
@@ -63,7 +63,7 @@
                 <div class="col-md-12">
                     <div class="row" style="display: block;float: left;">
                         <!--   article-->
-                        <%- include('grid-article') %>
+                            <%- include('grid-article') %>
                     </div>
                 </div>
             </div>

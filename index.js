@@ -50,76 +50,78 @@ app.get('/about-us', (req, res) => {
   res.render('about');
 });
 
-app.get('/menu', (req, res) => {
-  res.render('menu');
-});
-
 // blog
 app.get('/blog',async (req, res) => {
-  let sql_text ="select * from T2005E_mlem_MonAn; " +
+  let sql_text ="select top 4 * from T2005E_mlem_DanhMuc; " +
       " select top 4 * from T2005E_mlem_Blog; ";
   let data = {
-    MonAncs: [],
+      DanhMucs: [],
     articles: []
   };
   await db.query(sql_text).then(rows =>{
-    data.MonAncs = rows.recordsets[0] ;
+    data.DanhMucs = rows.recordsets[0] ;
     data.articels = rows.recordsets[1] ;
   }).catch(err => {
     console.log(err.message);
   })
   res.render('blog',data);
 });
-app.get('/blog/:id', async (req, res) => {
+app.get('/blog/:id',async  (req, res) => {
   let MonAnID = req.params.id;
-  let sql_text = `select * from T2005E_mlem_MonAn; `+
-      `select * from T2005E_mlem_Blog where MonAnID LIKE '${MonAnID}' ;`;
-  let data = {
-    MonAncs: [],
-    articles: []
-  };
-
-  await db.query(sql_text).then(rows =>{
-    data.MonAncs = rows.recordsets[0],
+  let sql_text = `select top 4 * from T2005E_mlem_DanhMuc; `+
+      `select * from T2005E_mlem_Blog  where MonAnID in (select ID from T2005E_mlem_MonAn where LoaiID like ${MonAnID} );`;
+    let data = {
+        DanhMucs: [],
+        articles: []
+    };
+   await db.query(sql_text).then(rows =>{
+    data.DanhMucs = rows.recordsets[0],
     data.articels = rows.recordsets[1]
   }).catch(err => {
-  })
-  res.render('blog-id',data);
+  });
+    if (data.articels == 'NULL' || data.articels == '') {
+        res.render('blog-article-null', data);
+    } else if (data.articels != 'NULL' || data.articels != '') {
+        res.render('blog-id', data);
+    }
+
 })
 app.get('/search', async (req,res) => {
   let keyword = req.query.search;
-  let sql_text = `select * from T2005E_mlem_MonAn; `+
+  let sql_text = `select top 4 * from T2005E_mlem_DanhMuc; `+
       `SELECT T2005E_mlem_Blog.* FROM T2005E_mlem_Blog `+
       ` INNER JOIN T2005E_mlem_MonAn ON T2005E_mlem_Blog.MonAnID = T2005E_mlem_MonAn.ID `+
       ` WHERE T2005E_mlem_MonAn.TenSP LIKE N'%${keyword}%' `+
       ` OR T2005E_mlem_Blog.TieuDe LIKE N'%${keyword}%'; `;
   let data = {
-        MonAncs: [],
-        articles: []
+      DanhMucs: [],
+      articles: []
   };
   await db.query(sql_text).then(rows => {
-        data.MonAncs = rows.recordsets[0],
+        data.DanhMucs = rows.recordsets[0],
         data.articels = rows.recordsets[1]
   }).catch(err => {
     // console.log(err.message);
   });
-  res.render('blog',data);
+    if (data.articels == 'NULL' || data.articels == '') {
+        res.render('blog-article-null', data);
+    } else if (data.articels != 'NULL' || data.articels != '') {
+        res.render('blog', data);
+    }
 })
 
 //reservation
 app.get('/reservation', (req, res) => {
-    let sql_text = `select top 3 * from T2005E_mlem_DanhMuc ORDER BY ID ASC; `+
-                    ` SELECT * FROM T2005E_mlem_Bookings;`
+    let sql_text = `select top 3 * from T2005E_mlem_MonAn ORDER BY ID ASC; `+
+                    ` SELECT count(ID) as SoBan FROM T2005E_mlem_Bookings;`
     db.query(sql_text, (err,rows) => {
         if (err) res.send(err);
-        else if (rows.recordsets[1] == 'NULL' || rows.recordsets[1] == '') {
+        else {
             res.render('reservation', {
-                danhmucs: rows.recordsets[0]
+                danhmucs: rows.recordsets[0],
+                SoBans: rows.recordsets[1]
             });
         }
-        else res.render('reservation-NotNull', {
-          danhmucs: rows.recordsets[0]
-        });
     });
 });
 app.post('/booking',async (req,res) => {
@@ -218,7 +220,6 @@ app.post('/delete-table',async (req,res) => {
     }
     res.redirect('/cart');
 });
-
 app.post('/update-order',async (req,res) => {
     let SoLuong = req.body.soLuong;
     let idOrder = req.body.IDmonan;
@@ -230,7 +231,6 @@ app.post('/update-order',async (req,res) => {
     }
     res.redirect('/cart');
 });
-
 app.post('/delete-order',async (req,res) => {
     let idOrder = req.body.IDmonan;
     let sql_text = `UPDATE T2005E_mlem_MonAn SET SOLUONG = 0 where ID LIKE ${idOrder} ;`;
@@ -244,7 +244,7 @@ app.post('/delete-order',async (req,res) => {
 
 //menu order
 app.post('/order',async (req,res) => {
-    let order = (req.body.soLuong) + 1;
+    let order = parseInt(req.body.soLuong) + 1;
     let idOrder = req.body.IDOrder;
     let sql_text = `UPDATE T2005E_mlem_MonAn SET SOLUONG = ${order} where ID LIKE ${idOrder} ;`;
     try {
@@ -253,6 +253,22 @@ app.post('/order',async (req,res) => {
         console.log(e);
     }
     res.redirect('/menu');
+})
+app.get('/menu', (req,res) => {
+
+    let sql_text = 'select * from T2005E_mlem_DanhMuc;'+
+                    `select * from T2005E_mlem_MonAn;` +
+                    `SELECT count(ID) as SoMonOrder FROM T2005E_mlem_MonAn where SOLUONG > 0;`;
+    db.query(sql_text, (err,rows) => {
+        if (err) res.send(err);
+        else {
+            res.render('menu', {
+                danhmucs: rows.recordsets[0],
+                menus: rows.recordsets[1],
+                SOMONORDER: rows.recordsets[2]
+            })
+        }
+    })
 })
 
 
