@@ -1,37 +1,37 @@
 <% articels.map( (e) => { %>
-    <div class="col-md-6 detail-a-dish">
-        <div class="row">
-            <div class="col-md-12 fix-img">
-                <div class="contain-img">
-                    <img src="<%= e.Anh %>" alt="">
-                </div>
-            </div>
-            <div class="col-md-12 date-time">
-                <div class="border-bottom clearfix">
-                    <p class="fa-pull-left fix-Date"></p>
-                    <span class="fa-pull-right" style="color: #b8b8b8">By: &ensp; MlemMlem</span>
-                </div>
-            </div>
-            <div class="col-md-12 title-recipe">
-                <p><%= e.TieuDe %></p>
-                <div class=" description">
-                    <p><%= e.NoiDung %></p>
-                </div>
+<div class="col-md-6 detail-a-dish">
+    <div class="row">
+        <div class="col-md-12 fix-img">
+            <div class="contain-img">
+                <img src="<%= e.Anh %>" alt="">
             </div>
         </div>
-        <div class="onclick" onclick="seeMore(this)">
-            see more...
+        <div class="col-md-12 date-time">
+            <div class="border-bottom clearfix">
+                <p class="fa-pull-left fix-Date"></p>
+                <span class="fa-pull-right" style="color: #b8b8b8">By: &ensp; MlemMlem</span>
+            </div>
+        </div>
+        <div class="col-md-12 title-recipe">
+            <p><%= e.TieuDe %></p>
+            <div class=" description">
+                <%- e.NoiDung %>
+            </div>
         </div>
     </div>
+    <div class="onclick" onclick="seeMore(this)">
+        see more...
+    </div>
+</div>
 
 <!--java-->
 
-    <script type="text/javascript" src="/lbs/mdBootstrap/js/moment.js"></script>
-    <script type="text/javascript">
-        var fixDate = new Date('<%= e.NgayViet %>');
-        fixDate = moment(fixDate).format('DD/MM/YYYY');
-        for (let i = 0; i <= fixDate.length; i++) {
-            $('.fix-Date')[i].innerText = fixDate;
-        };
-    </script>
+<script type="text/javascript" src="/lbs/mdBootstrap/js/moment.js"></script>
+<script type="text/javascript">
+    var fixDate = new Date('<%= e.NgayViet %>');
+    fixDate = moment(fixDate).format('DD/MM/YYYY');
+    for (let i = 0; i <= fixDate.length; i++) {
+        $('.fix-Date')[i].innerText = fixDate;
+    };
+</script>
 <% }) %>
