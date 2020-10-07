@@ -4,6 +4,7 @@
 <head>
   <title>Shale-PIZZAAsss</title>
   <%- include('shared-imports') %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="stylesheet" href="/css/bootstrap-spacing.css" type="text/css">
   <link rel="stylesheet" href="/css/home.css" type="text/css">
 </head>
@@ -30,7 +31,8 @@
   </div>
   <div class="section container">
     <div class="row">
-      <div class="col-md-6 text-center px-50">
+      <div class="col-md-6 text-center px-50 wow bounceInLeft"
+           style="visibility: visible; animation-name: bounceInLeft;">
         <span class="fancy">Discover</span>
         <h2 class="sans-serif">OUR STORY</h2>
         <p class="serif">Curabitur quas nets lacus ets nulat iaculis loremis etis nisle varius vitae seditum fugiatum
@@ -39,7 +41,8 @@
         </p>
         <a href="/about-us" class="btn btn-yellow sans-serif">ABOUT US</a>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 wow slideInRight"
+           style="visibility: visible; animation-name: slideInRight;padding-top : 40px">
         <div class="image-container">
           <img src="/images/kitchen-working.jpg" alt="Restaurant staff smiling" class="image">
           <div class="white-frame"></div>
@@ -58,13 +61,15 @@
   </div>
   <div class="section container">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 wow bounceInLeft"
+           style="visibility: visible; animation-name: bounceInLeft;">
         <div class="image-container">
           <img src="/images/staff.jpg" alt="Restaurant staff smiling" class="image">
           <div class="white-frame"></div>
         </div>
       </div>
-      <div class="col-md-6 text-center">
+      <div class="col-md-6 text-center  wow slideInRight"
+           style="visibility: visible; animation-name: slideInRight;padding-top : 40px">
         <span class="fancy">Discover</span>
         <h2 class="sans-serif">OUR CHEFS</h2>
         <p class="serif">Our local chefs are Italian-trained and are among the best at their job in the country. Each
@@ -82,6 +87,68 @@
       <div class="col-md-6 text-center">
         <span class="fancy">Best Recipes</span>
         <h2 class="sans-serif white-text">AWARDED CHEFS</h2>
+        <div class="row">
+          <!--begin col-md-6-->
+
+          <div class="col-md-6">
+            <!--begin menu-wrapper-->
+            <div class="menu-wrapper">
+              <!--begin home-menu-list-->
+              <div class="home-menu-list">
+                <h5 class="white-text">English Breakfast</h5>
+                <p class="price">$12.95</p>
+                <span class="dot-line"></span>
+              </div>
+
+              <!--end home-menu-list-->
+              <p class="home-menu-ingredients">Scrambled eggs with crispy bacon, sausage, black pudding, tomato &amp; mushroom.</p>
+            </div>
+            <!--end menu-wrapper-->
+          </div>
+          <div class="col-md-6">
+            <!--begin menu-wrapper-->
+            <div class="menu-wrapper">
+              <!--begin home-menu-list-->
+              <div class="home-menu-list">
+                <h5 class="white-text">Lasagna Classica</h5>
+                <p class="price">$19.55</p>
+                <span class="dot-line"></span>
+              </div>
+              <!--end home-menu-list-->
+              <p class="home-menu-ingredients">Broccoli rabe, ittalian sausage, peperoncino, tomates, flour and roasted garlic.</p>
+            </div>
+            <!--end menu-wrapper-->
+          </div>
+          <div class="col-md-6">
+            <!--begin menu-wrapper-->
+            <div class="menu-wrapper">
+              <!--begin home-menu-list-->
+              <div class="home-menu-list">
+                <h5 class="white-text">Vegetables Soup</h5>
+                <p class="price">$9.95</p>
+                <span class="dot-line"></span>
+              </div>
+              <!--end home-menu-list-->
+              <p class="home-menu-ingredients">Papaya salsa, sliced red radishes, avocado, corn tortilla, spicy tomato ketchup.</p>
+            </div>
+            <!--end menu-wrapper-->
+          </div>
+          <div class="col-md-6">
+            <!--begin menu-wrapper-->
+            <div class="menu-wrapper">
+              <!--begin home-menu-list-->
+              <div class="home-menu-list">
+                <h5 class="white-text">Toffee Pudding</h5>
+                <p class="price">$10.50</p>
+                <span class="dot-line"></span>
+              </div>
+
+              <!--end home-menu-list-->
+              <p class="home-menu-ingredients">Baked caramel colored sponge cake with raisins, ladled with warm toffee sauce.</p>
+            </div>
+            <!--end menu-wrapper-->
+          </div>
+        </div>
         <a href="/menu" class="btn btn-white-transparent sans-serif">FULL MENU</a>
       </div>
       <div class="col-md-6">
@@ -97,6 +164,15 @@
     </div>
   </div>
   <%- include('footer')%>
+
+
+
+<!--  ====== animate ======-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script type="text/javascript">
+    new WOW().init();
+  </script>
+  <!--  ====== end animate ======-->
 
 </body>
 
