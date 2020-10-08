@@ -260,6 +260,75 @@ p {
   animation-iteration-count: 2.2;
 }
 
+/*AWARDED CHEFS*/
+.margin-bottom-30 {
+  margin-bottom: 30px !important;
+}
+span.comic-text {
+  font-size: 80px;
+  line-height: 60px;
+  color: #F2B410;
+  font-family: 'Tangerine', cursive;
+}
+h3.section-title {
+  color: #252525;
+  text-transform: uppercase;
+  font-size: 36px;
+  line-height: 42px;
+  letter-spacing: 2px;
+  margin: 0 0 30px 0;
+}
+.menu-wrapper {
+  display: inline-block;
+  padding-right: 20px;
+  margin-bottom: 10px;
+}
+.home-menu-list {
+  display: block;
+  clear: both;
+}
+.home-menu-list h5 {
+  font-size: 18px;
+  line-height: 24px;
+  vertical-align: bottom;
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  color: #FFF;
+  float: left;
+  letter-spacing: 2px;
+  max-width: 70%;
+  padding-right: 10px;
+  margin-bottom: 10px;
+}
+.home-menu-list p.price {
+  color: #F2B410;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 700;
+  display: inline-block;
+  vertical-align: bottom;
+  float: right;
+  padding-top: 8px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+.dot-line {
+  border-bottom: 2px dotted #fff;
+  height: 29px;
+  overflow: hidden;
+  display: block;
+}
+.home-menu-ingredients {
+  display: block;
+  clear: both;
+  width: 100%;
+  color: #eee;
+}
+
+/*END AWARDED CHEFS*/
+
+
 /* animation declarations */
 @keyframes fadeZoomIn {
   from {

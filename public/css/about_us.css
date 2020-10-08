@@ -2,7 +2,7 @@
 
 .header-bot{
     width: 100%;
-    height: 550px;
+    height: 600px;
     position: relative;
     background: url(../images/demoepic.jpg) 50% top no-repeat fixed;
     background-size: cover;
@@ -52,69 +52,47 @@ hr{
 .container-1 img{
     margin-left: -30px;
 }
-
-.container .btn {
-
-    position: relative;
-
-    padding: 1.4rem 4.2rem;
-
-    padding-right: 3.1rem;
-
-    font-size: 1.4rem;
-
-    color: var(--inv);
-
-    letter-spacing: 1.1rem;
-
-    text-transform: uppercase;
-
-    transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
-
-    cursor: pointer;
-
-    user-select: none;
+/*=============================== button ==================*/
+.btn {
+    border-radius: 0;
+    box-shadow: none;
 }
-.btn:before, .btn:after {
+
+.btn,
+.btn:hover {
+    transition: all 0.25s ease-in-out;
+}
+
+.btn.btn-yellow {
+    position: relative;
+    color: #fff;
+    background-color: #F2B410;
+    border-color: #F2B410;
+    font-family: 'Montserrat',
+    sans-serif;
+    font-weight: 700;
+    padding: 18px 32px;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 2px;
+}
+
+.btn.btn-yellow::before {
+    display: block;
     content: '';
     position: absolute;
-    transition: inherit;
-    z-index: -1;
+    top: 4px;
+    right: 4px;
+    bottom: 4px;
+    left: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
 }
-.btn:hover {
-    color: var(--def);
-    transition-delay: .5s;
+
+.btn.btn-yellow:hover {
+    box-shadow: none;
+    background-color: #F39C12 !important;
 }
-.btn:hover:before {
-    transition-delay: 0s;
-}
-.btn:hover:after {
-    background: var(--inv);
-    transition-delay: .35s;
-}
-.from-center:before {
-    top: 0;
-    left: 50%;
-    height: 100%;
-    width: 0;
-    border: 1px solid ;
-    border-left: 0;
-    border-right: 0;
-}
-.from-center:after {
-    bottom: 0;
-    left: 0;
-    height: 0;
-    width: 100%;
-}
-.from-center:hover:before {
-    left: 0;
-    width: 100%;
-}
-.from-center:hover:after {
-    top: 0;
-    height: 100%;
-}
+/*==================================== end botton==================*/
 #myCarousel{
     margin-top: 130px;
 }
