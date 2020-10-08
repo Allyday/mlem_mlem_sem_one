@@ -36,17 +36,13 @@
     </div>
 
     <!-- menu  -->
-    <% SOMONORDER.map((d) => { %>
-        <% if (d.SoMonOrder != 0) { %>
-            <section class="notice">
+            <section class="notice" style="display: none;">
                 <div class="container">
                     <div class="col-md-12">
-                        <h4>You have <%= d.SoMonOrder %> dish in <a href="/cart">your bag !</a></h4>
+                        <h4>You have <span id="quantity"></span> dish in <a href="/cart">your bag !</a></h4>
                     </div>
                 </div>
             </section>
-        <% } %>
-    <% }) %>
 
     <section class="section-white">
         <div class="container">

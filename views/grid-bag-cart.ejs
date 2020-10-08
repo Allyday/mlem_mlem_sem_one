@@ -1,5 +1,5 @@
 
-    <section class="table-sp ">
+    <section class="table-sp" style="display: none">
 <!--        <form >-->
             <div class="status">
                 <p>Your cart</p>
@@ -17,34 +17,26 @@
                             <th scope="col" style="width: 120px"> </th>
                         </tr>
                         </thead>
-                        <tbody>
-<% dataBag.map((e) => { %>
-    <form>
-                        <tr>
-                            <th scope="row" class="img-table">
-                                <div class="fix-imgs" style="background-image: url('<%= e.Anh %>')"></div>
-<!--                                <img src="">-->
-                            </th>
-                            <td class="strong">
-                                <%= e.TenSP %>
-                                <input type="hidden" name="IDmonan" value="<%= e.ID %>" >
-                            </td>
-                            <td style="justify-content: center;display: flex">
-                                <input class="quantity" min="1" max="15" name="soLuong" value="<%= e.SOLUONG %>" type="number" required>
-                            </td>
-                            <td class="strong text-lowercase"><span class="Price"><%= e.Gia %></span> k</td>
-                            <td class="strong text-lowercase"><span class="Subtotal">10</span> k</td>
-                            <td class="strong">
-                                <button formaction="/update-order" formmethod="post" type="submit" class="tag-a btn-outline-yellow" style="margin-bottom: 10px">Update</button>
-                                <button formaction="/delete-order" formmethod="post"  type="submit" class="tag-a btn-outline-black">Remove</button>
-                            </td>
-                        </tr>
-     </form>
-<% }) %>
+                        <tbody id="myBody">
+<!--                          <tr>-->
+<!--                            <th scope="row" class="img-table">-->
+<!--                                <div class="fix-imgs" style="background-image: url('')"></div>-->
+<!--                            </th>-->
+<!--                            <td class="strong"></td>-->
+<!--                            <td style="justify-content: center;display: flex">-->
+<!--                                <input class="quantity" min="1" max="15" name="soLuong" value="" type="number" required>-->
+<!--                            </td>-->
+<!--                            <td class="strong text-lowercase"><span class="Price"> </span> k</td>-->
+<!--                            <td class="strong text-lowercase"><span class="Subtotal">10</span> k</td>-->
+<!--                            <td class="strong">-->
+<!--                                <button type="button" class="tag-a btn-outline-yellow" style="margin-bottom: 10px">Update</button>-->
+<!--                                <button type="button" class="tag-a btn-outline-black">Remove</button>-->
+<!--                            </td>-->
+<!--                          </tr>-->
                         </tbody>
                     </table>
                 </div>
-                <div class="col-md-3   slideInRight" style="background: #80808026;padding-top: 30px">
+                <div class="col-md-3 slideInRight" style="background: #80808026;padding-top: 30px;">
                     <!--  collapse-->
                     <p style="cursor: pointer;color:#F2B410 " data-toggle="collapse" href="#coupon"
                        aria-expanded="false" aria-controls="coupon">
@@ -81,27 +73,29 @@
 <!--        </form>-->
     </section>
     <script type="text/javascript">
-        var soluong = $('input[name=soLuong]');
-        var gia = $('.Price');
-        var Subtotal = $('.Subtotal');
+        var aray = JSON.parse(window.sessionStorage.getItem("cart"));
+        console.log(aray);
+        // assign array js to html table
+        aray.map((e) => {
+            var row = "<tr>\n" +
+                "                            <th scope=\"row\" class=\"img-table\">\n" +
+                "                                <div class=\"fix-imgs\" style=\"background-image: url('"+e.image+"')\"></div>\n" +
+                "                            </th>\n" +
+                "                            <td class=\"strong\">"+e.name+"</td>\n" +
+                "                            <td style=\"justify-content: center;display: flex\">\n" +
+                "                                <input class=\"quantity\" min=\"1\" max=\"15\" name=\"soLuong\" value=\""+e.quantity+"\" type=\"number\" required>\n" +
+                "                            </td>\n" +
+                "                            <td class=\"strong text-lowercase\"><span class=\"Price\">"+e.price+"</span> k</td>\n" +
+                "                            <td class=\"strong text-lowercase\"><span class=\"Subtotal\">"+((e.quantity)*(e.price)) +"</span> k</td>\n" +
+                "                            <td class=\"strong\">\n" +
+                "                                <button type=\"button\" class=\"tag-a btn-outline-yellow\" style=\"margin-bottom: 10px\">Update</button>\n" +
+                "                                <button type=\"button\" class=\"tag-a btn-outline-black\">Remove</button>\n" +
+                "                            </td>\n" +
+                "                          </tr>";
 
-        var Subsum = $('.Subsum');
-        var VAT = $('.VAT');
-        var Total = $('.Total');
+            document.getElementById("myBody").innerHTML += row;
+        });
+// handle
 
-        var Sum = 0;
-
-        for (let i = 0; i<= soluong.length; i++) {
-            soluong[i] = parseInt(soluong[i].value);
-            gia[i] = parseFloat(gia[i].innerText);
-            Sum += (soluong[i] * gia[i]);
-
-            Subtotal[i].innerText = parseFloat(soluong[i] * gia[i]).toFixed(2);
-
-            Subsum[0].innerText = parseFloat(Sum).toFixed(2);
-            VAT[0].innerText = parseFloat(Sum/10).toFixed(2);
-            Total[0].innerText = parseFloat (Sum + (Sum/10)).toFixed(3);
-        }
-        console.log(Sum);
     </script>
 

@@ -64,14 +64,13 @@
                             </div>
                         </div>
                     </div>
-                    <% SoBans.map((c) => { %>
-                        <% if (c.SoBan == 0) { %>
-                            <form action="/booking" method="post">
+<!--                    fix here-->
+ <form name="booking" action="javascript: void(0);">
                                 <div class="form-input">
                                     <div class="col-md-6 fa-pull-left" style="z-index: 2">
                                         <input class="fix-input" required type="text" name="name" placeholder="Full Name">
                                         <input class="fix-input" required type="text" name="phone" placeholder="Phone Number">
-                                        <input class="fix-input" required type="date" name="date" min="" value="" >
+                                        <input class="fix-input"  type="date" name="date" min="" value="" >
                                     </div>
                                     <div class="col-md-6 fa-pull-right" style="z-index: 2">
                                         <input class="fix-input" required type="email" name="email" placeholder="Email">
@@ -88,16 +87,19 @@
                                             <option value="9">9 person</option>
                                             <option value="10">10 person</option>
                                         </select>
-                                        <input onchange="onChangeTime()" class="fix-input" required type="time" name="time" placeholder="Booking Time">
+                                        <input onchange="onChangeTime()" class="fix-input"  type="time" name="time">
                                     </div>
                                     <div class="col-md-12 a-submit">
-                                        <input class="btn-outline-yellow" type="submit" value="Book Your Table">
+                                        <input
+                                                class="btn-outline-yellow"
+                                                type="submit"
+                                                value="Book Your Table"
+                                                onclick="addTable()"
+                                        >
                                     </div>
                                 </div>
                             </form>
-                       <% }%>
-                        <%  if (c.SoBan != 0){ %>
-                            <div class="thankyou">
+ <div class="thankyou" style="display: none;">
                                     <div class="row">
                                         <div class="col-12">
                                             <h3>Thanks for trusting us.</h3>
@@ -107,8 +109,7 @@
                                         </div>
                                     </div>
                                 </div>
-                        <% } %>
-                    <% }) %>
+<!--                    end fix-->
                 </div>
             </div>
         </section>
@@ -187,6 +188,7 @@
 
     <!--javascript-->
     <script type="text/javascript" src="/lbs/mdBootstrap/js/jquery.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
     <script type="text/javascript" src="/lbs/mdBootstrap/js/moment.js"></script>
     <script type="text/javascript" src="/lbs/mdBootstrap/js/jarallax.min.js"></script>
     <script type="text/javascript" src="/lbs/mdBootstrap/js/jarallax-video.min.js"></script>
@@ -224,6 +226,38 @@
             }
         }
 
+    </script>
+    <script type="text/javascript">
+        let table = window.sessionStorage.getItem("table");
+
+        if (table == null || table == '') {
+            $('.thankyou').css('display','none');
+            $('form[name=booking]').css('display','block');
+        }
+        // table = table!==null?table:[];
+        if (table.name !== '' && table.phone !== '' && table.people !== '') {
+            $('.thankyou').css('display','block');
+            $('form[name=booking]').css('display','none');
+        }
+
+        function addTable() {
+            var data = {
+                name: $('input[name=name]').val(),
+                phone: $('input[name=phone]').val(),
+                date: $('input[name=date]').val(),
+                email: $('input[name=email]').val(),
+                people: $('select[name=people] ').val(),
+                time: $('input[name=time]').val(),
+            };
+            if (data.name !== '' && data.phone !== '' && data.people !== '') {
+                let funcSetTimeOut = setTimeout(() => {
+                $('.thankyou').css('display','block');
+                $('form[name=booking]').css('display','none');
+                clearTimeout(funcSetTimeOut);
+                },1500);
+            };
+            window.sessionStorage.setItem("table", JSON.stringify(data));
+        }
     </script>
 </body>
 

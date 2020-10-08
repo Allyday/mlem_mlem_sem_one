@@ -32,16 +32,15 @@
             </div>
         </div>
     </div>
-
     <!--icon-->
-    <!-- <div class="background-icon">
+     <div class="background-icon">
         <div class="container">
             <section class="effect-icon">
                 <div class="row">
-                    <div class="col-md-8   slideInLeft text-shiphang">
-                        <p>Super-FAST and FREE delivery</p>
+                    <div class="col-md-8 slideInLeft text-shiphang">
+                        <p>Your bag is empty !!!</p>
                     </div>
-                    <div class="col-md-4 div-shiphang   slideInLeft">
+                    <div class="col-md-4 div-shiphang slideInLeft">
                         <div class="fa-pull-right">
                             <img id="icon" class="ship-hang" style="max-height: 200px"
                                 src="/images/sai-gon-ship-dich-vu-giao-hang-nhanh-1(1).png">
@@ -50,28 +49,22 @@
                 </div>
             </section>
         </div>
-    </div> -->
-
+    </div>
     <!--container-->
     <div class="background-container page-content" style="height: auto">
         <div class="container">
             <!--    table -->
-            <section class="reservation slideInUp">
-                <div class="status">
-                    <p>Your table is ready!</p>
-                </div>
                 <%- include('grid-table-cart') %>
-            </section>
             <!--bag-->
             <%- include('grid-bag-cart') %>
             <!--modal-->
             <section class="check-out">
                 <div class="row">
-                    <div class="col-md-6 btn-checkout   slideInLeft">
+                    <div class="col-md-12 btn-checkout slideInLeft" id="shopping">
                         <a style="font-size: 18px;box-shadow: none;" href="/menu"
                             class="btn btn-outline-yellow">Shopping</a>
                     </div>
-                    <div class="col-md-6 btn-checkout   slideInRight">
+                    <div class="col-md-6 btn-checkout slideInRight" id="checkout" style="display: none">
                         <a style="font-size: 18px;box-shadow: none;" href="javascript:void(0)"
                             class="btn btn-outline-yellow" data-toggle="modal" data-target="#Modal-login">check out</a>
                     </div>
@@ -268,6 +261,32 @@
         $(document).ready(function () {
             new WOW().init();
         });
+        anime({
+            targets: '.ship-hang',
+            translateX: [-1250, 0],
+            rotate: [0, 20, 0],
+            duration: 4000,
+            easing: 'easeInOutExpo',
+            translateZ: 100
+        });
+        anime({
+            targets: '.text-shiphang',
+            translateX: [-1250, 0],
+            duration: 4000,
+            easing: 'easeInOutExpo',
+            translateZ: 100
+        });
+        setTimeout(() => {
+            anime({
+                targets: '.ship-hang',
+                translateY: [0, -5, -10, -5, 0],
+                // delay: 500,
+                duration: 900,
+                easing: 'linear',
+                direction: 'alternate',
+                loop: true
+            });
+        }, 5000);
 
     </script>
     <!-- back on top-->
@@ -277,8 +296,12 @@
                 scrollTop: 0,
             }, 700)
         }
-        let cart = window.sessionStorage.getItem("cart");
-        cart = cart!==null?cart:[];
+    </script>
+<!--data-->
+    <script type="text/javascript">
+        $(document).ready(check);
+        var cart = window.sessionStorage.getItem("cart");
+
     </script>
 </body>
 

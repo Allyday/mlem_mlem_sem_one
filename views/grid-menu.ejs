@@ -6,10 +6,9 @@
             <div class="menu-wrapper">
                 <div class="menu-image" style="background-image: url('<%= e.Anh %>')">
                     <div class="hover-order text-center">
-                        <form action="/order" method="post">
-                            <input type="hidden" name="IDOrder" value="<%= e.ID %>">
-                            <input type="hidden" name="soLuong" value="<%= e.SOLUONG %>" >
-                            <button type="button" onclick="AddCart(...)"><i class="fas fa-shopping-cart"></i></button>
+                        <form action="javascript: void(0);" method="post">
+                            <input type="hidden" name="IDOrder" value="">
+                            <button type="submit" onclick="AddCart('<%= e.ID %>','<%= e.TenSP %>', 1,'<%= e.Gia %>', '<%= e.Anh %>')"><i class="fas fa-shopping-cart"></i></button>
                         </form>
                     </div>
 <!--                    <img src="" class="width-100">-->
@@ -26,16 +25,25 @@
                 <% }%>
         <% }) %>
     </div>
-<% })%>
-<script>
-    function AddCart(id,name,qty,price,image) {
-        const p = {
-            name:name,
 
+<script>
+    function AddCart(id,name,quantity,price,image) {
+        let temp = {
+            id: id,
+            name:name,
+            quantity: quantity,
+            price: price,
+            image: image
         }
-        let cart = window.sessionStorage.getItem("cart");
-        cart = cart!==null?cart:[];
-        cart.push(p);
-        window.sessionStorage.setItem("cart",cart);
+        dataCart.push(temp);
+        window.sessionStorage.setItem("cart", JSON.stringify(dataCart));
+         if (dataCart.length >=1 ) {
+            $('.notice').css('display','block');
+            $('#quantity').text(dataCart.length);
+        }
     }
+</script>
+<% })%>
+<script type="text/javascript">
+    const dataCart = [];
 </script>
