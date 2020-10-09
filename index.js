@@ -112,7 +112,7 @@ app.get('/search', async (req,res) => {
 
 //reservation
 app.get('/reservation', (req, res) => {
-    let sql_text = `select top 3 * from T2005E_mlem_MonAn ORDER BY ID ASC; `;
+    let sql_text = `select top 3 * from T2005E_mlem_DanhMuc ORDER BY ID ASC; `;
     db.query(sql_text, (err,rows) => {
         if (err) res.send(err);
         else {
