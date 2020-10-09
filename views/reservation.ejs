@@ -184,6 +184,28 @@
         </section>
     </div>
 
+    <!-- Central Modal Small -->
+    <div class="modal fade top" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p>Open: 9h00</p>
+                    <p>Close: 22h00</p>
+                    <p>Last order: 20h30</p>
+                    <p>The default: 11h00</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-outline-yellow waves-effect btn-sm" data-dismiss="modal">Understand</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Central Modal Small -->
+
     <%- include('footer') %>
 
     <!--javascript-->
@@ -220,12 +242,10 @@
         function onChangeTime() {
             if (InputTime.val() <= '20:30' && InputTime.val() >= '09:00') {
             } else {
-                alert('Chúng tôi nhận đặt lịch trước từ 09:00 đến 20:30 ' +
-                    ' Giờ mặc định chúng tôi đặt là 11:00 !!!');
+                $('#mymodal').modal('show');
                 InputTime.val('11:00');
             }
         }
-
     </script>
     <script type="text/javascript">
         let table = window.sessionStorage.getItem("table");

@@ -250,6 +250,27 @@
             </section>
         </div>
     </div>
+    <!-- Central Modal Small -->
+    <div class="modal fade top" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p>Open: 9h00</p>
+                    <p>Close: 22h00</p>
+                    <p>Last order: 20h30</p>
+                    <p>The default: 11h00</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-outline-yellow waves-effect btn-sm" data-dismiss="modal">Understand</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Central Modal Small -->
     <%- include('footer') %>
     <!--java-->
     <script type="text/javascript" src="/lbs/mdBootstrap/js/jquery.js"></script>
@@ -265,28 +286,17 @@
             targets: '.ship-hang',
             translateX: [-1250, 0],
             rotate: [0, 20, 0],
-            duration: 4000,
+            duration: 3000,
             easing: 'easeInOutExpo',
             translateZ: 100
         });
         anime({
             targets: '.text-shiphang',
             translateX: [-1250, 0],
-            duration: 4000,
+            duration: 3000,
             easing: 'easeInOutExpo',
             translateZ: 100
         });
-        setTimeout(() => {
-            anime({
-                targets: '.ship-hang',
-                translateY: [0, -5, -10, -5, 0],
-                // delay: 500,
-                duration: 900,
-                easing: 'linear',
-                direction: 'alternate',
-                loop: true
-            });
-        }, 5000);
 
     </script>
     <!-- back on top-->
@@ -301,7 +311,7 @@
     <script type="text/javascript">
         $(document).ready(check);
         var cart = window.sessionStorage.getItem("cart");
-
+        $(document).ready(sumary());
     </script>
 </body>
 

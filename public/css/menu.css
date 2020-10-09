@@ -118,7 +118,10 @@ h2.menu-section-title::after {
     transition: all 500ms;
 }
 .hover-order button,
-.hover-order button:hover{
+.hover-order button:hover,
+.hover-order button:focus
+{
+    outline: none;
     background: transparent;
     border: none;
     width: 100%;

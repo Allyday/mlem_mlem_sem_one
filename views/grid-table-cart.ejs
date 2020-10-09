@@ -68,10 +68,8 @@
     })
     function onChangeTime() {
         if (InputTime.val() <= '20:30' && InputTime.val() >= '09:00') {
-            console.log('It is ok!');
         } else {
-            alert('Chúng tôi nhận đặt lịch trước từ 09:00 đến 20:30 ' +
-                ' Giờ mặc định chúng tôi đặt là 11:00 !!!');
+            $('#mymodal').modal('show');
             InputTime.val('11:00');
         }
     }

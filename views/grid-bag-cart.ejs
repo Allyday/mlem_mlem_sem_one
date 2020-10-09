@@ -56,15 +56,15 @@
                         <tbody>
                         <tr>
                             <td>Sub-total:</td>
-                            <td class="text-right"><span class="Subsum"></span> k</td>
+                            <td class="text-right"><span id="Subsum">wow</span> $</td>
                         </tr>
                         <tr>
                             <td>VAT (10%):</td>
-                            <td class="text-right"><span class="VAT"></span> k</td>
+                            <td class="text-right"><span id="VAT"></span> $</td>
                         </tr>
                         <tr>
                             <td>Total:</td>
-                            <td class="text-right"><span class="Total"></span> k</td>
+                            <td class="text-right"><span id="Total"></span> $</td>
                         </tr>
                         </tbody>
                     </table>
@@ -74,7 +74,7 @@
     </section>
     <script type="text/javascript">
         var aray = JSON.parse(window.sessionStorage.getItem("cart"));
-        console.log(aray);
+
         // assign array js to html table
         aray.map((e) => {
             var row = "<tr>\n" +
@@ -85,17 +85,53 @@
                 "                            <td style=\"justify-content: center;display: flex\">\n" +
                 "                                <input class=\"quantity\" min=\"1\" max=\"15\" name=\"soLuong\" value=\""+e.quantity+"\" type=\"number\" required>\n" +
                 "                            </td>\n" +
-                "                            <td class=\"strong text-lowercase\"><span class=\"Price\">"+e.price+"</span> k</td>\n" +
-                "                            <td class=\"strong text-lowercase\"><span class=\"Subtotal\">"+((e.quantity)*(e.price)) +"</span> k</td>\n" +
+                "                            <td class=\"strong text-lowercase\"><span class=\"Price\">"+e.price+"</span> $</td>\n" +
+                "                            <td class=\"strong text-lowercase\"><span class=\"Subtotal\">"+parseFloat((e.quantity)*(e.price)).toFixed(2) +"</span> $</td>\n" +
                 "                            <td class=\"strong\">\n" +
-                "                                <button type=\"button\" class=\"tag-a btn-outline-yellow\" style=\"margin-bottom: 10px\">Update</button>\n" +
-                "                                <button type=\"button\" class=\"tag-a btn-outline-black\">Remove</button>\n" +
+                "                                <button type=\"button\" class=\"tag-a btn-outline-yellow\" style=\"margin-bottom: 10px\" onclick=\"updateCart("+e.id+")\">Update</button>\n" +
+                "                                <button type=\"button\" class=\"tag-a btn-outline-black\" onclick=\"removeCart("+e.id+")\">Remove</button>\n" +
                 "                            </td>\n" +
                 "                          </tr>";
 
             document.getElementById("myBody").innerHTML += row;
+
         });
 // handle
+        if (aray.length === 0) {
+            window.sessionStorage.removeItem("cart");
+            $('.table-sp').css('display','none');
+        }
+        function removeCart(id) {
+            let index = aray.findIndex((e) => {
+                if (e.id == id) return true;
+            });
+            aray.splice(index,1);
+            sessionStorage.setItem("cart", JSON.stringify(aray));
+            location.reload();
+        }
+        function updateCart(id) {
+            let index = aray.findIndex((e) => {
+                if (e.id == id) return true;
+            });
+            aray[index].quantity = $('input[name=soLuong]')[index].value;
+            $('.Subtotal')[index].innerText = parseFloat(($('input[name=soLuong]')[index].value)*(parseFloat($('.Price')[index].innerText).toFixed(2))).toFixed(2);
 
+            sessionStorage.setItem("cart", JSON.stringify(aray));
+            location.reload();
+        }
+
+        function sumary() {
+            var sumary = 0;
+            var VAT ,thanhTien;
+            for (let i=0;i<$('.Subtotal').length;i++) {
+                sumary += parseFloat($('.Subtotal')[i].innerText);
+            }
+            VAT = parseFloat(sumary/10).toFixed(2);
+            thanhTien = parseFloat(sumary + parseFloat(VAT)).toFixed(2);
+
+            $('#Subsum').text(parseFloat(sumary).toFixed(2));
+            $('#VAT').text(parseFloat(VAT));
+            $('#Total').text(thanhTien);
+        }
     </script>
 
