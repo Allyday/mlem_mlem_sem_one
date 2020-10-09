@@ -29,38 +29,38 @@
 <script>
 
 // $(document).ready(window.sessionStorage.clear());
-//     function AddCart(id,name,quantity,price,image) {
-//         var test = [];
-//         let temp = {
-//             id: id,
-//             name:name,
-//             quantity: quantity,
-//             price: price,
-//             image: image
-//         };
-//         let cart = JSON.parse(sessionStorage.getItem("cart"));
-//         // console.log(cart);
-//         if (cart == null) {
-//             cart = [];
-//             cart.push(temp);
-//         } else {
-//             let index = cart.findIndex((e) => {
-//                 if (e.id === id) return true;
-//             });
-//             if (index <= -1) {
-//                 cart.push(temp);
-//             }else {
-//                 cart[index].quantity += 1;
-//             }
-//
-//         }
-//         test = cart;
-//         window.sessionStorage.setItem("cart", JSON.stringify(test));
-//          if (cart.length >=1 ) {
-//             $('.notice').css('display','block');
-//             $('#quantity').text(cart.length);
-//         }
-//     }
+    function AddCart(id,name,quantity,price,image) {
+        var test = [];
+        let temp = {
+            id: id,
+            name:name,
+            quantity: quantity,
+            price: price,
+            image: image
+        };
+        let cart = JSON.parse(sessionStorage.getItem("cart"));
+        // console.log(cart);
+        if (cart == null) {
+            cart = [];
+            cart.push(temp);
+        } else {
+            let index = cart.findIndex((e) => {
+                if (e.id === id) return true;
+            });
+            if (index <= -1) {
+                cart.push(temp);
+            }else {
+                cart[index].quantity += 1;
+            }
+
+        }
+        test = cart;
+        window.sessionStorage.setItem("cart", JSON.stringify(test));
+         if (cart.length >=1 ) {
+            $('.notice').css('display','block');
+            $('#quantity').text(cart.length);
+        }
+    }
 var mang = [];
 console.log(parseInt($('.price').text()));
     function getprice() {
