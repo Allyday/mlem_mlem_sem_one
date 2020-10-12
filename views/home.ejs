@@ -191,6 +191,64 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
   <script type="text/javascript">
     new WOW().init();
+
+    function preloadImages(array) {
+      if (!preloadImages.list) {
+        preloadImages.list = [];
+      }
+      var list = preloadImages.list;
+      for (var i = 0; i < array.length; i++) {
+        var img = new Image();
+        img.onload = function () {
+          var index = list.indexOf(this);
+          if (index !== -1) { // remove image from the array once it's loaded // for memory consumption reasons
+            list.splice(index, 1);
+          }
+        }
+        list.push(img);
+        img.src = array[i];
+      }
+    }
+    preloadImages(['/images/pizzas/1.jpg',
+      '/images/pizzas/2.jpg',
+      '/images/pizzas/3.jpg',
+      '/images/pizzas/4.jpg',
+      '/images/pizzas/5.jpg',
+      '/images/pizzas/6.jpg',
+      '/images/pastas/pt1.jpg',
+      '/images/pastas/pt2.jpg',
+      '/images/pastas/3.jpg',
+      '/images/pastas/pt4.jpg',
+      '/images/desserts/ds1.jpg',
+      '/images/desserts/ds2.jpg',
+      '/images/desserts/ds3.jpg',
+      '/images/ss/ss1.jpg',
+      '/images/ss/ss2.jpg',
+      '/images/ss/ss3.jpg',
+      '/images/ss/ss6.jpg',
+      '/images/drinks/dr1.jpg',
+      '/images/drinks/dr2.jpg',
+      '/images/drinks/dr3.jpg',
+      '/images/drinks/dr4.jpg',
+      '/images/drinks/dr4.jpg',
+      '/images/drinks/dr5.jpg',
+      '/images/drinks/dr7.jpg',
+      '/images/burger/b1.jpg',
+      '/images/burger/b2.jpg',
+      '/images/burger/b3.jpg',
+      '/images/burger/b4.jpg',
+      '/images/burger/demoepic.jpg',
+      '/images/burger/4.png',
+      '/images/burger/backgroundLocation.jpg',
+      '/images/burger/pizza-fire.jpg',
+      '/images/burger/pizza-frame.jpg',
+      '/images/burger/bg8.jpg',
+      '/images/burger/hamber.jpg',
+      '/images/burger/carousel-humber2.jpg',
+      '/images/burger/carousel-humber1.jpg',
+      '/images/burger/carousel-humber.jpg',
+      '/images/burger/img_head_blog.jpg',
+    ]);
   </script>
   <!--  ====== end animate ======-->
 
