@@ -12,8 +12,11 @@
 }
 
 .section-title {
-    font-family: 'Lora', serif;
-    font-size: 60px;
+    margin: 0 0 20px;
+    font-family: 'Montserrat';
+    font-size: 36px;
+    line-height: 42px;
+    font-weight: 700;
 }
 
 .header-bot .overplay {
@@ -51,6 +54,7 @@ hr {
 
 .serif {
     font-family: 'Lora';
+    margin: 20px 0 25px;
 }
 
 .container-1 {
