@@ -121,7 +121,7 @@ p {
 }
 
 .parralax.two {
-  background-image: url('../images/pizza-right.jpg');
+  background-image: url('../images/bg8.jpg');
   min-height: 80%;
 }
 
@@ -328,9 +328,8 @@ h3.section-title {
 }
 
 .home-menu-ingredients {
-  display: block;
-  clear: both;
-  width: 100%;
+  font-size: 14px;
+  text-align: left;
   color: #eee;
 }
 

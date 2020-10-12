@@ -85,29 +85,34 @@
     <!--location-->
     <div class="background-local">
         <div class="container">
-            <form action="/thanh-pho" method="get" id="FormChooseCity">
+            <form action="/location" method="get" id="FormChooseCity">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="selected">
-                            <select id="country" onchange="changeCountry()" class="browser-default custom-select custom-select-lg mb-3">
+                            <select id="country" onchange="changeCountry()"
+                                class="browser-default custom-select custom-select-lg mb-3">
                                 <option selected disabled>Select country</option>
                                 <option value="VIETNAM">VIETNAM</option>
                                 <option value="USA">USA</option>
                                 <option value="India">INDIA</option>
-                                <option value="ITALY" >ITALY</option>
+                                <option value="ITALY">ITALY</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="selected">
                             <select id="area" class="browser-default custom-select custom-select-lg mb-3" name="city">
-                            <% vitris.map((e) => { %>
-                                <option value="hanoi" <% if (e.ThanhPho == 'hanoi') { %> selected <% } %> >Hà Nội</option>
-                                <option value="hcm" <% if (e.ThanhPho == 'hcm') { %> selected <% } %>>Hồ Chí Minh City</option>
-                                <option value="washington" <% if (e.ThanhPho == 'washington') { %> selected <% } %>>Washington</option>
-                                <option value="delhi" <% if (e.ThanhPho == 'delhi') { %> selected <% } %>>New Delhi</option>
-                                <option value="roma" <% if (e.ThanhPho == 'roma') { %> selected <% } %> >Roma</option>
-                            <%  }) %>
+                                <% vitris.map((e) => { %>
+                                <option value="hanoi" <% if (e.ThanhPho == 'hanoi') { %> selected <% } %>>Hà Nội
+                                </option>
+                                <option value="hcm" <% if (e.ThanhPho == 'hcm') { %> selected <% } %>>Hồ Chí Minh City
+                                </option>
+                                <option value="washington" <% if (e.ThanhPho == 'washington') { %> selected <% } %>>
+                                    Washington</option>
+                                <option value="delhi" <% if (e.ThanhPho == 'delhi') { %> selected <% } %>>New Delhi
+                                </option>
+                                <option value="roma" <% if (e.ThanhPho == 'roma') { %> selected <% } %>>Roma</option>
+                                <%  }) %>
                             </select>
                         </div>
                     </div>
@@ -175,18 +180,18 @@
             if ($("#country option:selected").val() === 'USA') {
                 $("#area option").map(function () {
                     if ($(this).val() === 'washington') {
-                        $(this).css('display','block');
+                        $(this).css('display', 'block');
                     } else {
-                        $(this).css('display','none');
+                        $(this).css('display', 'none');
                     }
                 })
             }
-            if ($("#country option:selected").val() ==='India') {
+            if ($("#country option:selected").val() === 'India') {
                 $("#area option").map(function () {
                     if ($(this).val() === 'delhi') {
                         $(this).css('display', 'block');
                     } else {
-                        $(this).css('display','none');
+                        $(this).css('display', 'none');
                     }
                 });
             }
@@ -197,7 +202,7 @@
                     } else if ($(this).val() === 'hcm') {
                         $(this).css('display', 'block');
                     } else {
-                        $(this).css('display','none');
+                        $(this).css('display', 'none');
                     }
                 })
             }
@@ -206,7 +211,7 @@
                     if ($(this).val() === 'roma') {
                         $(this).css('display', 'block');
                     } else {
-                        $(this).css('display','none');
+                        $(this).css('display', 'none');
                     }
                 })
             }
@@ -218,15 +223,15 @@
         });
 
         $('#area').on('change', () => {
-            let count =0;
-            let slow = setTimeout( () => {
+            let count = 0;
+            let slow = setTimeout(() => {
                 count++;
                 $('#FormChooseCity').submit();
                 if (count === 1) {
                     count = 0;
                     clearTimeout(slow);
                 }
-            },1500);
+            }, 1500);
         });
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaj0mHlR-keu-9hsR6d-gB0L9BclG04rk&callback=initMap">
