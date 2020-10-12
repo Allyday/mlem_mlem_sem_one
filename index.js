@@ -122,36 +122,6 @@ app.get('/reservation', (req, res) => {
         }
     });
 });
-// app.post('/booking',async (req,res) => {
-//     let name = req.body.name ;
-//     let phone = req.body.phone ;
-//     let people = req.body.people ;
-//     let date = req.body.date ;
-//     let email = req.body.email ;
-//     let time = req.body.time ;
-//
-//     let sql_text = `INSERT INTO T2005E_mlem_Bookings(TenKH,Tel,SoNguoi,Ngay,Email,Gio) `+
-//                     `VALUES (N'${name}','${phone}',${people} ,'${date}', '${email}', '${time}');`;
-//     try {
-//      await db.query(sql_text);
-//     }catch (err) {
-//     }
-//     res.redirect(`/reservation`);
-// });
-//contact
-// app.post('/save-comment',async (req,res) => {
-//     let name = req.body.name;
-//     let email = req.body.email;
-//     let phone = req.body.phone;
-//     let message = req.body.message;
-//     let sql_text = `INSERT INTO T2005E_mlem_DanhGia (FullName,Phone,Email,Comment) `+
-//                     `values (N'${name}', ${phone} ,'${email}','${message}');`;
-//     try {
-//      await db.query(sql_text);
-//     }catch (err) {
-//     }
-//     res.redirect('/contact');
-// });
 app.get('/contact', (req, res) => {
     let sql_text = `select top 1 * from T2005E_mlem_ViTri;`;
     db.query(sql_text, (err,rows) => {

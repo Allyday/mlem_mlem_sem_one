@@ -117,7 +117,10 @@
             $('.Subtotal')[index].innerText = parseFloat(($('input[name=soLuong]')[index].value)*(parseFloat($('.Price')[index].innerText).toFixed(2))).toFixed(2);
 
             sessionStorage.setItem("cart", JSON.stringify(aray));
-            location.reload();
+            // location.reload();
+            setTimeout(() => {
+                sumary();
+            }, 1500)
         }
 
         function sumary() {
