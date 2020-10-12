@@ -13,7 +13,7 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 //use body-parser
 const bodyparser = require("body-parser");
-app.use(bodyparser.urlencoded({extended:true}));
+app.use(bodyparser.urlencoded({ extended: true }));
 
 // config sql server
 const mssql = require('mssql');
@@ -51,116 +51,116 @@ app.get('/about-us', (req, res) => {
 });
 
 // blog
-app.get('/blog',async (req, res) => {
-  let sql_text ="select top 4 * from T2005E_mlem_DanhMuc; " +
-      " select top 4 * from T2005E_mlem_Blog; ";
+app.get('/blog', async (req, res) => {
+  let sql_text = "select top 4 * from T2005E_mlem_DanhMuc; " +
+    " select top 4 * from T2005E_mlem_Blog; ";
   let data = {
-      DanhMucs: [],
+    DanhMucs: [],
     articles: []
   };
-  await db.query(sql_text).then(rows =>{
-    data.DanhMucs = rows.recordsets[0] ;
-    data.articels = rows.recordsets[1] ;
+  await db.query(sql_text).then(rows => {
+    data.DanhMucs = rows.recordsets[0];
+    data.articels = rows.recordsets[1];
   }).catch(err => {
     console.log(err.message);
   })
-  res.render('blog',data);
+  res.render('blog', data);
 });
-app.get('/blog/:id',async  (req, res) => {
+app.get('/blog/:id', async (req, res) => {
   let MonAnID = req.params.id;
-  let sql_text = `select top 4 * from T2005E_mlem_DanhMuc; `+
-      `select * from T2005E_mlem_Blog  where MonAnID in (select ID from T2005E_mlem_MonAn where LoaiID like ${MonAnID} );`;
-    let data = {
-        DanhMucs: [],
-        articles: []
-    };
-   await db.query(sql_text).then(rows =>{
-    data.DanhMucs = rows.recordsets[0],
-    data.articels = rows.recordsets[1]
-  }).catch(err => {
-  });
-    if (data.articels == 'NULL' || data.articels == '') {
-        res.render('blog-article-null', data);
-    } else if (data.articels != 'NULL' || data.articels != '') {
-        res.render('blog-id', data);
-    }
-
-})
-app.get('/search', async (req,res) => {
-  let keyword = req.query.search;
-  let sql_text = `select top 4 * from T2005E_mlem_DanhMuc; `+
-      `SELECT T2005E_mlem_Blog.* FROM T2005E_mlem_Blog `+
-      ` INNER JOIN T2005E_mlem_MonAn ON T2005E_mlem_Blog.MonAnID = T2005E_mlem_MonAn.ID `+
-      ` WHERE T2005E_mlem_MonAn.TenSP LIKE N'%${keyword}%' `+
-      ` OR T2005E_mlem_Blog.TieuDe LIKE N'%${keyword}%'; `;
+  let sql_text = `select top 4 * from T2005E_mlem_DanhMuc; ` +
+    `select * from T2005E_mlem_Blog  where MonAnID in (select ID from T2005E_mlem_MonAn where LoaiID like ${MonAnID} );`;
   let data = {
-      DanhMucs: [],
-      articles: []
+    DanhMucs: [],
+    articles: []
   };
   await db.query(sql_text).then(rows => {
-        data.DanhMucs = rows.recordsets[0],
-        data.articels = rows.recordsets[1]
+    data.DanhMucs = rows.recordsets[0],
+      data.articels = rows.recordsets[1]
+  }).catch(err => {
+  });
+  if (data.articels == 'NULL' || data.articels == '') {
+    res.render('blog-article-null', data);
+  } else if (data.articels != 'NULL' || data.articels != '') {
+    res.render('blog-id', data);
+  }
+
+})
+app.get('/search', async (req, res) => {
+  let keyword = req.query.search;
+  let sql_text = `select top 4 * from T2005E_mlem_DanhMuc; ` +
+    `SELECT T2005E_mlem_Blog.* FROM T2005E_mlem_Blog ` +
+    ` INNER JOIN T2005E_mlem_MonAn ON T2005E_mlem_Blog.MonAnID = T2005E_mlem_MonAn.ID ` +
+    ` WHERE T2005E_mlem_MonAn.TenSP LIKE N'%${keyword}%' ` +
+    ` OR T2005E_mlem_Blog.TieuDe LIKE N'%${keyword}%'; `;
+  let data = {
+    DanhMucs: [],
+    articles: []
+  };
+  await db.query(sql_text).then(rows => {
+    data.DanhMucs = rows.recordsets[0],
+      data.articels = rows.recordsets[1]
   }).catch(err => {
     // console.log(err.message);
   });
-    if (data.articels == 'NULL' || data.articels == '') {
-        res.render('blog-article-null', data);
-    } else if (data.articels != 'NULL' || data.articels != '') {
-        res.render('blog', data);
-    }
+  if (data.articels == 'NULL' || data.articels == '') {
+    res.render('blog-article-null', data);
+  } else if (data.articels != 'NULL' || data.articels != '') {
+    res.render('blog', data);
+  }
 })
 
 //reservation
 app.get('/reservation', (req, res) => {
-    let sql_text = `select top 3 * from T2005E_mlem_DanhMuc ORDER BY ID ASC; `;
-    db.query(sql_text, (err,rows) => {
-        if (err) res.send(err);
-        else {
-            res.render('reservation', {
-                danhmucs: rows.recordset
-            });
-        }
-    });
+  let sql_text = `select top 3 * from T2005E_mlem_DanhMuc ORDER BY ID ASC; `;
+  db.query(sql_text, (err, rows) => {
+    if (err) res.send(err);
+    else {
+      res.render('reservation', {
+        danhmucs: rows.recordset
+      });
+    }
+  });
 });
 app.get('/contact', (req, res) => {
-    let sql_text = `select top 1 * from T2005E_mlem_ViTri;`;
-    db.query(sql_text, (err,rows) => {
-      if (err) res.send(err);
-      else res.render('contact',{
-        vitris: rows.recordsets[0]
-      });
+  let sql_text = `select top 1 * from T2005E_mlem_ViTri;`;
+  db.query(sql_text, (err, rows) => {
+    if (err) res.send(err);
+    else res.render('contact', {
+      vitris: rows.recordsets[0]
     });
+  });
 });
-app.get('/thanh-pho', (req,res) => {
-    let city = req.query.city;
-    let sql_text = `SELECT * FROM T2005E_mlem_ViTri WHERE ThanhPho LIKE '%${city}%'`;
-    db.query(sql_text, (err,rows) => {
-      if (err) res.send(err);
-      else res.render('contact', {
-        vitris: rows.recordsets[0]
-      });
+app.get('/location', (req, res) => {
+  let city = req.query.city;
+  let sql_text = `SELECT * FROM T2005E_mlem_ViTri WHERE ThanhPho LIKE '%${city}%'`;
+  db.query(sql_text, (err, rows) => {
+    if (err) res.send(err);
+    else res.render('contact', {
+      vitris: rows.recordsets[0]
     });
+  });
 });
 
-app.get('/cart', (req,res) => {
-    res.render('cart');
+app.get('/cart', (req, res) => {
+  res.render('cart');
 });
 
 
 //menu order
-app.get('/menu', (req,res) => {
+app.get('/menu', (req, res) => {
 
-    let sql_text = 'select * from T2005E_mlem_DanhMuc;'+
-                    `select * from T2005E_mlem_MonAn;` ;
-    db.query(sql_text, (err,rows) => {
-        if (err) res.send(err);
-        else {
-            res.render('menu', {
-                danhmucs: rows.recordsets[0],
-                menus: rows.recordsets[1]
-            })
-        }
-    })
+  let sql_text = 'select * from T2005E_mlem_DanhMuc;' +
+    `select * from T2005E_mlem_MonAn;`;
+  db.query(sql_text, (err, rows) => {
+    if (err) res.send(err);
+    else {
+      res.render('menu', {
+        danhmucs: rows.recordsets[0],
+        menus: rows.recordsets[1]
+      })
+    }
+  })
 })
 
 
