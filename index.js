@@ -145,11 +145,8 @@ app.get('/thanh-pho', (req,res) => {
 app.get('/cart', (req,res) => {
     res.render('cart');
 });
-
-
 //menu order
 app.get('/menu', (req,res) => {
-
     let sql_text = 'select * from T2005E_mlem_DanhMuc;'+
                     `select * from T2005E_mlem_MonAn;` ;
     db.query(sql_text, (err,rows) => {
@@ -161,8 +158,4 @@ app.get('/menu', (req,res) => {
             })
         }
     })
-})
-
-
-
-
+});
