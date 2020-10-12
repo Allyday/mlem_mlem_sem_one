@@ -17,6 +17,7 @@
             <div class="container">
                 <div class="row fix-title-head">
                     <div class="col-md-12 wow  fadeIn" data-wow-delay="0.5s" style="width: 100%;text-align: center">
+<!--                        data-wow-deley: thời gian chờ chuyển động lại-->
                         <span class="title-yellow-head">Our Menu</span>
                     </div>
                     <div class="col-md-12 wow  bounceIn" data-wow-delay="1s" style="width: 100%;text-align: center">
@@ -134,7 +135,6 @@
             <div class="content-part part-tese">
                 <div class="content-title">
                     <h1>Chef's Pick</h1>
-                    <h2>COOKING RECIPES</h2>
                 </div>
                 <div class="sw"></div>
                 <div class="gallery_container"></div>
@@ -154,12 +154,20 @@
         $(function () {
             $('.content-part.part-tese').addClass('show');
             $('.gallery_container').gallery_slider({
-                imgNum: 4,
+                imgNum: 12,
                 imgArr: [
-                    '/images/pizza1.jpg',
-                    '/images/pizza1.jpg',
-                    '/images/pizza1.jpg',
-                    '/images/pizza1.jpg'
+                    '/images/pizzas/1.jpg',
+                    '/images/pizzas/2.jpg',
+                    '/images/pizzas/3.jpg',
+                    '/images/pizzas/4.jpg',
+                    '/images/pizzas/5.jpg',
+                    '/images/pizzas/6.jpg',
+                    '/images/pizzas/7.jpg',
+                    '/images/pizzas/8.jpg',
+                    '/images/pizzas/9.jpg',
+                    '/images/pizzas/10.jpg',
+                    '/images/pizzas/11.jpg',
+                    '/images/pizzas/12.jpg'
                 ]
             });
         })
