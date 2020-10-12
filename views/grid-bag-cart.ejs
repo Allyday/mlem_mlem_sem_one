@@ -1,140 +1,143 @@
-
-    <section class="table-sp" style="display: none">
-<!--        <form >-->
-            <div class="status">
-                <p>Your cart</p>
-            </div>
-            <div class="row">
-                <div class="col-md-9   slideInLeft">
-                    <table class="table">
-                        <thead class="grey lighten-2">
-                        <tr>
-                            <th scope="col" class="strong"></th>
-                            <th scope="col" class="strong">Name</th>
-                            <th scope="col" class="strong">Quantity</th>
-                            <th scope="col" class="strong">price</th>
-                            <th scope="col" class="strong">Total</th>
-                            <th scope="col" style="width: 120px"> </th>
-                        </tr>
-                        </thead>
-                        <tbody id="myBody">
-<!--                          <tr>-->
-<!--                            <th scope="row" class="img-table">-->
-<!--                                <div class="fix-imgs" style="background-image: url('')"></div>-->
-<!--                            </th>-->
-<!--                            <td class="strong"></td>-->
-<!--                            <td style="justify-content: center;display: flex">-->
-<!--                                <input class="quantity" min="1" max="15" name="soLuong" value="" type="number" required>-->
-<!--                            </td>-->
-<!--                            <td class="strong text-lowercase"><span class="Price"> </span> k</td>-->
-<!--                            <td class="strong text-lowercase"><span class="Subtotal">10</span> k</td>-->
-<!--                            <td class="strong">-->
-<!--                                <button type="button" class="tag-a btn-outline-yellow" style="margin-bottom: 10px">Update</button>-->
-<!--                                <button type="button" class="tag-a btn-outline-black">Remove</button>-->
-<!--                            </td>-->
-<!--                          </tr>-->
-                        </tbody>
-                    </table>
+<section class="table-sp" style="display: none">
+    <!--        <form >-->
+    <div class="status">
+        <p>Your cart</p>
+    </div>
+    <div class="row">
+        <div class="col-md-9   slideInLeft">
+            <table class="table">
+                <thead class="grey lighten-2">
+                    <tr>
+                        <th scope="col" class="strong"></th>
+                        <th scope="col" class="strong">Name</th>
+                        <th scope="col" class="strong">Quantity</th>
+                        <th scope="col" class="strong">price</th>
+                        <th scope="col" class="strong">Total</th>
+                        <th scope="col" style="width: 120px"> </th>
+                    </tr>
+                </thead>
+                <tbody id="myBody">
+                    <!--                          <tr>-->
+                    <!--                            <th scope="row" class="img-table">-->
+                    <!--                                <div class="fix-imgs" style="background-image: url('')"></div>-->
+                    <!--                            </th>-->
+                    <!--                            <td class="strong"></td>-->
+                    <!--                            <td style="justify-content: center;display: flex">-->
+                    <!--                                <input class="quantity" min="1" max="15" name="soLuong" value="" type="number" required>-->
+                    <!--                            </td>-->
+                    <!--                            <td class="strong text-lowercase"><span class="Price"> </span> k</td>-->
+                    <!--                            <td class="strong text-lowercase"><span class="Subtotal">10</span> k</td>-->
+                    <!--                            <td class="strong">-->
+                    <!--                                <button type="button" class="tag-a btn-outline-yellow" style="margin-bottom: 10px">Update</button>-->
+                    <!--                                <button type="button" class="tag-a btn-outline-black">Remove</button>-->
+                    <!--                            </td>-->
+                    <!--                          </tr>-->
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3 slideInRight" style="background: #80808026;padding-top: 30px;">
+            <!--  collapse-->
+            <p style="cursor: pointer;color:#F2B410 " data-toggle="collapse" href="#coupon" aria-expanded="false"
+                aria-controls="coupon">
+                USE COUPON CODE
+            </p>
+            <div class="collapse" id="coupon" style="margin-bottom: 20px">
+                <div class="md-4">
+                    <label>Enter your coupon here</label>
+                    <input type="text" name="coupon" class="fix-input form-control m-md-1"
+                        placeholder="your coupon here">
                 </div>
-                <div class="col-md-3 slideInRight" style="background: #80808026;padding-top: 30px;">
-                    <!--  collapse-->
-                    <p style="cursor: pointer;color:#F2B410 " data-toggle="collapse" href="#coupon"
-                       aria-expanded="false" aria-controls="coupon">
-                        USE COUPON CODE
-                    </p>
-                    <div class="collapse" id="coupon" style="margin-bottom: 20px">
-                        <div class="md-4">
-                            <label>Enter your coupon here</label>
-                            <input type="text" name="coupon" class="fix-input form-control m-md-1"
-                                   placeholder="your coupon here">
-                        </div>
-                        <button style="margin-top: 10px" type="button"
-                                class="fix-btn btn-outline-yellow">Apply</button>
-                    </div>
-                    <!--    table check out-->
-                    <table class="table">
-                        <tbody>
-                        <tr>
-                            <td>Sub-total:</td>
-                            <td class="text-right"><span id="Subsum">wow</span> $</td>
-                        </tr>
-                        <tr>
-                            <td>VAT (10%):</td>
-                            <td class="text-right"><span id="VAT"></span> $</td>
-                        </tr>
-                        <tr>
-                            <td>Total:</td>
-                            <td class="text-right"><span id="Total"></span> $</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <button style="margin-top: 10px" type="button" class="fix-btn btn-outline-yellow">Apply</button>
             </div>
-<!--        </form>-->
-    </section>
-    <script type="text/javascript">
-        var aray = JSON.parse(window.sessionStorage.getItem("cart"));
+            <!--    table check out-->
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>Sub-total:</td>
+                        <td class="text-right"><span id="Subsum">wow</span> $</td>
+                    </tr>
+                    <tr>
+                        <td>VAT (10%):</td>
+                        <td class="text-right"><span id="VAT"></span> $</td>
+                    </tr>
+                    <tr>
+                        <td>Total:</td>
+                        <td class="text-right"><span id="Total"></span> $</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--        </form>-->
+</section>
+<script type="text/javascript">
+    var aray = JSON.parse(window.sessionStorage.getItem("cart"));
 
-        // assign array js to html table
-        aray.map((e) => {
-            var row = "<tr>\n" +
-                "                            <th scope=\"row\" class=\"img-table\">\n" +
-                "                                <div class=\"fix-imgs\" style=\"background-image: url('"+e.image+"')\"></div>\n" +
-                "                            </th>\n" +
-                "                            <td class=\"strong\">"+e.name+"</td>\n" +
-                "                            <td style=\"justify-content: center;display: flex\">\n" +
-                "                                <input class=\"quantity\" min=\"1\" max=\"15\" name=\"soLuong\" value=\""+e.quantity+"\" type=\"number\" required>\n" +
-                "                            </td>\n" +
-                "                            <td class=\"strong text-lowercase\"><span class=\"Price\">"+e.price+"</span> $</td>\n" +
-                "                            <td class=\"strong text-lowercase\"><span class=\"Subtotal\">"+parseFloat((e.quantity)*(e.price)).toFixed(2) +"</span> $</td>\n" +
-                "                            <td class=\"strong\">\n" +
-                "                                <button type=\"button\" class=\"tag-a btn-outline-yellow\" style=\"margin-bottom: 10px\" onclick=\"updateCart("+e.id+")\">Update</button>\n" +
-                "                                <button type=\"button\" class=\"tag-a btn-outline-black\" onclick=\"removeCart("+e.id+")\">Remove</button>\n" +
-                "                            </td>\n" +
-                "                          </tr>";
+    // assign array js to html table
+    aray.map((e) => {
+        var row =
+            `<tr>\n
+                <th scope=\"row\" class=\"img-table\">\n
+                    <div class=\"fix-imgs\" style=\"background-image: url('${e.image}')\"></div>\n
+                </th>\n
+                <td class=\"strong\">${e.name}</td>\n
+                <td style=\"justify-content: center;display: flex\">\n
+                    <input class=\"quantity\" min=\"1\" max=\"15\" name=\"soLuong\" value=\"${e.quantity}\"
+                        type=\"number\" onchange=\"updateCart(${e.id})\" required style=\"font-size: 16px;\">\n
+                </td>\n
+                <td class=\"strong text-lowercase\"><span class=\"Price\">${e.price}</span> $</td>\n
+                <td class=\"strong text-lowercase\"><span class=\"Subtotal\">
+                    ${parseFloat((e.quantity) * (e.price)).toFixed(2)}</span> $
+                </td>\n
+                <td class=\"strong\">\n
+                    <a onclick=\"removeCart(${e.id})\"><i class=\"fas fa-times\"></i></a>\n
+                </td>\n
+            </tr>`;
 
-            document.getElementById("myBody").innerHTML += row;
+        document.getElementById("myBody").innerHTML += row;
 
+    });
+    // handle
+    if (aray.length === 0) {
+        window.sessionStorage.removeItem("cart");
+        $('.table-sp').css('display', 'none');
+    }
+
+    function removeCart(id) {
+        let index = aray.findIndex((e) => {
+            if (e.id == id) return true;
         });
-// handle
-        if (aray.length === 0) {
-            window.sessionStorage.removeItem("cart");
-            $('.table-sp').css('display','none');
-        }
-        function removeCart(id) {
-            let index = aray.findIndex((e) => {
-                if (e.id == id) return true;
-            });
-            aray.splice(index,1);
-            sessionStorage.setItem("cart", JSON.stringify(aray));
-            location.reload();
-        }
-        function updateCart(id) {
-            let index = aray.findIndex((e) => {
-                if (e.id == id) return true;
-            });
-            aray[index].quantity = $('input[name=soLuong]')[index].value;
-            $('.Subtotal')[index].innerText = parseFloat(($('input[name=soLuong]')[index].value)*(parseFloat($('.Price')[index].innerText).toFixed(2))).toFixed(2);
+        aray.splice(index, 1);
+        sessionStorage.setItem("cart", JSON.stringify(aray));
+        location.reload();
+    }
 
-            sessionStorage.setItem("cart", JSON.stringify(aray));
-            // location.reload();
-            setTimeout(() => {
-                sumary();
-            }, 1500)
+    function updateCart(id) {
+        let index = aray.findIndex((e) => {
+            if (e.id == id) return true;
+        });
+        aray[index].quantity = $('input[name=soLuong]')[index].value;
+        $('.Subtotal')[index].innerText = parseFloat(($('input[name=soLuong]')[index].value) * (parseFloat($('.Price')[
+            index].innerText).toFixed(2))).toFixed(2);
+
+        sessionStorage.setItem("cart", JSON.stringify(aray));
+        // location.reload();
+        setTimeout(() => {
+            sumary();
+        }, 100)
+    }
+
+    function sumary() {
+        var sumary = 0;
+        var VAT, thanhTien;
+        for (let i = 0; i < $('.Subtotal').length; i++) {
+            sumary += parseFloat($('.Subtotal')[i].innerText);
         }
+        VAT = parseFloat(sumary / 10).toFixed(2);
+        thanhTien = parseFloat(sumary + parseFloat(VAT)).toFixed(2);
 
-        function sumary() {
-            var sumary = 0;
-            var VAT ,thanhTien;
-            for (let i=0;i<$('.Subtotal').length;i++) {
-                sumary += parseFloat($('.Subtotal')[i].innerText);
-            }
-            VAT = parseFloat(sumary/10).toFixed(2);
-            thanhTien = parseFloat(sumary + parseFloat(VAT)).toFixed(2);
-
-            $('#Subsum').text(parseFloat(sumary).toFixed(2));
-            $('#VAT').text(parseFloat(VAT));
-            $('#Total').text(thanhTien);
-        }
-    </script>
-
+        $('#Subsum').text(parseFloat(sumary).toFixed(2));
+        $('#VAT').text(parseFloat(VAT));
+        $('#Total').text(thanhTien);
+    }
+</script>
