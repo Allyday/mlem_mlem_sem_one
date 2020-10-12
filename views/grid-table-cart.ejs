@@ -1,6 +1,6 @@
 <section class="reservation slideInUp" style="display: none">
     <div class="status">
-        <p>Your table is ready!</p>
+        <p>Your booking has been made!</p>
     </div>
     <form>
         <table class="table">
@@ -18,17 +18,18 @@
                     <th scope="row" class="strong" id="name"></th>
                     <td class="strong" id="phone"></td>
                     <td class="strong">
-                        <button onclick="this.parentNode.querySelector('input[name=soNguoi]').stepDown()"
-                                class="minus" type="button">-</button>
+                        <button onclick="this.parentNode.querySelector('input[name=soNguoi]').stepDown()" class="minus"
+                            type="button">-</button>
                         <input class="quantity" min="1" max="15" name="soNguoi" value="" type="number">
-                        <button onclick="this.parentNode.querySelector('input[name=soNguoi]').stepUp()"
-                                class="plus" type="button">+</button>
+                        <button onclick="this.parentNode.querySelector('input[name=soNguoi]').stepUp()" class="plus"
+                            type="button">+</button>
                     </td>
                     <td class="strong">
                         <input type="date" required name="date">
                     </td>
                     <td class="strong">
-                        <input class="fix-input" required type="time" name="time" style=" width: 150px;" onchange="onChangeTime()">
+                        <input class="fix-input" required type="time" name="time" style=" width: 150px;"
+                            onchange="onChangeTime()">
                     </td>
                 </tr>
 
@@ -39,7 +40,7 @@
                 <button type="button" class="tag-a btn-outline-yellow" onclick="updateTable()">Update</button>
             </div>
             <div class="col-md-6 btn-checkout">
-                <button type="button" class="tag-a btn-outline-black" onclick="removeTable()">Remove</button>
+                <button type="button" class="tag-a btn-outline-black" onclick="removeTable()">Cancel Booking</button>
             </div>
         </div>
     </form>
@@ -52,23 +53,22 @@
 
     // console.log(table);
     var todayDate = new Date();
-    todayDate.setDate(todayDate.getDate()+1);
+    todayDate.setDate(todayDate.getDate() + 1);
 
     var InputDate = $('input[type=date]');
-    var attrTag = InputDate.attr(
-        {
-            'value': moment(table.date).format('YYYY-MM-DD'),
-            'min': moment(todayDate).format('YYYY-MM-DD')
-        });
+    var attrTag = InputDate.attr({
+        'value': moment(table.date).format('YYYY-MM-DD'),
+        'min': moment(todayDate).format('YYYY-MM-DD')
+    });
 
     // input time
     var InputTime = $('input[type=time]');
     InputTime.attr({
         'value': table.time,
     })
+
     function onChangeTime() {
-        if (InputTime.val() <= '20:30' && InputTime.val() >= '09:00') {
-        } else {
+        if (InputTime.val() <= '20:30' && InputTime.val() >= '09:00') {} else {
             $('#mymodal').modal('show');
             InputTime.val('11:00');
         }
@@ -77,37 +77,36 @@
 <script type="text/javascript">
     function check() {
         if (table !== null) {
-            $('.reservation').css('display','block');
+            $('.reservation').css('display', 'block');
             $('.background-icon').css('display', 'none');
         }
         if (cart !== null) {
-            $('.table-sp').css('display','block');
-            $('#checkout').css('display','flex');
+            $('.table-sp').css('display', 'block');
+            $('#checkout').css('display', 'flex');
             $('#shopping').removeClass('col-md-12');
             $('#shopping').addClass('col-md-6');
             $('.background-icon').css('display', 'none');
         }
     };
     $('#phone').text(table.phone);
-    $('#name').text( table.name );
+    $('#name').text(table.name);
     $('input[name=soNguoi]').val(table.people);
 
     function removeTable() {
         window.sessionStorage.removeItem('table');
         location.reload();
     }
+
     function updateTable() {
         let preData = {
-            name:  table.name,
+            name: table.name,
             phone: table.phone,
             date: $('input[name=date]').val(),
             email: table.email,
-            people:  $('input[name=soNguoi]').val(),
+            people: $('input[name=soNguoi]').val(),
             time: $('input[name=time]').val(),
         };
         sessionStorage.setItem('table', JSON.stringify(preData));
         location.reload();
     }
 </script>
-
-
