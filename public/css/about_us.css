@@ -1,6 +1,6 @@
 /*======================= header bot ==================*/
 
-.header-bot{
+.header-bot {
     width: 100%;
     height: 600px;
     position: relative;
@@ -9,13 +9,14 @@
     color: white;
     margin: 0 auto;
     padding: 210px 0 90px
-
 }
-.section-title{
+
+.section-title {
     font-family: 'Lora', serif;
     font-size: 60px;
 }
-.header-bot .overplay{
+
+.header-bot .overplay {
     background: rgba(17, 17, 17, 0.75);
     position: absolute;
 
@@ -26,32 +27,40 @@
 }
 
 
-.text-center{
+.text-center {
     text-align: center;
 }
-.comic-text{
-    font-size:80px;
-    line-height:60px;
-    color:#F2B410;
+
+.comic-text {
+    font-size: 80px;
+    line-height: 60px;
+    color: #F2B410;
     font-family: 'Tangerine', cursive;
 }
-.animate__bounceInLeft{
+
+.animate__bounceInLeft {
     --animate-duration: 5s;
 }
-hr{
+
+hr {
     width: 50px;
 }
 
 /*========================= end header bot ======================*/
 /*======================================== container =====================*/
 
+.serif {
+    font-family: 'Lora';
+}
 
-.container-1{
+.container-1 {
     margin-top: 130px;
 }
-.container-1 img{
+
+.container-1 img {
     margin-left: -30px;
 }
+
 /*=============================== button ==================*/
 .btn {
     border-radius: 0;
@@ -69,7 +78,7 @@ hr{
     background-color: #F2B410;
     border-color: #F2B410;
     font-family: 'Montserrat',
-    sans-serif;
+        sans-serif;
     font-weight: 700;
     padding: 18px 32px;
     font-size: 13px;
@@ -92,10 +101,12 @@ hr{
     box-shadow: none;
     background-color: #F39C12 !important;
 }
+
 /*==================================== end botton==================*/
-#myCarousel{
+#myCarousel {
     margin-top: 130px;
 }
-.footer-about{
+
+.footer-about {
     margin-top: 10px;
 }
