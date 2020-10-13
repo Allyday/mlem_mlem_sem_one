@@ -104,6 +104,7 @@ hr {
 .btn.btn-yellow:hover {
     box-shadow: none;
     background-color: #F39C12 !important;
+    color: #fff;
 }
 
 /*==================================== end botton==================*/
