@@ -33,17 +33,6 @@ const db = new mssql.Request();
 // routings
 app.get('/', (req, res) => {
   res.render('home');
-  // let get_danh_mucs = 'SELECT * FROM DanhMuc;';
-  // let get_brands = 'SELECT * FROM ThuongHieu;';
-  // let get_products = 'SELECT * FROM SanPham;';
-  // db.query(get_danh_mucs + get_brands + get_products, (err, data) => {
-  //   if (err) res.send(err);
-  //   else res.render('home', {
-  //     tabs: data.recordsets[0],
-  //     brands: data.recordsets[1],
-  //     products: data.recordsets[2],
-  //   });
-  // });
 });
 
 app.get('/about-us', (req, res) => {

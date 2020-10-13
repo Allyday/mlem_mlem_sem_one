@@ -17,21 +17,6 @@
                     </tr>
                 </thead>
                 <tbody id="myBody">
-                    <!--                          <tr>-->
-                    <!--                            <th scope="row" class="img-table">-->
-                    <!--                                <div class="fix-imgs" style="background-image: url('')"></div>-->
-                    <!--                            </th>-->
-                    <!--                            <td class="strong"></td>-->
-                    <!--                            <td style="justify-content: center;display: flex">-->
-                    <!--                                <input class="quantity" min="1" max="15" name="soLuong" value="" type="number" required>-->
-                    <!--                            </td>-->
-                    <!--                            <td class="strong text-lowercase"><span class="Price"> </span> k</td>-->
-                    <!--                            <td class="strong text-lowercase"><span class="Subtotal">10</span> k</td>-->
-                    <!--                            <td class="strong">-->
-                    <!--                                <button type="button" class="tag-a btn-outline-yellow" style="margin-bottom: 10px">Update</button>-->
-                    <!--                                <button type="button" class="tag-a btn-outline-black">Remove</button>-->
-                    <!--                            </td>-->
-                    <!--                          </tr>-->
                 </tbody>
             </table>
         </div>
@@ -121,7 +106,6 @@
             index].innerText).toFixed(2))).toFixed(2);
 
         sessionStorage.setItem("cart", JSON.stringify(aray));
-        // location.reload();
         setTimeout(() => {
             sumary();
         }, 100)
