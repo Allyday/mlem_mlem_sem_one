@@ -60,7 +60,7 @@ app.get('/blog', async (req, res) => {
   };
   await db.query(sql_text).then(rows => {
     data.DanhMucs = rows.recordsets[0];
-    data.articels = rows.recordsets[1];
+    data.articles = rows.recordsets[1];
   }).catch(err => {
     console.log(err.message);
   })
@@ -76,12 +76,12 @@ app.get('/blog/:id', async (req, res) => {
   };
   await db.query(sql_text).then(rows => {
     data.DanhMucs = rows.recordsets[0],
-      data.articels = rows.recordsets[1]
+      data.articles = rows.recordsets[1]
   }).catch(err => {
   });
-  if (data.articels == 'NULL' || data.articels == '') {
+  if (data.articles == 'NULL' || data.articles == '') {
     res.render('blog-article-null', data);
-  } else if (data.articels != 'NULL' || data.articels != '') {
+  } else if (data.articles != 'NULL' || data.articles != '') {
     res.render('blog-id', data);
   }
 
@@ -103,9 +103,9 @@ app.get('/search', async (req, res) => {
   }).catch(err => {
     // console.log(err.message);
   });
-  if (data.articels == 'NULL' || data.articels == '') {
+  if (data.articles == 'NULL' || data.articles == '') {
     res.render('blog-article-null', data);
-  } else if (data.articels != 'NULL' || data.articels != '') {
+  } else if (data.articles != 'NULL' || data.articles != '') {
     res.render('blog', data);
   }
 })
