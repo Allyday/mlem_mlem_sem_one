@@ -83,10 +83,10 @@
 
         function seeMore(dom) {
             if (dom.parentElement.offsetHeight <= 550) {
-                dom.innerText = 'see less...';
+                dom.innerText = 'See less...';
                 dom.parentElement.style.height = 'auto';
             } else {
-                dom.innerText = 'see more...';
+                dom.innerText = 'See more...';
                 dom.parentElement.style.height = '550px';
             }
             // dom.innerText = 'see less';
@@ -98,7 +98,6 @@
     <!-- back on top-->
     <script type="text/javascript">
         function toTop() {
-            // document.documentElement.scrollTop = 0;
             $('html,body').animate({
                 scrollTop: 0,
             }, 700)
